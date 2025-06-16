@@ -1,0 +1,12 @@
+{
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[astor]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

@@ -1,0 +1,27 @@
+{
+  "importOrder": [
+    "<TYPES>",
+    "<TYPES>^[.]",
+    "",
+    "^(astro|astro/(.*)|@astrojs/(.*))$",
+    "^(solid-js/(.*)|solid-js)$",
+    "<BUILTIN_MODULES>",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    ".astro$",
+    "^~/(.*)$",
+    "^[.]",
+    "",
+    ".css$"
+  ],
+  "tailwindStylesheet": "./src/styles/global.css",
+  "tailwindFunctions": [
+    "cx",
+    "cva"
+  ],
+  "plugins": [
+    "prettier-plugin-astro",
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ]
+}

@@ -1,0 +1,103 @@
+---
+import type { PackageManager } from "~/types/store";
+
+import { Code } from "astro-expressive-code/components";
+
+import NpmCommandTabs from "./npm-command-tabs";
+
+type Props = {
+  type: "install" | "create" | "run" | "exec";
+  command: string;
+};
+
+const { type, command } = Astro.props;
+
+const prefix = (packageManager: PackageManager) => {
+  switch (type) {
+    case "install": {
+      switch (packageManager) {
+        case "npm":
+          return "npm install";
+        case "yarn":
+        case "pnpm":
+        case "bun":
+          return `${packageManager} add`;
+      }
+    }
+    case "create": {
+      return `${packageManager} create`;
+    }
+    case "run": {
+      return `${packageManager} run`;
+    }
+    case "exec": {
+      switch (packageManager) {
+        case "npm": {
+          return "npx";
+        }
+        case "pnpm": {
+          return "pnpm dlx";
+        }
+        case "yarn": {
+          return packageManager;
+        }
+        case "bun": {
+          return "bunx --bun";
+        }
+      }
+    }
+  }
+};
+
+const contents = [
+  {
+    packageManager: "npm",
+    command: `${prefix("npm")} ${command}`,
+  },
+  {
+    packageManager: "yarn",
+    command: `${prefix("yarn")} ${command}`,
+  },
+  {
+    packageManager: "pnpm",
+    command: `${prefix("pnpm")} ${command}`,
+  },
+  {
+    packageManager: "bun",
+    command: `${prefix("bun")} ${command}`,
+  },
+];
+---
+
+<div class="npm-command">
+  <div>
+    <NpmCommandTabs client:load />
+  </div>
+  {
+    contents.map(({ packageManager, command }) => (
+      <div data-package-manager={packageManager} class="command invisible hidden">
+        <Code code={command} lang="bash" frame="none" />
+      </div>
+    ))
+  }
+</div>
+<script>
+  import { packageManagerAtom } from "~/atoms/global-atoms";
+
+  const npmCommands = document.querySelectorAll(".npm-command");
+
+  packageManagerAtom.subscribe((value) => {
+    const commands = document.querySelectorAll(".npm-command .command");
+
+    commands.forEach((command) => {
+      command.classList.add("invisible", "hidden");
+    });
+
+    npmCommands.forEach((npmCommand) => {
+      const command = npmCommand.querySelector(`.command[data-package-manager="${value}"]`);
+      if (command) {
+        command.classList.remove("invisible", "hidden");
+      }
+    });
+  });
+</script>
