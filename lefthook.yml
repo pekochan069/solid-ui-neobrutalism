@@ -1,0 +1,6 @@
+pre-commit:
+  commands:
+    format:
+      glob: "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc,astro,css,yaml,yml}"
+      run: prettier --write .
+      stage_fixed: true
