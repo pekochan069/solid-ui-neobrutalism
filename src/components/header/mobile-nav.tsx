@@ -36,7 +36,7 @@ type MobileNavProps = {
 
 export default function MobileNav(props: MobileNavProps) {
   return (
-    <Popover gutter={10} modal={true}>
+    <Popover gutter={10} preventScroll={true}>
       <PopoverTrigger as={Button}>Menu</PopoverTrigger>
       <PopoverContent class="h-[calc(100svh-var(--header-height)-2px)] w-svw -translate-x-2 rounded-none">
         <div>

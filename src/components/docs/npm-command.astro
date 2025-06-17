@@ -23,6 +23,7 @@ const prefix = (packageManager: PackageManager) => {
         case "bun":
           return `${packageManager} add`;
       }
+      break;
     }
     case "create": {
       return `${packageManager} create`;
@@ -71,11 +72,14 @@ const contents = [
 
 <div class="npm-command">
   <div>
-    <NpmCommandTabs client:load />
+    <NpmCommandTabs client:only />
   </div>
   {
     contents.map(({ packageManager, command }) => (
-      <div data-package-manager={packageManager} class="command invisible hidden">
+      <div
+        data-package-manager={packageManager}
+        class="command invisible hidden"
+      >
         <Code code={command} lang="bash" frame="none" />
       </div>
     ))
@@ -94,7 +98,9 @@ const contents = [
     });
 
     npmCommands.forEach((npmCommand) => {
-      const command = npmCommand.querySelector(`.command[data-package-manager="${value}"]`);
+      const command = npmCommand.querySelector(
+        `.command[data-package-manager="${value}"]`,
+      );
       if (command) {
         command.classList.remove("invisible", "hidden");
       }

@@ -1,6 +1,3 @@
-import type { ParentProps } from "solid-js";
-
-import { createEffect, onMount } from "solid-js";
 import { useStore } from "@nanostores/solid";
 
 import { packageManagerAtom } from "~/atoms/global-atoms";

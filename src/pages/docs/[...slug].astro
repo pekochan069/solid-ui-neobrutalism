@@ -1,7 +1,8 @@
 ---
-import { getCollection, render } from "astro:content";
+import { render } from "astro:content";
 
 import BaseLayout from "~/layout/base-layout.astro";
+import { mdxComponents } from "~/components/mdx-components";
 import { docs } from "~/lib/contents";
 
 export async function getStaticPaths() {
@@ -24,7 +25,7 @@ const RenderedDoc = await render(doc);
       <p class="mt-2 text-sm">{doc.data.description}</p>
     </div>
     <div class="prose">
-      <RenderedDoc.Content />
+      <RenderedDoc.Content components={{ ...mdxComponents }} />
     </div>
   </div>
 </BaseLayout>

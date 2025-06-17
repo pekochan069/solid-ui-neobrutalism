@@ -1,0 +1,109 @@
+{
+  "inlineColors": {
+    "light": {
+      "background": "slate-100",
+      "secondary-background": "white",
+      "foreground": "slate-950",
+      "main-foreground": "slate-950",
+      "main": "slate-500",
+      "border": "slate-950",
+      "ring": "slate-950",
+      "overlay": "slate-950/80",
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "orange-600",
+      "chart-2": "teal-600",
+      "chart-3": "cyan-900",
+      "chart-4": "amber-400",
+      "chart-5": "amber-500",
+      "chart-active-dot": "slate-950"
+    },
+    "dark": {
+      "background": "slate-950",
+      "secondary-background": "slate-800",
+      "foreground": "slate-50",
+      "main": "slate-500",
+      "border": "slate-200",
+      "ring": "slate-50",
+      "overlay": "slate-950/80",
+      "shadow": "4px 4px 0px 0px var(--border)",
+      "chart-1": "blue-700",
+      "chart-2": "emerald-500",
+      "chart-3": "amber-500",
+      "chart-4": "purple-500",
+      "chart-5": "rose-500",
+      "chart-active-dot": "white"
+    }
+  },
+  "cssVars": {
+    "light": {
+      "background": "oklch(96.8% 0.007 247.896)",
+      "secondary-background": "oklch(100% 0 0)",
+      "foreground": "oklch(12.9% 0.042 264.695)",
+      "main-foreground": "oklch(12.9% 0.042 264.695)",
+      "main": "oklch(55.4% 0.046 257.417)",
+      "border": "oklch(12.9% 0.042 264.695)",
+      "ring": "oklch(12.9% 0.042 264.695)",
+      "overlay": "oklch(12.9% 0.042 264.695 / 80)",
+      "shadow": "4px 4px 0px 0px oklch(55.4% 0.046 257.417)",
+      "chart-1": "oklch(0.646 0.222 41.116)",
+      "chart-2": "oklch(0.6 0.118 184.704)",
+      "chart-3": "oklch(0.398 0.07 227.392)",
+      "chart-4": "oklch(0.828 0.189 84.429)",
+      "chart-5": "oklch(0.769 0.188 70.08)",
+      "chart-active-dot": "oklch(12.9% 0.042 264.695)"
+    },
+    "dark": {
+      "      background": "oklch(12.9% 0.042 264.695)",
+      "      secondary-background": "oklch(27.9% 0.041 260.031)",
+      "      foreground": "oklch(98.4% 0.003 247.858)",
+      "      main": "oklch(55.4% 0.046 257.417)",
+      "      border": "oklch(92.9% 0.013 255.508)",
+      "      ring": "oklch(98.4% 0.003 247.858)",
+      "      overlay": "oklch(12.9% 0.042 264.695 / 80)",
+      "      shadow": "4px 4px 0px 0px var(--border)",
+      "      chart-1": "oklch(0.488 0.243 264.376)",
+      "      chart-2": "oklch(0.696 0.17 162.48)",
+      "      chart-3": "oklch(0.769 0.188 70.08)",
+      "      chart-4": "oklch(0.627 0.265 303.9)",
+      "      chart-5": "oklch(0.645 0.246 16.439)",
+      "      sidebar": "oklch(0.216 0.006 56.043)",
+      "      chart-active-dot": "oklch(100% 0 0)"
+    }
+  },
+  "cssVarsV4": {
+    "light": {
+      "background": "oklch(96.8% 0.007 247.896)",
+      "secondary-background": "oklch(100% 0 0)",
+      "foreground": "oklch(12.9% 0.042 264.695)",
+      "main-foreground": "oklch(12.9% 0.042 264.695)",
+      "main": "oklch(55.4% 0.046 257.417)",
+      "border": "oklch(12.9% 0.042 264.695)",
+      "ring": "oklch(12.9% 0.042 264.695)",
+      "overlay": "oklch(12.9% 0.042 264.695 / 80)",
+      "shadow": "4px 4px 0px 0px oklch(55.4% 0.046 257.417)",
+      "chart-1": "oklch(0.646 0.222 41.116)",
+      "chart-2": "oklch(0.6 0.118 184.704)",
+      "chart-3": "oklch(0.398 0.07 227.392)",
+      "chart-4": "oklch(0.828 0.189 84.429)",
+      "chart-5": "oklch(0.769 0.188 70.08)",
+      "chart-active-dot": "oklch(12.9% 0.042 264.695)"
+    },
+    "dark": {
+      "      background": "oklch(12.9% 0.042 264.695)",
+      "      secondary-background": "oklch(27.9% 0.041 260.031)",
+      "      foreground": "oklch(98.4% 0.003 247.858)",
+      "      main": "oklch(55.4% 0.046 257.417)",
+      "      border": "oklch(92.9% 0.013 255.508)",
+      "      ring": "oklch(98.4% 0.003 247.858)",
+      "      overlay": "oklch(12.9% 0.042 264.695 / 80)",
+      "      shadow": "4px 4px 0px 0px var(--border)",
+      "      chart-1": "oklch(0.488 0.243 264.376)",
+      "      chart-2": "oklch(0.696 0.17 162.48)",
+      "      chart-3": "oklch(0.769 0.188 70.08)",
+      "      chart-4": "oklch(0.627 0.265 303.9)",
+      "      chart-5": "oklch(0.645 0.246 16.439)",
+      "      sidebar": "oklch(0.216 0.006 56.043)",
+      "      chart-active-dot": "oklch(100% 0 0)"
+    }
+  }
+}

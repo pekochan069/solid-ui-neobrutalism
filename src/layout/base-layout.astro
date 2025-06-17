@@ -17,39 +17,14 @@ import "~/styles/global.css";
     <slot />
   </body>
 </html>
-<script>
-  import type { PackageManager } from "~/types/store";
-
-  import { packageManagerAtom } from "~/atoms/global-atoms";
-
-  function getPackageManager(): PackageManager {
-    if (typeof localStorage !== "undefined") {
-      const storedPackageManager = localStorage.getItem("packageManager") as PackageManager | null;
-
-      return storedPackageManager || "npm";
-    } else {
-      return "npm"; // Default to npm if localStorage is not available
-    }
-  }
-
-  packageManagerAtom.set(getPackageManager());
-
-  // Listen for changes in the package manager selection
-  window.addEventListener("storage", (event) => {
-    if (event.key === "packageManager") {
-      const newPackageManager = event.newValue as PackageManager | null;
-      if (newPackageManager) {
-        packageManagerAtom.set(newPackageManager);
-      }
-    }
-  });
-</script>
 <script is:inline>
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
   };
   const isDark = getThemePreference() === "dark";
   document.documentElement.classList[isDark ? "add" : "remove"]("dark");
@@ -59,6 +34,9 @@ import "~/styles/global.css";
       const isDark = document.documentElement.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
     });
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
   }
 </script>

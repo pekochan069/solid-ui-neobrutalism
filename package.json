@@ -7,20 +7,24 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "registry:build": "bun ./scripts/build-registry.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/solid-js": "^5.1.0",
     "@kobalte/core": "^0.13.10",
     "@kobalte/tailwindcss": "^0.9.0",
+    "@nanostores/persistent": "^1.0.0",
     "@nanostores/solid": "^1.0.0",
     "@tailwindcss/vite": "^4.1.10",
     "astro": "^5.9.3",
     "astro-expressive-code": "^0.41.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "lucide-solid": "^0.516.0",
     "nanostores": "^1.0.1",
+    "shadcn": "^2.7.0-canary.0",
     "solid-js": "^1.9.7",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.10",
@@ -34,6 +38,8 @@
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.12",
+    "rimraf": "^6.0.1",
     "unplugin-icons": "^22.1.0"
-  }
+  },
+  "packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }

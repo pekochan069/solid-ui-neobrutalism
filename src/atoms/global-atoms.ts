@@ -1,5 +1,10 @@
-import { atom, onMount } from "nanostores";
+import type { PackageManager } from "~/types/store";
 
-const packageManagerAtom = atom<"npm" | "yarn" | "pnpm" | "bun">("npm");
+import { persistentAtom } from "@nanostores/persistent";
+
+const packageManagerAtom = persistentAtom<PackageManager>(
+  "packageManager",
+  "npm",
+);
 
 export { packageManagerAtom };

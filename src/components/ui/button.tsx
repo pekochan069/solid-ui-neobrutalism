@@ -15,7 +15,7 @@ const buttonVariants = cva(
       variant: {
         default:
           "border-2 border-border bg-main text-main-foreground shadow-shadow active:translate-x-boxShadowX active:translate-y-boxShadowY active:shadow-none",
-        noShadow: "border-2 border-border bg-main text-main-foreground",
+        "no-shadow": "border-2 border-border bg-main text-main-foreground",
         neutral:
           "border-2 border-border bg-secondary-background text-foreground shadow-shadow active:translate-x-boxShadowX active:translate-y-boxShadowY active:shadow-none",
         reverse:
