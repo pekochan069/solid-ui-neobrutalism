@@ -6,10 +6,16 @@ import * as PopoverPrimitive from "@kobalte/core/popover";
 
 import { cn } from "~/lib/utils";
 
-const PopoverTrigger = PopoverPrimitive.Trigger;
+const PopoverTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, PopoverPrimitive.PopoverTriggerProps<T>>,
+) => {
+  return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
+};
+
+type PopoverProps = PopoverPrimitive.PopoverRootProps;
 
 const Popover: Component<PopoverPrimitive.PopoverRootProps> = (props) => {
-  return <PopoverPrimitive.Root gutter={4} {...props} />;
+  return <PopoverPrimitive.Root data-slot="popover" gutter={4} {...props} />;
 };
 
 type PopoverContentProps<T extends ValidComponent = "div"> =
@@ -22,9 +28,9 @@ const PopoverContent = <T extends ValidComponent = "div">(
   return (
     <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
+        data-slot="popover-content"
         class={cn(
-          "z-50 w-72 origin-(--radix-popover-content-transform-origin) rounded-base border-2 border-border bg-main p-4 text-foreground outline-none data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95",
-
+          "z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border bg-main p-4 text-main-foreground outline-none ui-expanded:animate-in ui-expanded:fade-in-0 ui-expanded:zoom-in-95 ui-closed:animate-out ui-closed:fade-out-0 ui-closed:zoom-out-95",
           local.class,
         )}
         {...others}
@@ -33,4 +39,4 @@ const PopoverContent = <T extends ValidComponent = "div">(
   );
 };
 
-export { Popover, PopoverTrigger, PopoverContent };
+export { Popover, PopoverTrigger, PopoverContent, type PopoverProps };

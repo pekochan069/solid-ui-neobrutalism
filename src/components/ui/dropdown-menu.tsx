@@ -3,19 +3,68 @@ import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as DropdownMenuPrimitive from "@kobalte/core/dropdown-menu";
+import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-solid";
 
 import { cn } from "~/lib/utils";
 
-const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
-const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
-const DropdownMenuSub = DropdownMenuPrimitive.Sub;
-const DropdownMenuGroup = DropdownMenuPrimitive.Group;
-const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+const DropdownMenuTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, DropdownMenuPrimitive.DropdownMenuTriggerProps<T>>,
+) => {
+  return (
+    <DropdownMenuPrimitive.Trigger
+      data-slot="dropdown-menu-trigger"
+      {...props}
+    />
+  );
+};
+
+const DropdownMenuPortal = (
+  props: DropdownMenuPrimitive.DropdownMenuPortalProps,
+) => {
+  return (
+    <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />
+  );
+};
+
+const DropdownMenuSub = (props: DropdownMenuPrimitive.DropdownMenuSubProps) => {
+  return <DropdownMenuPrimitive.Sub data-slot="dropdown-menu-sub" {...props} />;
+};
+
+const DropdownMenuGroup = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, DropdownMenuPrimitive.DropdownMenuGroupProps<T>>,
+) => {
+  return (
+    <DropdownMenuPrimitive.Group data-slot="dropdown-menu-group" {...props} />
+  );
+};
+
+const DropdownMenuRadioGroup = <
+  TValue = string,
+  T extends ValidComponent = "div",
+>(
+  props: PolymorphicProps<
+    T,
+    DropdownMenuPrimitive.DropdownMenuRadioGroupProps<T, TValue>
+  >,
+) => {
+  return (
+    <DropdownMenuPrimitive.RadioGroup
+      data-slot="dropdown-menu-radio-group"
+      {...props}
+    />
+  );
+};
 
 const DropdownMenu: Component<DropdownMenuPrimitive.DropdownMenuRootProps> = (
   props,
 ) => {
-  return <DropdownMenuPrimitive.Root gutter={4} {...props} />;
+  return (
+    <DropdownMenuPrimitive.Root
+      data-slot="dropdown-menu"
+      gutter={4}
+      {...props}
+    />
+  );
 };
 
 type DropdownMenuContentProps<T extends ValidComponent = "div"> =
@@ -30,8 +79,9 @@ const DropdownMenuContent = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
+        data-slot="dropdown-menu-content"
         class={cn(
-          "animate-content-hide data-[expanded]:animate-content-show z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] overflow-hidden rounded-base border-2 border-border bg-main p-1 text-main-foreground shadow-md",
+          "z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] animate-out overflow-hidden rounded-base border-2 border-border bg-background p-1 text-foreground shadow-md ui-expanded:animate-in",
           props.class,
         )}
         {...rest}
@@ -51,10 +101,9 @@ const DropdownMenuItem = <T extends ValidComponent = "div">(
   const [, rest] = splitProps(props as DropdownMenuItemProps, ["class"]);
   return (
     <DropdownMenuPrimitive.Item
+      data-slot="dropdown-menu-item"
       class={cn(
-        "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:border-border ui-disabled:pointer-events-none ui-disabled:opacity-50",
-        // "relative flex cursor-default items-center gap-2 rounded-base border-2 border-transparent bg-main px-2 py-1.5 text-sm font-base outline-hidden transition-colors select-none focus:border-border data-disabled:pointer-events-none data-disabled:opacity-50 data-[inset=true]:pl-8 [&_svg]:pointer-events-none [&_svg]:h-4 [&_svg]:w-4 [&_svg]:shrink-0",
-
+        "relative flex cursor-default items-center gap-2 rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none hover:bg-main hover:text-main-foreground focus:border-border ui-disabled:pointer-events-none ui-disabled:opacity-50",
         props.class,
       )}
       {...rest}
@@ -66,6 +115,7 @@ const DropdownMenuShortcut: Component<ComponentProps<"span">> = (props) => {
   const [, rest] = splitProps(props, ["class"]);
   return (
     <span
+      data-slot="dropdown-menu-shortcut"
       class={cn("ml-auto text-xs tracking-widest opacity-60", props.class)}
       {...rest}
     />
@@ -78,6 +128,7 @@ const DropdownMenuLabel: Component<
   const [, rest] = splitProps(props, ["class", "inset"]);
   return (
     <div
+      data-slot="dropdown-menu-label"
       class={cn(
         "px-2 py-1.5 text-sm font-semibold",
         props.inset && "pl-8",
@@ -99,7 +150,8 @@ const DropdownMenuSeparator = <T extends ValidComponent = "hr">(
   const [, rest] = splitProps(props as DropdownMenuSeparatorProps, ["class"]);
   return (
     <DropdownMenuPrimitive.Separator
-      class={cn("-mx-1 my-1 h-px bg-muted", props.class)}
+      data-slot="dropdown-menu-separator"
+      class={cn("-mx-1 my-1 h-0.5 bg-border", props.class)}
       {...rest}
     />
   );
@@ -120,25 +172,15 @@ const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
   ]);
   return (
     <DropdownMenuPrimitive.SubTrigger
+      data-slot="dropdown-menu-sub-trigger"
       class={cn(
-        "focus:bg-accent data-[state=open]:bg-accent flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none",
+        "flex cursor-default items-center rounded-base px-2 py-1.5 text-sm outline-none select-none focus:bg-main ui-expanded:bg-main",
         props.class,
       )}
       {...rest}
     >
       {props.children}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="ml-auto size-4"
-      >
-        <path d="M9 6l6 6l-6 6" />
-      </svg>
+      <ChevronRightIcon class="ml-auto size-4" />
     </DropdownMenuPrimitive.SubTrigger>
   );
 };
@@ -154,8 +196,9 @@ const DropdownMenuSubContent = <T extends ValidComponent = "div">(
   const [, rest] = splitProps(props as DropdownMenuSubContentProps, ["class"]);
   return (
     <DropdownMenuPrimitive.SubContent
+      data-slot="dropdown-menu-sub-content"
       class={cn(
-        "bg-popover text-popover-foreground z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] animate-in overflow-hidden rounded-md border p-1 shadow-md",
+        "shadow-base z-50 min-w-32 origin-[var(--kb-menu-content-transform-origin)] animate-in overflow-hidden rounded-md border-2 bg-background p-1 text-foreground",
         props.class,
       )}
       {...rest}
@@ -178,26 +221,16 @@ const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
   ]);
   return (
     <DropdownMenuPrimitive.CheckboxItem
+      data-slot="dropdown-menu-checkbox-item"
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         props.class,
       )}
       {...rest}
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="size-4"
-          >
-            <path d="M5 12l5 5l10 -10" />
-          </svg>
+          <CheckIcon class="size-4" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {props.children}
@@ -216,6 +249,7 @@ const DropdownMenuGroupLabel = <T extends ValidComponent = "span">(
   const [, rest] = splitProps(props as DropdownMenuGroupLabelProps, ["class"]);
   return (
     <DropdownMenuPrimitive.GroupLabel
+      data-slot="dropdown-menu-group-label"
       class={cn("px-2 py-1.5 text-sm font-semibold", props.class)}
       {...rest}
     />
@@ -237,26 +271,16 @@ const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
   ]);
   return (
     <DropdownMenuPrimitive.RadioItem
+      data-slot="dropdown-menu-radio-item"
       class={cn(
-        "focus:bg-accent focus:text-accent-foreground relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         props.class,
       )}
       {...rest}
     >
       <span class="absolute left-2 flex size-3.5 items-center justify-center">
         <DropdownMenuPrimitive.ItemIndicator>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="size-2 fill-current"
-          >
-            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-          </svg>
+          <DotIcon class="size-10" />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {props.children}

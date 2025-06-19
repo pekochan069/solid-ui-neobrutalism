@@ -14,7 +14,7 @@ const alertVariants = cva(
     variants: {
       variant: {
         default: "bg-main text-main-foreground",
-        destructive: "bg-black text-white",
+        destructive: "border-black bg-black text-white shadow-destructive",
       },
     },
     defaultVariants: {
@@ -36,6 +36,7 @@ const Alert = <T extends ValidComponent = "div">(
   ]);
   return (
     <AlertPrimitive.Root
+      data-slot="alert"
       class={cn(alertVariants({ variant: props.variant }), local.class)}
       {...others}
     />
@@ -46,6 +47,7 @@ const AlertTitle: Component<ComponentProps<"h5">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
   return (
     <h5
+      data-slot="alert-title"
       class={cn(
         "col-start-2 line-clamp-1 min-h-4 font-heading tracking-tight",
         local.class,
@@ -59,6 +61,7 @@ const AlertDescription: Component<ComponentProps<"div">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
   return (
     <div
+      data-slot="alert-description"
       class={cn(
         "col-start-2 grid justify-items-start gap-1 text-sm font-base [&_p]:leading-relaxed",
         local.class,

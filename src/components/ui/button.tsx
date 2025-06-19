@@ -14,17 +14,36 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border-2 border-border bg-main text-main-foreground shadow-shadow active:translate-x-boxShadowX active:translate-y-boxShadowY active:shadow-none",
-        "no-shadow": "border-2 border-border bg-main text-main-foreground",
+          "border-2 border-border bg-main text-main-foreground shadow-shadow active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
+        outline:
+          "border-2 border-border bg-transparent text-foreground shadow-shadow active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
+        "outline-no-shadow":
+          "border-2 border-border bg-transparent text-foreground hover:bg-secondary-background/50",
+        ghost:
+          "bg-transparent text-foreground hover:bg-secondary-background/50",
+        "no-shadow":
+          "border-2 border-border bg-main text-main-foreground hover:bg-main/80",
         neutral:
-          "border-2 border-border bg-secondary-background text-foreground shadow-shadow active:translate-x-boxShadowX active:translate-y-boxShadowY active:shadow-none",
+          "border-2 border-black bg-secondary-background text-foreground shadow-destructive active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
+        "neutral-no-shadow":
+          "border-2 border-border bg-secondary-background text-foreground hover:bg-secondary-background/80",
         reverse:
-          "border-2 border-border bg-main text-main-foreground active:translate-x-reverseBoxShadowX active:translate-y-reverseBoxShadowY active:shadow-shadow",
+          "border-2 border-border bg-main text-main-foreground active:translate-x-reverse-box-shadow-x active:translate-y-reverse-box-shadow-y active:shadow-shadow",
+        link: "text-foreground underline-offset-4 hover:underline",
+        success:
+          "border-2 border-success-foreground bg-success text-success-foreground hover:bg-success/50",
+        info: "border-2 border-info-foreground bg-info text-info-foreground hover:bg-info/50",
+        warning:
+          "border-2 border-warning-foreground bg-warning text-warning-foreground hover:bg-warning/50",
+        error:
+          "border-2 border-error-foreground bg-error text-error-foreground hover:bg-error/50",
       },
       size: {
         default: "h-10 px-4 py-2",
+        xs: "h-8 px-2 text-xs",
         sm: "h-9 px-3 text-xs",
         lg: "h-11 px-8",
+        xl: "h-12 px-10 text-lg",
         icon: "size-10",
       },
     },
@@ -52,6 +71,7 @@ const Button = <T extends ValidComponent = "button">(
   ]);
   return (
     <ButtonPrimitive.Root
+      data-slot="button"
       class={cn(
         buttonVariants({ variant: local.variant, size: local.size }),
         local.class,

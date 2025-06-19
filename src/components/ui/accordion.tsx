@@ -3,11 +3,15 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as AccordionPrimitive from "@kobalte/core/accordion";
-import { ChevronDown } from "lucide-solid";
+import { ChevronDownIcon } from "lucide-solid";
 
 import { cn } from "~/lib/utils";
 
-const Accordion = AccordionPrimitive.Root;
+const Accordion = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, AccordionPrimitive.AccordionRootProps<T>>,
+) => {
+  return <AccordionPrimitive.Root data-slot="accordion" {...props} />;
+};
 
 type AccordionItemProps<T extends ValidComponent = "div"> =
   AccordionPrimitive.AccordionItemProps<T> & {
@@ -20,6 +24,7 @@ const AccordionItem = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as AccordionItemProps, ["class"]);
   return (
     <AccordionPrimitive.Item
+      data-slot="accordion-item"
       class={cn(
         "overflow-hidden rounded-base border-2 border-b border-border shadow-shadow",
         local.class,
@@ -43,8 +48,9 @@ const AccordionTrigger = <T extends ValidComponent = "button">(
     "children",
   ]);
   return (
-    <AccordionPrimitive.Header class="flex">
+    <AccordionPrimitive.Header data-slot="accordion-header" class="flex">
       <AccordionPrimitive.Trigger
+        data-slot="accordion-trigger"
         class={cn(
           "ui flex flex-1 items-center justify-between border-border bg-main p-4 text-left text-base font-heading text-main-foreground transition-all focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 ui-expanded:rounded-b-none ui-expanded:border-b-2 ui-expanded:[&_svg]:rotate-180",
           local.class,
@@ -52,7 +58,7 @@ const AccordionTrigger = <T extends ValidComponent = "button">(
         {...others}
       >
         {local.children}
-        <ChevronDown class="pointer-events-none size-5 shrink-0 transition-transform duration-200" />
+        <ChevronDownIcon class="pointer-events-none size-5 shrink-0 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
@@ -73,13 +79,14 @@ const AccordionContent = <T extends ValidComponent = "div">(
   ]);
   return (
     <AccordionPrimitive.Content
+      data-slot="accordion-content"
       class={cn(
         "overflow-hidden rounded-b-base bg-secondary-background text-sm font-base transition-all ui-expanded:animate-accordion-down ui-closed:animate-accordion-up",
         local.class,
       )}
       {...others}
     >
-      <div class="pt-0 pb-4">{local.children}</div>
+      <div class="p-4">{local.children}</div>
     </AccordionPrimitive.Content>
   );
 };

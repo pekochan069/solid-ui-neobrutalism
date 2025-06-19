@@ -8,9 +8,27 @@ import { XIcon } from "lucide-solid";
 import { cn } from "~/lib/utils";
 import { buttonVariants } from "./button";
 
-const AlertDialog = AlertDialogPrimitive.Root;
-const AlertDialogTrigger = AlertDialogPrimitive.Trigger;
-const AlertDialogPortal = AlertDialogPrimitive.Portal;
+type AlertDialogProps = AlertDialogPrimitive.AlertDialogRootProps;
+
+const AlertDialog = (props: AlertDialogProps) => {
+  return <AlertDialogPrimitive.Root data-slot="alert-dialog" {...props} />;
+};
+
+const AlertDialogTrigger = <T extends ValidComponent = "button">(
+  props: PolymorphicProps<T, AlertDialogPrimitive.AlertDialogTriggerProps<T>>,
+) => {
+  return (
+    <AlertDialogPrimitive.Trigger data-slot="alert-dialog-trigger" {...props} />
+  );
+};
+
+type AlertDialogPortalProps = AlertDialogPrimitive.AlertDialogPortalProps;
+
+const AlertDialogPortal = (props: AlertDialogPortalProps) => {
+  return (
+    <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
+  );
+};
 
 type AlertDialogOverlayProps<T extends ValidComponent = "div"> =
   AlertDialogPrimitive.AlertDialogOverlayProps<T> & {
@@ -25,6 +43,7 @@ const AlertDialogOverlay = <T extends ValidComponent = "div">(
   ]);
   return (
     <AlertDialogPrimitive.Overlay
+      data-slot="alert-dialog-overlay"
       class={cn(
         "fixed inset-0 z-50 bg-overlay ui-expanded:animate-in ui-expanded:fade-in-0 ui-closed:animate-out ui-closed:fade-out-0",
         local.class,
@@ -51,6 +70,7 @@ const AlertDialogContent = <T extends ValidComponent = "div">(
     <AlertDialogPortal>
       <AlertDialogOverlay />
       <AlertDialogPrimitive.Content
+        data-slot="alert-dialog-content"
         class={cn(
           "fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-base border-2 border-border bg-background p-6 shadow-shadow duration-200 sm:max-w-lg ui-expanded:animate-in ui-expanded:fade-in-0 ui-expanded:zoom-in-95 ui-closed:animate-out ui-closed:fade-out-0 ui-closed:zoom-out-95",
           local.class,
@@ -59,9 +79,10 @@ const AlertDialogContent = <T extends ValidComponent = "div">(
       >
         {local.children}
         <AlertDialogPrimitive.CloseButton
+          data-slot="alert-dialog-close"
           class={cn(
             buttonVariants({ variant: "neutral", size: "icon" }),
-            "absolute top-4 right-4",
+            "absolute top-2 right-3 size-8",
           )}
         >
           <XIcon class="size-4" />
@@ -83,6 +104,7 @@ const AlertDialogTitle = <T extends ValidComponent = "h2">(
   const [local, others] = splitProps(props as AlertDialogTitleProps, ["class"]);
   return (
     <AlertDialogPrimitive.Title
+      data-slot="alert-dialog-title"
       class={cn("text-lg font-semibold", local.class)}
       {...others}
     />
@@ -102,6 +124,7 @@ const AlertDialogDescription = <T extends ValidComponent = "p">(
   ]);
   return (
     <AlertDialogPrimitive.Description
+      data-slot="alert-dialog-description"
       class={cn("text-sm text-muted-foreground", local.class)}
       {...others}
     />

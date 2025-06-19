@@ -6,7 +6,11 @@ import * as TabsPrimitive from "@kobalte/core/tabs";
 
 import { cn } from "~/lib/utils";
 
-const Tabs = TabsPrimitive.Root;
+const Tabs = <T extends ValidComponent = "div">(
+  props: PolymorphicProps<T, TabsPrimitive.TabsRootProps<T>>,
+) => {
+  return <TabsPrimitive.Root data-slot="tabs" {...props} />;
+};
 
 type TabsListProps<T extends ValidComponent = "div"> =
   TabsPrimitive.TabsListProps<T> & {
@@ -19,6 +23,7 @@ const TabsList = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as TabsListProps, ["class"]);
   return (
     <TabsPrimitive.List
+      data-slot="tabs-list"
       class={cn(
         "inline-flex h-12 items-center justify-center rounded-base border-2 border-border bg-background p-1 text-foreground",
         local.class,
@@ -39,6 +44,7 @@ const TabsTrigger = <T extends ValidComponent = "button">(
   const [local, others] = splitProps(props as TabsTriggerProps, ["class"]);
   return (
     <TabsPrimitive.Trigger
+      data-slot="tabs-trigger"
       class={cn(
         "inline-flex items-center justify-center gap-1.5 rounded-base border-2 border-transparent px-2 py-1 text-sm font-heading whitespace-nowrap ring-offset-white transition-all focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 ui-selected:border-border ui-selected:bg-main ui-selected:text-main-foreground",
         local.class,
@@ -59,6 +65,7 @@ const TabsContent = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as TabsContentProps, ["class"]);
   return (
     <TabsPrimitive.Content
+      data-slot="tabs-content"
       class={cn(
         "mt-2 ring-offset-white focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:outline-none",
         local.class,
@@ -79,6 +86,7 @@ const TabsIndicator = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as TabsIndicatorProps, ["class"]);
   return (
     <TabsPrimitive.Indicator
+      data-slot="tabs-indicator"
       class={cn(
         "duration-250ms absolute transition-all data-[orientation=horizontal]:-bottom-px data-[orientation=horizontal]:h-[2px] data-[orientation=vertical]:-right-px data-[orientation=vertical]:w-[2px]",
         local.class,

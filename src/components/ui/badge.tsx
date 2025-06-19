@@ -30,6 +30,7 @@ const Badge: Component<BadgeProps> = (props) => {
   const [local, others] = splitProps(props, ["class", "variant", "round"]);
   return (
     <div
+      data-slot="badge"
       class={cn(
         badgeVariants({ variant: local.variant }),
         local.round && "rounded-full",

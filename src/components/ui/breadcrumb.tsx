@@ -3,7 +3,7 @@ import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js";
 
 import { mergeProps, splitProps } from "solid-js";
 import * as BreadcrumbPrimitive from "@kobalte/core/breadcrumbs";
-import { ChevronRight, MoreHorizontal } from "lucide-solid";
+import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-solid";
 
 import { cn } from "~/lib/utils";
 
@@ -16,18 +16,19 @@ const Breadcrumb = <T extends ValidComponent = "nav">(
 ) => {
   const merged = mergeProps(
     {
-      separator: () => <ChevronRight />,
+      separator: () => <ChevronRightIcon />,
     },
     props,
   );
 
-  return <BreadcrumbPrimitive.Root {...merged} />;
+  return <BreadcrumbPrimitive.Root data-slot="breadcrumb" {...merged} />;
 };
 
 const BreadcrumbList: Component<ComponentProps<"ol">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
   return (
     <ol
+      data-slot="breadcrumb-list"
       class={cn(
         "flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5",
         local.class,
@@ -41,6 +42,7 @@ const BreadcrumbItem: Component<ComponentProps<"li">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
   return (
     <li
+      data-slot="breadcrumb-item"
       class={cn("inline-flex items-center gap-1.5", local.class)}
       {...others}
     />
@@ -56,6 +58,7 @@ const BreadcrumbLink = <T extends ValidComponent = "a">(
   const [local, others] = splitProps(props as BreadcrumbLinkProps, ["class"]);
   return (
     <BreadcrumbPrimitive.Link
+      data-slot="breadcrumb-link"
       class={cn("ui-current:font-bold", local.class)}
       {...others}
     />
@@ -77,6 +80,7 @@ const BreadcrumbSeparator = <T extends ValidComponent = "span">(
   ]);
   return (
     <BreadcrumbPrimitive.Separator
+      data-slot="breadcrumb-separator"
       class={cn("[&>svg]:size-3.5", local.class)}
       {...others}
     />
@@ -87,10 +91,11 @@ const BreadcrumbEllipsis: Component<ComponentProps<"span">> = (props) => {
   const [local, others] = splitProps(props, ["class"]);
   return (
     <span
+      data-slot="breadcrumb-ellipsis"
       class={cn("flex size-9 items-center justify-center", local.class)}
       {...others}
     >
-      <MoreHorizontal class="size-4" />
+      <MoreHorizontalIcon class="size-4" />
       <span class="sr-only">More</span>
     </span>
   );
