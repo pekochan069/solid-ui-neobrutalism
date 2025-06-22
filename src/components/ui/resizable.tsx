@@ -54,7 +54,7 @@ const ResizableHandle = <T extends ValidComponent = "button">(
       <Show when={props.withHandle}>
         <div
           data-slot="resizable-grip"
-          class="z-10 flex h-5 w-4 items-center justify-center rounded-base border bg-main text-main-foreground"
+          class="z-10 flex h-5 w-4 items-center justify-center rounded-base border bg-primary text-primary-foreground"
         >
           <GripVerticalIcon class="size-3" />
         </div>

@@ -48,7 +48,7 @@ const ComboboxItem = <T extends ValidComponent = "li">(
     <ComboboxPrimitive.Item
       data-slot="combobox-item"
       class={cn(
-        "relative flex cursor-default items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none select-none ui-disabled:pointer-events-none ui-disabled:opacity-50 ui-highlighted:bg-main ui-highlighted:text-main-foreground",
+        "relative flex cursor-default items-center justify-between rounded-sm px-2 py-1.5 text-sm outline-none select-none ui-disabled:pointer-events-none ui-disabled:opacity-50 ui-highlighted:bg-primary ui-highlighted:text-primary-foreground",
         local.class,
       )}
       {...others}

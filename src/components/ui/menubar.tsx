@@ -70,7 +70,7 @@ const MenubarTrigger = <T extends ValidComponent = "button">(
     <MenubarPrimitive.Trigger
       data-slot="menubar-trigger"
       class={cn(
-        "flex cursor-default items-center rounded-base px-3 py-1.5 text-sm font-medium outline-none select-none focus:bg-main focus:text-main-foreground ui-expanded:bg-main ui-expanded:text-main-foreground",
+        "flex cursor-default items-center rounded-base px-3 py-1.5 text-sm font-medium outline-none select-none focus:bg-primary focus:text-primary-foreground ui-expanded:bg-primary ui-expanded:text-primary-foreground",
         local.class,
       )}
       {...others}
@@ -118,7 +118,7 @@ const MenubarSubTrigger = <T extends ValidComponent = "div">(
     <MenubarPrimitive.SubTrigger
       data-slot="menubar-sub-trigger"
       class={cn(
-        "flex cursor-default items-center rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-expanded:bg-main ui-expanded:text-main-foreground",
+        "flex cursor-default items-center rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-expanded:bg-primary ui-expanded:text-primary-foreground",
         local.inset && "pl-8",
         local.class,
       )}
@@ -172,7 +172,7 @@ const MenubarItem = <T extends ValidComponent = "div">(
     <MenubarPrimitive.Item
       data-slot="menubar-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.inset && "pl-8",
         local.class,
       )}
@@ -198,7 +198,7 @@ const MenubarCheckboxItem = <T extends ValidComponent = "div">(
     <MenubarPrimitive.CheckboxItem
       data-slot="menubar-checkbox-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.class,
       )}
       {...others}
@@ -230,7 +230,7 @@ const MenubarRadioItem = <T extends ValidComponent = "div">(
     <MenubarPrimitive.RadioItem
       data-slot="menubar-radio-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.class,
       )}
       {...others}

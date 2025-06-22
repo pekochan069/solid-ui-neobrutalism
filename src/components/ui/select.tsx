@@ -100,7 +100,7 @@ const SelectItem = <T extends ValidComponent = "li">(
     <SelectPrimitive.Item
       data-slot="select-item"
       class={cn(
-        "relative mt-0 flex w-full cursor-default items-center rounded-sm py-1.5 pr-8 pl-2 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative mt-0 flex w-full cursor-default items-center rounded-sm py-1.5 pr-8 pl-2 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.class,
       )}
       {...others}

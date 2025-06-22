@@ -1,0 +1,33 @@
+---
+title: Solid Start Installation
+slug: "installation/solid-start"
+description: How to install SolidUI Neobrutalism theme for Solid Start
+prev: installation/vite
+next: installation/astro
+---
+
+### Create New Solid Start App
+
+Start by creating a new Solid Start app using `create-solid`. Select **Solid Start** template when prompted:
+
+<NpmCommand type="create" command="solid@latest" />
+
+When creating the new Solid Start app, make sure to choose the **with-tailwindcss** option to automatically set up Tailwind CSS:
+
+```bash
+? Which template do you want to use? › - Use arrow-keys. Return to submit.
+    bare
+    hackernews
+    with-auth
+    with-mdx
+❯   with-tailwindcss
+    with-vitest
+```
+
+Once you have created the app, navigate into the project and install the dependencies:
+
+```bash
+cd {project-name}
+```
+
+<NpmCommand type="install" command="" />

@@ -15,10 +15,7 @@
     ".css$"
   ],
   "tailwindStylesheet": "./src/styles/global.css",
-  "tailwindFunctions": [
-    "cx",
-    "cva"
-  ],
+  "tailwindFunctions": ["clsx", "twMerge", "cva"],
   "plugins": [
     "prettier-plugin-astro",
     "@ianvs/prettier-plugin-sort-imports",

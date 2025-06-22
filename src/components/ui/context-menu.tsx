@@ -98,7 +98,7 @@ const ContextMenuItem = <T extends ValidComponent = "div">(
     <ContextMenuPrimitive.Item
       data-slot="context-menu-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.class,
       )}
       {...others}
@@ -154,7 +154,7 @@ const ContextMenuSubTrigger = <T extends ValidComponent = "div">(
     <ContextMenuPrimitive.SubTrigger
       data-slot="context-menu-sub-trigger"
       class={cn(
-        "flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none focus:bg-main focus:text-main-foreground ui-expanded:bg-main ui-expanded:text-main-foreground",
+        "flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none focus:bg-primary focus:text-primary-foreground ui-expanded:bg-primary ui-expanded:text-primary-foreground",
         local.class,
       )}
       {...others}
@@ -205,7 +205,7 @@ const ContextMenuCheckboxItem = <T extends ValidComponent = "div">(
     <ContextMenuPrimitive.CheckboxItem
       data-slot="context-menu-checkbox-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.class,
       )}
       {...others}
@@ -257,7 +257,7 @@ const ContextMenuRadioItem = <T extends ValidComponent = "div">(
     <ContextMenuPrimitive.RadioItem
       data-slot="context-menu-radio-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-sm py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         local.class,
       )}
       {...others}

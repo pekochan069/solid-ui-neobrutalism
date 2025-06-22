@@ -157,7 +157,7 @@ const SingleCalendar = (props: SingleCalendarProps) => {
                         <CalendarCell class="p-0">
                           <CalendarCellTrigger
                             day={day()}
-                            class="size-8 rounded-base text-sm transition-colors duration-100 focus-visible:bg-main/80 disabled:pointer-events-none disabled:opacity-40 data-selected:border-2 data-selected:border-border data-selected:bg-main! data-selected:text-main-foreground! data-today:bg-main/50 md:hover:bg-main/80"
+                            class="size-8 rounded-base text-sm transition-colors duration-100 focus-visible:bg-primary/80 disabled:pointer-events-none disabled:opacity-40 data-selected:border-2 data-selected:border-border data-selected:bg-primary! data-selected:text-primary-foreground! data-today:bg-primary/50 md:hover:bg-primary/80"
                           >
                             {day().getDate()}
                           </CalendarCellTrigger>
@@ -254,7 +254,7 @@ const MultipleCalendar = (props: MultipleCalendarProps) => {
                         <CalendarCell class="p-0">
                           <CalendarCellTrigger
                             day={day()}
-                            class="size-8 rounded-base text-sm transition-colors duration-100 focus-visible:bg-main/80 disabled:pointer-events-none disabled:opacity-40 data-selected:border-2 data-selected:border-border data-selected:bg-main! data-selected:text-main-foreground! data-today:bg-main/50 md:hover:bg-main/80"
+                            class="size-8 rounded-base text-sm transition-colors duration-100 focus-visible:bg-primary/80 disabled:pointer-events-none disabled:opacity-40 data-selected:border-2 data-selected:border-border data-selected:bg-primary! data-selected:text-primary-foreground! data-today:bg-primary/50 md:hover:bg-primary/80"
                           >
                             {day().getDate()}
                           </CalendarCellTrigger>
@@ -364,11 +364,11 @@ const RangeCalendar = (props: RangeCalendarProps) => {
                           <tr>
                             <Index each={week()}>
                               {(day) => (
-                                <CalendarCell class="p-0 has-data-in-range:bg-main/40 has-data-in-range:first:rounded-l-base has-data-in-range:last:rounded-r-base has-data-range-end:rounded-r-base has-data-range-start:rounded-l-base has-[[disabled]]:opacity-40">
+                                <CalendarCell class="p-0 has-data-in-range:bg-primary/40 has-data-in-range:first:rounded-l-base has-data-in-range:last:rounded-r-base has-data-range-end:rounded-r-base has-data-range-start:rounded-l-base has-[[disabled]]:opacity-40">
                                   <CalendarCellTrigger
                                     day={day()}
                                     month={month().month}
-                                    class="inline-flex size-8 items-center justify-center rounded-base text-sm focus-visible:bg-main/80 disabled:pointer-events-none data-range-end:border-2 data-range-end:border-border data-range-end:bg-main data-range-start:border-2 data-range-start:border-border data-range-start:bg-main data-today:bg-main/50 md:hover:not-data-range-start:not-data-range-end:bg-main/80"
+                                    class="inline-flex size-8 items-center justify-center rounded-base text-sm focus-visible:bg-primary/80 disabled:pointer-events-none data-range-end:border-2 data-range-end:border-border data-range-end:bg-primary data-range-start:border-2 data-range-start:border-border data-range-start:bg-primary data-today:bg-primary/50 md:hover:not-data-range-start:not-data-range-end:bg-primary/80"
                                   >
                                     {day().getDate()}
                                   </CalendarCellTrigger>

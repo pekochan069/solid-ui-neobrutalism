@@ -1,12 +1,45 @@
+---
+title: Manual Installation
+slug: "installation/manual"
+description: How to install SolidUI Neobrutalism theme manually
+prev: installation/vite
+next: installation/astro
+---
+
+### Add Tailwind CSS to your Solid.js project.
+
+[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation/using-vite)
+
+### Add dependencies
+
+<NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css" />
+
+### Configure path aliases
+
+```json ins={6-9}
+// tsconfig.json
+{
+    ...
+    "compilerOptions": {
+        ...
+        baseUrl: ".",
+        paths: {
+            "~/*": ["./src/*"]
+        }
+    }
+}
+```
+
+### Configure styles
+
+<ShrinkableCode>
+
+```css
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@kobalte/tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
-
-@view-transition {
-  navigation: auto; /* enabled! */
-}
 
 :root {
   --background: oklch(0.93 0.03 256);
@@ -26,8 +59,6 @@
   --chart-5: oklch(0.769 0.188 70.08);
   --chart-active-dot: oklch(0.28 0.09 268);
 
-  --header-height: calc(var(--spacing) * 14);
-
   --info: oklch(0.95 0.024 236.81);
   --info-foreground: oklch(0.68 0.148143 238.1044);
   --success: oklch(0.95 0.0506 162.83);
@@ -39,6 +70,8 @@
 
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
+
+  --header-height: calc(var(--spacing) * 14);
 }
 
 .dark {
@@ -128,171 +161,6 @@
   body {
     @apply bg-background font-base text-foreground;
   }
-
-  .expressive-code {
-    .frame {
-      @apply border-2! border-border! shadow-shadow!;
-
-      .title {
-        @apply rounded-none!;
-
-        &::after {
-          @apply border-t-0!;
-        }
-      }
-    }
-  }
 }
-
-@utility no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-@layer components {
-  .prose {
-    h1 {
-      @apply mt-2 scroll-m-28;
-
-      a {
-        @apply scroll-m-28 text-3xl font-heading tracking-tight;
-      }
-
-      & + p {
-        @apply mt-4;
-      }
-    }
-
-    h2 {
-      @apply mt-12 scroll-m-28 first:mt-0 lg:mt-20 [&+p]:!mt-4;
-
-      a {
-        @apply text-2xl font-heading tracking-tight *:[code]:text-2xl;
-      }
-
-      & + p {
-        @apply mt-4;
-      }
-    }
-
-    h3 {
-      @apply mt-8 scroll-m-28;
-      a {
-        @apply text-xl font-heading tracking-tight *:[code]:text-xl;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    h4 {
-      @apply mt-8 scroll-m-28;
-
-      a {
-        @apply text-lg font-heading tracking-tight;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    h5 {
-      @apply mt-8 scroll-m-28;
-
-      a {
-        @apply text-lg font-medium tracking-tight;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    h6 {
-      @apply mt-8 scroll-m-28;
-
-      a {
-        @apply text-base font-medium tracking-tight;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    a {
-      @apply font-medium underline underline-offset-4;
-    }
-
-    p {
-      @apply mt-6 leading-relaxed;
-    }
-
-    strong {
-      @apply font-bold;
-    }
-
-    ul {
-      @apply my-6 ml-6 list-disc;
-    }
-
-    ol {
-      @apply my-6 ml-6 list-decimal;
-    }
-
-    li {
-      @apply mt-1;
-    }
-
-    blockquote {
-      @apply mt-6 border-l-2 pl-6 italic;
-    }
-
-    img {
-      @apply rounded-base;
-    }
-
-    hr {
-      @apply my-4 md:my-8;
-    }
-
-    pre {
-      @apply no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0;
-    }
-
-    figcaption {
-      @apply flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70;
-    }
-
-    .expressive-code {
-      @apply mt-8;
-    }
-
-    .doc-anchor {
-      @apply no-underline;
-
-      .doc-anchor-icon {
-        @apply ml-1 rounded-base bg-transparent px-1 py-0.5 transition-colors group-hover:bg-primary group-hover:text-primary-foreground;
-      }
-    }
-  }
-}
-
-.os-scrollbar {
-  --os-size: 8px;
-  --os-handle-bg: var(--muted-foreground);
-  --os-handle-bg-hover: var(--foreground);
-  --os-handle-bg-active: var(--foreground);
-}
-
-@media (min-width: 768px) {
-  .os-scrollbar {
-    --os-size: 10px;
-  }
-}
+```
+</ShrinkableCode>

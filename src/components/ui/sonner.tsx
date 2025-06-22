@@ -15,7 +15,7 @@ const Toaster: Component<ToasterProps> = (props) => {
             "bg-background text-foreground border-border border-2 font-heading shadow-shadow rounded-base text-[13px] flex items-center gap-2.5 p-4 w-[356px] [&:has(button)]:justify-between",
           description: "group-[.toast]:text-muted-foreground",
           actionButton:
-            "font-base border-2 text-[12px] h-6 px-2 bg-main text-main-foreground border-border rounded-base shrink-0",
+            "font-base border-2 text-[12px] h-6 px-2 bg-primary text-primary-foreground border-border rounded-base shrink-0",
           cancelButton:
             "font-base border-2 text-[12px] h-6 px-2 bg-secondary-background text-foreground border-border rounded-base shrink-0",
           success: "bg-success text-success-foreground",

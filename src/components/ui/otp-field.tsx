@@ -60,7 +60,7 @@ const OTPFieldSlot: Component<ComponentProps<"div"> & { index: number }> = (
         class={cn(
           "absolute inset-0 z-10 transition-all group-first:rounded-l-base group-last:rounded-r-base",
           context.activeSlots().includes(local.index) &&
-            "ring-2 ring-main ring-offset-background",
+            "ring-2 ring-primary ring-offset-background",
         )}
       />
       {char()}

@@ -14,7 +14,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "border-2 border-border bg-main text-main-foreground shadow-shadow active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
+          "border-2 border-border bg-primary text-primary-foreground shadow-shadow active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
         outline:
           "border-2 border-border bg-transparent text-foreground shadow-shadow active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
         "outline-no-shadow":
@@ -22,13 +22,13 @@ const buttonVariants = cva(
         ghost:
           "bg-transparent text-foreground hover:bg-secondary-background/50",
         "no-shadow":
-          "border-2 border-border bg-main text-main-foreground hover:bg-main/80",
+          "border-2 border-border bg-primary text-primary-foreground hover:bg-primary/80",
         neutral:
           "border-2 border-black bg-secondary-background text-foreground shadow-destructive active:translate-x-box-shadow-x active:translate-y-box-shadow-y active:shadow-none",
         "neutral-no-shadow":
           "border-2 border-border bg-secondary-background text-foreground hover:bg-secondary-background/80",
         reverse:
-          "border-2 border-border bg-main text-main-foreground active:translate-x-reverse-box-shadow-x active:translate-y-reverse-box-shadow-y active:shadow-shadow",
+          "border-2 border-border bg-primary text-primary-foreground active:translate-x-reverse-box-shadow-x active:translate-y-reverse-box-shadow-y active:shadow-shadow",
         link: "text-foreground underline-offset-4 hover:underline",
         success:
           "border-2 border-success-foreground bg-success text-success-foreground hover:bg-success/50",

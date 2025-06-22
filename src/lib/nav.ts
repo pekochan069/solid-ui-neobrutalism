@@ -28,7 +28,7 @@ const nav: NavGroup[] = [
     items: [
       {
         title: "Introduction",
-        href: "/docs",
+        href: "/docs/introduction",
       },
       {
         title: "Installation",

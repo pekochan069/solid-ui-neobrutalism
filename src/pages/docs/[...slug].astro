@@ -1,17 +1,32 @@
 ---
 import { render } from "astro:content";
+import { ArrowLeftIcon, ArrowRightIcon } from "lucide-solid";
 
+import ShrinkableCode from "~/components/docs/shrinkable-code.astro";
 import BaseLayout from "~/layout/base-layout.astro";
 import { mdxComponents } from "~/components/mdx-components";
+import { Button } from "~/components/ui/button";
 import { docs } from "~/lib/contents";
 
-export async function getStaticPaths() {
-  return docs.map((doc) => ({
+const slug = Astro.params.slug;
+
+export function getStaticPaths() {
+  const paths = docs.map((doc) => ({
     params: {
-      slug: doc.data.slug,
+      slug: doc.id,
     },
     props: { doc },
   }));
+  paths.push({
+    params: {
+      slug: "/",
+    },
+    props: {
+      doc: docs.find((doc) => doc.data.slug === "installation") || docs[0],
+    },
+  });
+
+  return paths;
 }
 
 const { doc } = Astro.props;
@@ -21,11 +36,45 @@ const RenderedDoc = await render(doc);
 <BaseLayout>
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
-      <h1 class="text-3xl">{doc.data.title}</h1>
-      <p class="mt-2 text-sm">{doc.data.description}</p>
+      <div class="flex items-center justify-between">
+        <h1 class="text-4xl font-heading">{doc.data.title}</h1>
+        <div>
+          {
+            doc.data.prev && (
+              <Button
+                as="a"
+                href={`/docs/${doc.data.prev}`}
+                size="icon"
+                variant="neutral-no-shadow"
+                class="size-8"
+              >
+                <ArrowLeftIcon />
+              </Button>
+            )
+          }
+          {
+            doc.data.next && (
+              <Button
+                as="a"
+                href={`/docs/${doc.data.next}`}
+                size="icon"
+                variant="neutral-no-shadow"
+                class="size-8"
+              >
+                <ArrowRightIcon />
+              </Button>
+            )
+          }
+        </div>
+      </div>
+      <p
+        class="mt-2 text-[1.05rem] text-balance text-muted-foreground sm:text-base"
+      >
+        {doc.data.description}
+      </p>
     </div>
     <div class="prose">
-      <RenderedDoc.Content components={{ ...mdxComponents }} />
+      <RenderedDoc.Content components={{ ...mdxComponents, ShrinkableCode }} />
     </div>
   </div>
 </BaseLayout>

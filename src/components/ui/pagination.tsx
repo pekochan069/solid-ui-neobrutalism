@@ -43,7 +43,7 @@ const PaginationItem = <T extends ValidComponent = "button">(
         buttonVariants({
           variant: "neutral-no-shadow",
         }),
-        "size-10 ui-current:bg-main ui-current:text-main-foreground ui-current:hover:bg-main/80",
+        "size-10 ui-current:bg-primary ui-current:text-primary-foreground ui-current:hover:bg-primary/80",
         local.class,
       )}
       {...others}

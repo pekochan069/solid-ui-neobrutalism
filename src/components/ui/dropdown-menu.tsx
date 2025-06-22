@@ -103,7 +103,7 @@ const DropdownMenuItem = <T extends ValidComponent = "div">(
     <DropdownMenuPrimitive.Item
       data-slot="dropdown-menu-item"
       class={cn(
-        "relative flex cursor-default items-center gap-2 rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none hover:bg-main hover:text-main-foreground focus:border-border ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center gap-2 rounded-base px-2 py-1.5 text-sm transition-colors outline-none select-none hover:bg-primary hover:text-primary-foreground focus:border-border ui-disabled:pointer-events-none ui-disabled:opacity-50",
         props.class,
       )}
       {...rest}
@@ -174,7 +174,7 @@ const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
     <DropdownMenuPrimitive.SubTrigger
       data-slot="dropdown-menu-sub-trigger"
       class={cn(
-        "flex cursor-default items-center rounded-base px-2 py-1.5 text-sm outline-none select-none focus:bg-main ui-expanded:bg-main",
+        "flex cursor-default items-center rounded-base px-2 py-1.5 text-sm outline-none select-none focus:bg-primary ui-expanded:bg-primary",
         props.class,
       )}
       {...rest}
@@ -223,7 +223,7 @@ const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
     <DropdownMenuPrimitive.CheckboxItem
       data-slot="dropdown-menu-checkbox-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         props.class,
       )}
       {...rest}
@@ -273,7 +273,7 @@ const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
     <DropdownMenuPrimitive.RadioItem
       data-slot="dropdown-menu-radio-item"
       class={cn(
-        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-main focus:text-main-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
+        "relative flex cursor-default items-center rounded-base py-1.5 pr-2 pl-8 text-sm transition-colors outline-none select-none focus:bg-primary focus:text-primary-foreground ui-disabled:pointer-events-none ui-disabled:opacity-50",
         props.class,
       )}
       {...rest}

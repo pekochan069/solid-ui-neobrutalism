@@ -61,7 +61,7 @@ const SliderFill = <T extends ValidComponent = "div">(
   return (
     <SliderPrimitive.Fill
       data-slot="slider-fill"
-      class={cn("absolute h-full rounded-base bg-main", local.class)}
+      class={cn("absolute h-full rounded-base bg-primary", local.class)}
       {...others}
     />
   );

@@ -52,7 +52,7 @@ const AccordionTrigger = <T extends ValidComponent = "button">(
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         class={cn(
-          "ui flex flex-1 items-center justify-between border-border bg-main p-4 text-left text-base font-heading text-main-foreground transition-all focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 ui-expanded:rounded-b-none ui-expanded:border-b-2 ui-expanded:[&_svg]:rotate-180",
+          "ui flex flex-1 items-center justify-between border-border bg-primary p-4 text-left text-base font-heading text-primary-foreground transition-all focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 ui-expanded:rounded-b-none ui-expanded:border-b-2 ui-expanded:[&_svg]:rotate-180",
           local.class,
         )}
         {...others}

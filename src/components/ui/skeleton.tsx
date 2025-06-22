@@ -16,7 +16,10 @@ const Skeleton = <T extends ValidComponent = "div">(
   return (
     <SkeletonPrimitive.Root
       data-slot="skeleton"
-      class={cn("bg-main/20 data-[animate='true']:animate-pulse", local.class)}
+      class={cn(
+        "bg-primary/20 data-[animate='true']:animate-pulse",
+        local.class,
+      )}
       {...others}
     />
   );

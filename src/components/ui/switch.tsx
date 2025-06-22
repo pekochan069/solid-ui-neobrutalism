@@ -52,7 +52,7 @@ const SwitchControl = <T extends ValidComponent = "input">(
       <SwitchPrimitive.Control
         data-slot="switch-control"
         class={cn(
-          "inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-border bg-secondary-background transition-[color,background-color,box-shadow] ui-disabled:cursor-not-allowed ui-disabled:opacity-50 ui-checked:bg-main",
+          "inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-border bg-secondary-background transition-[color,background-color,box-shadow] ui-disabled:cursor-not-allowed ui-disabled:opacity-50 ui-checked:bg-primary",
           local.class,
         )}
         {...others}

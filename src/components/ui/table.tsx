@@ -46,7 +46,7 @@ const TableFooter: Component<ComponentProps<"tfoot">> = (props) => {
   return (
     <tfoot
       data-slot="table-footer"
-      class={cn("bg-main font-medium text-main-foreground", local.class)}
+      class={cn("bg-primary font-medium text-primary-foreground", local.class)}
       {...others}
     />
   );
@@ -58,7 +58,7 @@ const TableRow: Component<ComponentProps<"tr">> = (props) => {
     <tr
       data-slot="table-row"
       class={cn(
-        "border-b transition-colors hover:bg-main/20 data-[state=selected]:bg-muted",
+        "border-b transition-colors hover:bg-primary/20 data-[state=selected]:bg-muted",
         local.class,
       )}
       {...others}

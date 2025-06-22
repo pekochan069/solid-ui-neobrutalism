@@ -30,7 +30,7 @@ const Checkbox = <T extends ValidComponent = "div">(
       />
       <CheckboxPrimitive.Control
         data-slot="checkbox-control"
-        class="size-4 shrink-0 rounded-sm border-2 border-border ring-offset-background peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 data-[indeterminate]:border-none data-[indeterminate]:bg-foreground! data-[indeterminate]:text-background! ui-checked:border-none ui-checked:bg-main ui-checked:text-background"
+        class="size-4 shrink-0 rounded-sm border-2 border-border ring-offset-background peer-focus-visible:ring-2 peer-focus-visible:ring-ring peer-focus-visible:ring-offset-2 peer-focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 data-[indeterminate]:border-none data-[indeterminate]:bg-foreground! data-[indeterminate]:text-background! ui-checked:border-none ui-checked:bg-primary ui-checked:text-background"
       >
         <CheckboxPrimitive.Indicator data-slot="checkbox-indicator">
           <Switch>

@@ -15,7 +15,7 @@ import { cn } from "~/lib/utils";
 const calloutVariants = cva("rounded-base border-2 px-4 py-3", {
   variants: {
     variant: {
-      default: "border-main bg-background text-main",
+      default: "border-primary bg-background text-primary",
       success: "border-success-foreground bg-success text-success-foreground",
       info: "border-info-foreground bg-info text-info-foreground",
       warning: "border-warning-foreground bg-warning text-warning-foreground",

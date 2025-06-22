@@ -6,7 +6,7 @@ import { rimraf } from "rimraf";
 // import { getAllBlocks } from "~/lib/blocks";
 import registry from "~/registry";
 import { baseColorsV4 } from "~/registry/registry-base-colors";
-import { colorMapping, } from "~/registry/registry-colors";
+import { colorMapping } from "~/registry/registry-colors";
 
 const REGISTRY_DIR = path.join(process.cwd(), "public/r");
 
@@ -39,13 +39,13 @@ async function buildThemes() {
         return `      "${key}": "${value.replace("{{base}}", color.name)}"`;
       })
       .join(",\n")}
-      },
-      "dark": {\n${Object.entries(colorMapping.dark)
-        .map(([key, value]) => {
-          return `      "${key}": "${value.replace("{{base}}", color.name)}"`;
-        })
-        .join(",\n")}
-      }`;
+    },
+    "dark": {\n${Object.entries(colorMapping.dark)
+      .map(([key, value]) => {
+        return `      "${key}": "${value.replace("{{base}}", color.name)}"`;
+      })
+      .join(",\n")}
+    }`;
 
     const cssVarsV4 = `    "light": {\n${Object.entries(color.light)
       .map(([key, value]) => {
@@ -55,7 +55,7 @@ async function buildThemes() {
     },
     "dark": {\n${Object.entries(color.dark)
       .map(([key, value]) => {
-        return `"      ${key}": "${value}"`;
+        return `      "${key}": "${value}"`;
       })
       .join(",\n")}
     }`;

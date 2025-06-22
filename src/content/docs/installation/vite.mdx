@@ -1,12 +1,14 @@
 ---
-title: Installation
+title: Vite Installation
 slug: "installation/vite"
 description: How to install SolidUI Neobrutalism theme for Vite
+prev: installation
+next: installation/solid-start
 ---
 
 ### Create New Vite App
 
-Start by creating a new Vite Solid.js app using `create-vite`. Select **Solid.js** template when prompted.
+Start by creating a new Vite Solid.js app using `create-vite`. Select **Solid.js** template when prompted:
 
 <NpmCommand type="create" command="vite@latest" />
 
@@ -25,10 +27,18 @@ Replace everything in `src/index.css` with the following:
 
 The current version of vite splits TypeScript configuration into three files, two of which need to be edited. Add the `baseUrl` and `paths` properties to the `compilerOptions` section of the `tsconfig.json` and `tsconfig.app.json` files:
 
-```json
+```json ins={13-16}
 // tsconfig.json
 {
-    ...
+    "files": [],
+    "references": [
+      {
+        "path": "./tsconfig.app.json"
+      },
+      {
+        "path": "./tsconfig.node.json"
+      }
+    ],
     "compilerOptions": {
         baseUrl: ".",
         paths: {
@@ -40,7 +50,7 @@ The current version of vite splits TypeScript configuration into three files, tw
 
 Then edit `tsconfig.app.json` file to extend the base configuration:
 
-```json
+```json ins={6-9}
 // tsconfig.app.json
 {
     ...
@@ -56,19 +66,21 @@ Then edit `tsconfig.app.json` file to extend the base configuration:
 
 ### Edit `vite.config.ts` file
 
-```ts
+Add the following code to the vite.config.ts so your app can resolve paths without error:
+
+```ts ins={2,3,8-13}
 // vite.config.ts
 import path from "path";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 import solid from "vite-plugin-solid";
-import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-    plugins: [solid(), tailwindcss()],
-    resolve: {
-        alias: {
-            "~": path.resolve(__dirname, "./src"),
-        },
+  plugins: [solid(), tailwindcss()],
+  resolve: {
+    alias: {
+      "~": path.resolve(__dirname, "./src"),
     },
+  },
 });
 ```

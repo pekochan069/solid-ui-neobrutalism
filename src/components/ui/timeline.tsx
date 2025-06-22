@@ -89,9 +89,9 @@ const TimelineItem: Component<TimelineItemProps> = (props) => {
     <li
       data-slot="timeline-item"
       class={cn(
-        "relative border-l-main/30 pb-8 pl-8",
+        "relative border-l-primary/30 pb-8 pl-8",
         local.isLast && "border-l-transparent pb-0",
-        local.isActive && !local.isLast && "border-l-main",
+        local.isActive && !local.isLast && "border-l-primary",
         local.class,
       )}
       style={{
@@ -126,8 +126,8 @@ const TimelineItemBullet: Component<TimelineItemBulletProps> = (props) => {
     <div
       data-slot="timeline-item-bullet"
       class={cn(
-        `absolute top-0 flex items-center justify-center rounded-full border border-main/30 bg-background`,
-        props.isActive && "border-main",
+        `absolute top-0 flex items-center justify-center rounded-full border border-primary/30 bg-background`,
+        props.isActive && "border-primary",
       )}
       style={{
         width: `${props.bulletSize}px`,

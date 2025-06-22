@@ -1,6 +1,6 @@
 import { createEffect, createSignal, onMount } from "solid-js";
-import IconLucideMoon from "~icons/lucide/moon";
-import IconLucideSun from "~icons/lucide/sun";
+import MoonIcon from "lucide-solid/icons/moon";
+import SunIcon from "lucide-solid/icons/sun";
 
 import { Button } from "~/components/ui/button";
 
@@ -18,6 +18,10 @@ export default function ThemeToggle() {
       (theme() === "system" &&
         window.matchMedia("(prefers-color-scheme: dark)").matches);
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    document.documentElement.dataset.theme = isDark
+      ? "catppuccin-macchiato"
+      : "catppuccin-latte";
+    ``;
   });
 
   const onClick = () => {
@@ -30,8 +34,8 @@ export default function ThemeToggle() {
 
   return (
     <Button size="icon" onClick={onClick}>
-      <IconLucideSun class="size-6 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-      <IconLucideMoon class="absolute size-6 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
+      <SunIcon class="size-6 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
+      <MoonIcon class="absolute size-6 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
       <span class="sr-only">Toggle theme</span>
     </Button>
   );

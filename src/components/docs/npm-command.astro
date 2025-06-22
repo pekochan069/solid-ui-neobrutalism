@@ -18,10 +18,21 @@ const prefix = (packageManager: PackageManager) => {
       switch (packageManager) {
         case "npm":
           return "npm install";
-        case "yarn":
+        case "yarn": {
+          if (command === "") {
+            return "yarn";
+          }
+
+          return "yarn add";
+        }
         case "pnpm":
-        case "bun":
+        case "bun": {
+          if (command === "") {
+            return `${packageManager} install`;
+          }
+
           return `${packageManager} add`;
+        }
       }
       break;
     }
@@ -70,7 +81,7 @@ const contents = [
 ];
 ---
 
-<div class="npm-command">
+<div class="npm-command mt-6">
   <div>
     <NpmCommandTabs client:only />
   </div>
@@ -80,7 +91,7 @@ const contents = [
         data-package-manager={packageManager}
         class="command invisible hidden"
       >
-        <Code code={command} lang="bash" frame="none" />
+        <Code code={command} lang="bash" frame="none" class="mt-0" />
       </div>
     ))
   }

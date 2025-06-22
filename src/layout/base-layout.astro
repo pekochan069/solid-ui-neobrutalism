@@ -1,10 +1,13 @@
 ---
 import Header from "~/components/header";
+import { Toaster as Sonner } from "~/components/ui/sonner";
+import { Toaster } from "~/components/ui/toast";
 
+import "overlayscrollbars/overlayscrollbars.css";
 import "~/styles/global.css";
 ---
 
-<html lang="en">
+<html lang="en" data-overlayscrollbars-initialize>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -12,11 +15,22 @@ import "~/styles/global.css";
     <meta name="generator" content={Astro.generator} />
     <title>Solid UI Neobrutalism</title>
   </head>
-  <body>
+  <body data-overlayscrollbars-initialize>
     <Header />
     <slot />
+    <Sonner client:load />
+    <Toaster client:load />
   </body>
 </html>
+<script>
+  import { OverlayScrollbars } from "overlayscrollbars";
+
+  OverlayScrollbars(document.body, {
+    scrollbars: {
+      autoHide: "scroll",
+    },
+  });
+</script>
 <script is:inline>
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -26,8 +40,16 @@ import "~/styles/global.css";
       ? "dark"
       : "light";
   };
-  const isDark = getThemePreference() === "dark";
-  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  function setDarkMode(document) {
+    const isDark = getThemePreference() === "dark";
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    document.documentElement.dataset["theme"] = isDark
+      ? "catppuccin-macchiato"
+      : "catppuccin-latte";
+  }
+
+  setDarkMode(document);
 
   if (typeof localStorage !== "undefined") {
     const observer = new MutationObserver(() => {
@@ -39,4 +61,8 @@ import "~/styles/global.css";
       attributeFilter: ["class"],
     });
   }
+
+  document.addEventListener("astro:before-swap", (e) => {
+    setDarkMode(e.newDocument);
+  });
 </script>
