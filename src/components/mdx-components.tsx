@@ -12,7 +12,7 @@ export const mdxComponents = {
     return (
       <a
         class={cn(
-          "flex w-full flex-col items-center gap-2 rounded-xl border-2 border-border fill-foreground p-6 text-foreground transition-colors sm:p-10 [&_svg]:size-10",
+          "flex w-full flex-col items-center gap-2 rounded-xl border-2 border-border fill-foreground p-6 text-foreground transition-colors sm:p-10 [&_p]:m-0 [&_svg]:size-10",
           local.class,
         )}
         {...others}
