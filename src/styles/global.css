@@ -39,6 +39,9 @@
 
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
+
+  --code-background: #eff1f5;
+  --code-frame: #dce0e8;
 }
 
 .dark {
@@ -70,6 +73,9 @@
 
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
+
+  --code-background: #24273a;
+  --code-frame: #181926;
 }
 
 @theme inline {
@@ -97,6 +103,9 @@
   --color-warning-foreground: var(--warning-foreground);
   --color-error: var(--error);
   --color-error-foreground: var(--error-foreground);
+
+  --color-code-background: var(--code-background);
+  --color-code-frame: var(--code-frame);
 
   --spacing-box-shadow-x: 4px;
   --spacing-box-shadow-y: 4px;
@@ -128,20 +137,6 @@
   body {
     @apply bg-background font-base text-foreground;
   }
-
-  .expressive-code {
-    .frame {
-      @apply border-2! border-border! shadow-shadow!;
-
-      .title {
-        @apply rounded-none!;
-
-        &::after {
-          @apply border-t-0!;
-        }
-      }
-    }
-  }
 }
 
 @utility no-scrollbar {
@@ -154,6 +149,25 @@
 }
 
 @layer components {
+  .expressive-code {
+    @apply rounded-base border-2 border-border shadow-shadow;
+
+    .frame {
+      .title {
+        @apply rounded-none!;
+
+        &::after {
+          @apply border-t-0!;
+        }
+      }
+
+      .copy {
+        button {
+        }
+      }
+    }
+  }
+
   .prose {
     h1 {
       @apply mt-2 scroll-m-28;
@@ -268,6 +282,10 @@
 
     figcaption {
       @apply flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70;
+    }
+
+    code {
+      @apply rounded-base bg-muted px-1 py-0.5 text-muted-foreground;
     }
 
     .expressive-code {

@@ -1,10 +1,10 @@
 type NavItem = {
-  title: string;
+  label: string;
   href: string;
 };
 
 type NavGroup = {
-  title: string;
+  label: string;
   items: NavItem[];
 };
 

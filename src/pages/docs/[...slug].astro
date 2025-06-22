@@ -2,7 +2,6 @@
 import { render } from "astro:content";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-solid";
 
-import ShrinkableCode from "~/components/docs/shrinkable-code.astro";
 import BaseLayout from "~/layout/base-layout.astro";
 import { mdxComponents } from "~/components/mdx-components";
 import { Button } from "~/components/ui/button";
@@ -73,8 +72,36 @@ const RenderedDoc = await render(doc);
         {doc.data.description}
       </p>
     </div>
-    <div class="prose">
-      <RenderedDoc.Content components={{ ...mdxComponents, ShrinkableCode }} />
+    <div class="prose @container">
+      <RenderedDoc.Content components={{ ...mdxComponents }} />
+    </div>
+    <div class="mt-8 flex justify-between">
+      {
+        doc.data.prev ? (
+          <Button
+            as="a"
+            href={`/docs/${doc.data.prev}`}
+            variant="neutral-no-shadow"
+          >
+            <ArrowLeftIcon />
+            {doc.data.prevLabel!}
+          </Button>
+        ) : (
+          <div />
+        )
+      }
+      {
+        doc.data.next && (
+          <Button
+            as="a"
+            href={`/docs/${doc.data.next}`}
+            variant="neutral-no-shadow"
+          >
+            {doc.data.nextLabel!}
+            <ArrowRightIcon />
+          </Button>
+        )
+      }
     </div>
   </div>
 </BaseLayout>

@@ -10,13 +10,7 @@ import lucidePreprocess from "vite-plugin-lucide-preprocess";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    expressiveCode({
-      themes: ["catppuccin-latte", "catppuccin-macchiato"],
-    }),
-    mdx({}),
-    solidJs(),
-  ],
+  integrations: [expressiveCode(), mdx({}), solidJs()],
   markdown: {
     rehypePlugins: [
       rehypeSlug,

@@ -12,7 +12,7 @@ import {
 function MobileNavItem(props: { item: NavItem }) {
   return (
     <a href={props.item.href} class="text-2xl font-semibold">
-      {props.item.title}
+      {props.item.label}
     </a>
   );
 }
@@ -20,7 +20,7 @@ function MobileNavItem(props: { item: NavItem }) {
 function MobileNavGroup(props: { group: NavGroup }) {
   return (
     <li>
-      <h3 class="mb-3 text-foreground/70">{props.group.title}</h3>
+      <h3 class="mb-3 text-foreground/70">{props.group.label}</h3>
       <ul class="grid gap-2">
         <For each={props.group.items}>
           {(item) => <MobileNavItem item={item} />}
@@ -36,9 +36,9 @@ type MobileNavProps = {
 
 export default function MobileNav(props: MobileNavProps) {
   return (
-    <Popover gutter={10} preventScroll={true}>
+    <Popover gutter={10}>
       <PopoverTrigger as={Button}>Menu</PopoverTrigger>
-      <PopoverContent class="h-[calc(100svh-var(--header-height)-2px)] w-svw -translate-x-2 rounded-none">
+      <PopoverContent class="h-[calc(100svh-var(--header-height)-2px)] w-svw -translate-x-2 overflow-y-scroll rounded-none">
         <div>
           <ul class="grid gap-10">
             <For each={props.navGroups}>

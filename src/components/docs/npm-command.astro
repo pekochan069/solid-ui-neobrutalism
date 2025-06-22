@@ -91,7 +91,13 @@ const contents = [
         data-package-manager={packageManager}
         class="command invisible hidden"
       >
-        <Code code={command} lang="bash" frame="none" class="mt-0" />
+        <Code
+          code={command}
+          lang="bash"
+          frame="none"
+          class="mt-0"
+          showLineNumbers={false}
+        />
       </div>
     ))
   }

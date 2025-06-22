@@ -1,0 +1,15 @@
+---
+import { nav } from "~/lib/nav";
+
+const components = nav.filter((item) => item.label === "Components")[0]!.items;
+---
+
+<ul class="m-0 grid list-none grid-cols-3 gap-y-4 p-0 text-lg">
+  {
+    components.map((component) => (
+      <li>
+        <a href={component.href}>{component.label}</a>
+      </li>
+    ))
+  }
+</ul>

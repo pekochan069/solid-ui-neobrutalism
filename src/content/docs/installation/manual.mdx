@@ -2,8 +2,10 @@
 title: Manual Installation
 slug: "installation/manual"
 description: How to install SolidUI Neobrutalism theme manually
-prev: installation/vite
-next: installation/astro
+prev: installation/tauri
+prevLabel: Tauri
+next: components
+nextLabel: Components
 ---
 
 ### Add Tailwind CSS to your Solid.js project.
@@ -12,7 +14,7 @@ next: installation/astro
 
 ### Add dependencies
 
-<NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css" />
+<NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
 
 ### Configure path aliases
 
@@ -30,11 +32,14 @@ next: installation/astro
 }
 ```
 
+The `~` alias is a preference. You can use other aliases such as `@` if you want.
+
 ### Configure styles
 
-<ShrinkableCode>
+<CollapsibleCode>
 
 ```css
+/* src/styles/global.css */
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@kobalte/tailwindcss";
@@ -163,4 +168,21 @@ next: installation/astro
   }
 }
 ```
-</ShrinkableCode>
+
+</CollapsibleCode>
+
+### Add `cn` helper function
+
+```ts
+// src/lib/utils.ts
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+### That's it!
+
+Now you can start adding components to your app.
