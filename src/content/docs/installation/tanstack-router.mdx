@@ -1,45 +1,43 @@
 ---
-title: Manual Installation
-slug: "installation/manual"
-description: How to install SolidUI Neobrutalism theme manually
-prev: installation/tauri
-prevLabel: Tauri
-next: components
-nextLabel: Components
+title: TanStack Router
+slug: "installation/tanstack-router"
+description: How to install SolidUI Neobrutalism theme for TanStack Router project
+prev: installation/astro
+prevLabel: Astro
+next: installation/tanstack-start
+nextLabel: TanStack Start
 ---
 
-### Add Tailwind CSS To Your Solid.js Project.
+### Create New TanStack Router App
 
-[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation/using-vite)
+Start by creating a new TanStack Router app using `create-tsrouter-app`. Use `--interactive` and `--framework Solid` parameters to create a new Solid.js project. Select **Solid-UI** template when prompted:
 
-### Add Dependencies
+<NpmCommand type="create" command="tsrouter-app@latest --interactive --framework Solid" />
 
-<NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
-
-### Configure Path Aliases
-
-```json ins={6-9}
-// tsconfig.json
-{
-  ...
-  "compilerOptions": {
-    ...
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./src/*"]
-    }
-  }
-}
+```bash showLineNumbers=false
+◆  What add-ons would you like for your project?
+│  ◻ Form
+│  ◻ Sentry
+│  ◼ Solid-UI (Add Solid-UI to your application.)
+│  ◻ Start
+│  ◻ Store
+│  ◻ T3Env
+│  ◻ TanStack Query
+└
 ```
 
-The `~` alias is a preference. You can use other aliases such as `@` if you want.
+### Update dependencies
 
-### Configure Styles
+<NpmCommand type="uninstall" command="tailwindcss-animate" />
+
+<NpmCommand type="install" command="tw-animate-css lucide-solid @kobalte/tailwindcss" />
+
+### Edit Styles
 
 <CollapsibleCode>
 
 ```css
-/* src/styles/global.css */
+/* src/styles.css */
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@kobalte/tailwindcss";
@@ -170,18 +168,6 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
 ```
 
 </CollapsibleCode>
-
-### Add `cn` Helper Function
-
-```ts
-// src/lib/utils.ts
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
-```
 
 ### That's it!
 

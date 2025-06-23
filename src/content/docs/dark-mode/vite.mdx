@@ -1,0 +1,82 @@
+---
+title: Vite
+slug: dark-mode/vite
+description: How to enable dark mode for Vite app
+prev: dark-mode
+prevLabel: Dark Mode
+next: dark-mode/solid-start
+nextLabel: Solid Start
+---
+
+### Install Solid Mode Watcher
+
+Start by installing `solid-mode-watcher`
+
+<NpmCommand type="install" command="solid-mode-watcher" />
+
+### Add Mode Watcher To Your App
+
+```tsx ins={2,8}
+// src/App.tsx
+import { ModeWatcher } from "solid-mode-watcher";
+
+function App() {
+  return (
+    <>
+      ...
+      <ModeWatcher />
+    </>
+  )
+}
+```
+
+### Add A Mode Toggler
+
+#### Toggle
+
+```tsx
+// src/components/mode-toggle.tsx
+import Moon from "lucide-solid/icons/moon";
+import Sun from "lucide-solid/icons/sun";
+import { toggleMode } from "solid-mode-watcher";
+
+import { Toggle } from "~/components/ui/toggle";
+
+export default function ModeToggle() {
+  return (
+    <Toggle onClick={toggleMode} class="absolute">
+      <Moon class="size-5 scale-0 -rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
+      <Sun class="absolute size-5 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
+    </Toggle>
+  );
+}
+```
+
+#### Dropdown Menu
+
+```tsx
+// src/components/mode-toggle.tsx
+import Moon from "lucide-solid/icons/moon";
+import Sun from "lucide-solid/icons/sun";
+import { setMode } from "solid-mode-watcher";
+
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import { Button } from "./ui/button";
+
+export default function ModeToggle() {
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger as={Button} size="icon" variant="neutral-no-shadow">
+        <Moon class="size-5 scale-0 -rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
+        <Sun class="absolute size-5 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
+        <span class="sr-only">Toggle theme</span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem onClick={() => setMode("light")}>Light</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("system")}>System</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+```

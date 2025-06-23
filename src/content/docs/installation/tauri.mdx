@@ -1,20 +1,48 @@
 ---
-title: Manual Installation
-slug: "installation/manual"
-description: How to install SolidUI Neobrutalism theme manually
-prev: installation/tauri
-prevLabel: Tauri
-next: components
-nextLabel: Components
+title: Tauri
+slug: installation/tauri
+description: How to install SolidUI Neobrutalism theme for Tauri project
+prev: installation/tanstack-start
+prevLabel: TanStack Start
+next: installation/manual
+nextLabel: Manual
 ---
 
-### Add Tailwind CSS To Your Solid.js Project.
+### Create New Tauri App
 
-[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation/using-vite)
+Start by creating a new Tauri app using `create-tauri-app`. Select **Typescript / Javascript** template when prompted which language to use for your frontend, and then select **Solid** template when prompted which UI template to use:
 
-### Add Dependencies
+<NpmCommand type="create" command="tauri@latest" />
 
-<NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
+```bash showLineNumbers=false
+? Choose which language to use for your frontend ›
+❯ TypeScript / JavaScript  (pnpm, yarn, npm, deno, bun)
+  Rust
+  .NET
+```
+
+```bash showLineNumbers=false
+? Choose your UI template ›
+  Vanilla
+  Vue
+  Svelte
+  React
+❯ Solid  (https://solidjs.com/)
+  Angular
+  Preact
+```
+
+Once you have created the app, navigate into the project and install the dependencies:
+
+```bash  showLineNumbers=false
+cd {project-name}
+```
+
+<NpmCommand type="install" command="" />
+
+### Add Tailwind CSS and Dependencies
+
+<NpmCommand type="install" command="tailwindcss @tailwindcss/vite class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
 
 ### Configure Path Aliases
 
@@ -34,12 +62,33 @@ nextLabel: Components
 
 The `~` alias is a preference. You can use other aliases such as `@` if you want.
 
+### Edit `vite.config.ts` File
+
+Add the following code to the vite.config.ts so your app can resolve paths without error:
+
+```ts ins={2,3,8-13}
+// vite.config.ts
+import path from "path";
+import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from "vite";
+import solid from "vite-plugin-solid";
+
+export default defineConfig({
+  plugins: [solid(), tailwindcss()],
+  resolve: {
+    alias: {
+      "~": path.resolve(__dirname, "./src"),
+    },
+  },
+});
+```
+
 ### Configure Styles
 
 <CollapsibleCode>
 
 ```css
-/* src/styles/global.css */
+/* src/App.css */
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@kobalte/tailwindcss";

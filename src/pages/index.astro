@@ -1,5 +1,10 @@
 ---
 import BaseLayout from "~/layout/base-layout.astro";
+import { Button } from "~/components/ui/button";
 ---
 
-<BaseLayout> Hello! </BaseLayout>
+<BaseLayout>
+  <div class="mt-32 grid place-content-center">
+    <Button as="a" href="/docs" class="text-3xl">Docs</Button>
+  </div>
+</BaseLayout>

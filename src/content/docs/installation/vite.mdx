@@ -1,7 +1,7 @@
 ---
-title: Vite Installation
+title: Vite
 slug: "installation/vite"
-description: How to install SolidUI Neobrutalism theme for Vite
+description: How to install SolidUI Neobrutalism theme for Vite app
 prev: installation
 prevLabel: Installation
 next: installation/solid-start
@@ -14,39 +14,60 @@ Start by creating a new Vite Solid.js app using `create-vite`. Select **Solid.js
 
 <NpmCommand type="create" command="vite@latest" />
 
-### Add Tailwind CSS to your project
+When creating the new vite app, make sure to choose the **Solid** option to automatically set up Solid.js project:
 
-<NpmCommand type="install" command="tailwindcss @tailwindcss/vite" />
-
-Replace everything in `src/index.css` with the following:
-
-```css showLineNumbers=false
-/* src/index.css */
-@import "tailwindcss";
+```bash showLineNumbers=false
+◆  Select a framework:
+│  ○ Vanilla
+│  ○ Vue
+│  ○ React
+│  ○ Preact
+│  ○ Lit
+│  ○ Svelte
+│  ● Solid
+│  ○ Qwik
+│  ○ Angular
+│  ○ Marko
+│  ○ Others
+└
 ```
 
-### Edit `tsconfig.json` file
+Once you have created the app, navigate into the project and install the dependencies:
+
+```bash  showLineNumbers=false
+cd {project-name}
+```
+
+<NpmCommand type="install" command="" />
+
+### Add Tailwind CSS and Dependencies
+
+<NpmCommand type="install" command="tailwindcss @tailwindcss/vite class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
+
+<NpmCommand type="install" command="-D @types/node" />
+
+### Edit `tsconfig.json` File
 
 The current version of vite splits TypeScript configuration into three files, two of which need to be edited. Add the `baseUrl` and `paths` properties to the `compilerOptions` section of the `tsconfig.json` and `tsconfig.app.json` files:
 
 ```json ins={13-16}
 // tsconfig.json
 {
-    "files": [],
-    "references": [
-      {
-        "path": "./tsconfig.app.json"
-      },
-      {
-        "path": "./tsconfig.node.json"
-      }
-    ],
-    "compilerOptions": {
-        baseUrl: ".",
-        paths: {
-            "~/*": ["./src/*"]
-        }
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
     }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  }
 }
 ```
 
@@ -55,18 +76,18 @@ Then edit `tsconfig.app.json` file to extend the base configuration:
 ```json ins={6-9}
 // tsconfig.app.json
 {
+  ...
+  "compilerOptions": {
     ...
-    "compilerOptions": {
-        ...
-        baseUrl: ".",
-        paths: {
-            "~/*": ["./src/*"]
-        }
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
     }
+  }
 }
 ```
 
-### Edit `vite.config.ts` file
+### Edit `vite.config.ts` File
 
 Add the following code to the vite.config.ts so your app can resolve paths without error:
 
@@ -86,3 +107,156 @@ export default defineConfig({
   },
 });
 ```
+
+### Configure Styles
+
+<CollapsibleCode>
+
+```css
+/* src/index.css */
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@kobalte/tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.93 0.03 256);
+  --foreground: oklch(0.28 0.09 268);
+  --primary: oklch(0.62 0.19 260);
+  --primary-foreground: oklch(0.28 0.09 268);
+  --secondary-background: oklch(100% 0 0);
+  --border: oklch(0.28 0.09 268);
+  --ring: oklch(0.28 0.09 268);
+  --overlay: oklch(0.28 0.09 268 / 0.8);
+  --shadow: 4px 4px 0px 0px var(--border);
+  --shadow-destructive: 4px 4px 0px 0px oklch(0 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-active-dot: oklch(0.28 0.09 268);
+
+  --info: oklch(0.95 0.024 236.81);
+  --info-foreground: oklch(0.68 0.148143 238.1044);
+  --success: oklch(0.95 0.0506 162.83);
+  --success-foreground: oklch(0.69 0.1481 162.37);
+  --warning: oklch(0.96 0.0569 95.61);
+  --warning-foreground: oklch(0.71 0.186 48.13);
+  --error: oklch(0.93 0.0314 17.73);
+  --error-foreground: oklch(0.64 0.2082 25.38);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+
+  --header-height: calc(var(--spacing) * 14);
+}
+
+.dark {
+  --background: oklch(0.28 0.09 268);
+  --foreground: oklch(0.97 0.01 255);
+  --primary: oklch(0.62 0.19 260);
+  --primary-foreground: oklch(0.28 0.09 268);
+  --secondary-background: oklch(0.28 0.09 268);
+  --border: oklch(0.38 0.14 266);
+  --ring: oklch(0.97 0.01 255);
+  --overlay: oklch(0.28 0.09 268 / 0.8);
+  --shadow: 4px 4px 0px 0px var(--border);
+  --shadow-destructive: 4px 4px 0px 0px oklch(0 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --chart-active-dot: oklch(100% 0 0);
+
+  --info: oklch(0.28 0.0875 267.91);
+  --info-foreground: oklch(0.68 0.148143 238.1044);
+  --success: oklch(0.26 0.0487 172.54);
+  --success-foreground: oklch(0.69 0.1481 162.37);
+  --warning: oklch(0.29 0.0638 53.82);
+  --warning-foreground: oklch(0.71 0.186 48.13);
+  --error: oklch(0.26 0.0886 26.05);
+  --error-foreground: oklch(0.64 0.2082 25.38);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary-background: var(--secondary-background);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+
+  --spacing-box-shadow-x: 4px;
+  --spacing-box-shadow-y: 4px;
+  --spacing-reverse-box-shadow-x: -4px;
+  --spacing-reverse-box-shadow-y: -4px;
+  --radius-base: 5px;
+  --shadow-shadow: var(--shadow);
+  --shadow-destructive: var(--shadow-destructive);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+
+  --animate-caret-blink: caret-blink 1s infinite;
+
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-background font-base text-foreground;
+  }
+}
+```
+
+</CollapsibleCode>
+
+### Add `cn` Helper Function
+
+```ts
+// src/lib/utils.ts
+import { clsx, type ClassValue } from "clsx"
+import { twMerge } from "tailwind-merge"
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+### That's it!
+
+Now you can start adding components to your app.

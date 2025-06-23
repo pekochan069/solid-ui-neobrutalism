@@ -1,16 +1,30 @@
 ---
-title: Manual Installation
-slug: "installation/manual"
-description: How to install SolidUI Neobrutalism theme manually
-prev: installation/tauri
-prevLabel: Tauri
-next: components
-nextLabel: Components
+title: Astro
+slug: installation/astro
+description: How to install SolidUI Neobrutalism theme for Astro app
+prev: installation/solid-start
+prevLabel: Solid Start
+next: installation/tanstack-router
+nextLabel: TanStack Router
 ---
 
-### Add Tailwind CSS To Your Solid.js Project.
+### Create New Astro App
 
-[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation/using-vite)
+Start by creating a new Astro app using `create-astro`:
+
+<NpmCommand type="create" command="astro@latest" />
+
+Once you have created the app, navigate into the project:
+
+```bash  showLineNumbers=false
+cd {project-name}
+```
+
+Then add Tailwind CSS and Solid.js to your Astro app using Astro CLI:
+
+<NpmCommand type="run" command="astro add tailwind" />
+
+<NpmCommand type="run" command="astro add solid" />
 
 ### Add Dependencies
 

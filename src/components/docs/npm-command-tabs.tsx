@@ -14,7 +14,7 @@ export default function NpmCommandTabs() {
         packageManagerAtom.set(value as "npm" | "yarn" | "pnpm" | "bun")
       }
     >
-      <TabsList class="translate-y-2 border-b-0 bg-code-frame pr-2 [&>*]:-translate-y-1">
+      <TabsList class="translate-y-2 border-b-0 bg-code-frame pr-2 shadow-shadow [&>*]:-translate-y-1">
         <div class="mr-3 ml-2">
           <Terminal class="size-4 text-muted-foreground" />
         </div>

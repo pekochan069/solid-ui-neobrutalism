@@ -6,7 +6,7 @@ import { Code } from "astro-expressive-code/components";
 import NpmCommandTabs from "./npm-command-tabs";
 
 type Props = {
-  type: "install" | "create" | "run" | "exec";
+  type: "install" | "uninstall" | "create" | "run" | "exec";
   command: string;
 };
 
@@ -32,6 +32,18 @@ const prefix = (packageManager: PackageManager) => {
           }
 
           return `${packageManager} add`;
+        }
+      }
+      break;
+    }
+    case "uninstall": {
+      switch (packageManager) {
+        case "npm":
+          return "npm uninstall";
+        case "yarn":
+        case "pnpm":
+        case "bun": {
+          return `${packageManager} remove`;
         }
       }
       break;

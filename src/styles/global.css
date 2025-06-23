@@ -170,7 +170,7 @@
 
   .prose {
     h1 {
-      @apply mt-2 scroll-m-28;
+      @apply mt-2 scroll-m-28 first:mt-0;
 
       a {
         @apply scroll-m-28 text-3xl font-heading tracking-tight;
@@ -194,7 +194,7 @@
     }
 
     h3 {
-      @apply mt-8 scroll-m-28;
+      @apply mt-8 scroll-m-28 first:mt-0;
       a {
         @apply text-xl font-heading tracking-tight *:[code]:text-xl;
       }
@@ -205,7 +205,7 @@
     }
 
     h4 {
-      @apply mt-8 scroll-m-28;
+      @apply mt-8 scroll-m-28 first:mt-0;
 
       a {
         @apply text-lg font-heading tracking-tight;
@@ -217,7 +217,7 @@
     }
 
     h5 {
-      @apply mt-8 scroll-m-28;
+      @apply mt-8 scroll-m-28 first:mt-0;
 
       a {
         @apply text-lg font-medium tracking-tight;
@@ -229,7 +229,7 @@
     }
 
     h6 {
-      @apply mt-8 scroll-m-28;
+      @apply mt-8 scroll-m-28 first:mt-0;
 
       a {
         @apply text-base font-medium tracking-tight;
