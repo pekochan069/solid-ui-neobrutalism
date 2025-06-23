@@ -1,0 +1,41 @@
+---
+title: components.json
+slug: components-json
+description: Configuration for your project.
+prev: installation
+prevLabel: Installation
+next: theming
+nextLabel: Theming
+---
+
+The `components.json` file holds configuration for your project.
+
+> Note: The `components.json` file is optional
+> 
+> It is only required if you're using the CLI to add components to your project. If you're using the copy and paste method, you don't need this file.
+
+### Schema
+
+```json {5,11-12}
+// components.json
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "tailwind": {
+    "css": "src/styles/global.css",
+    "config": "",
+    "baseColor": "slate",
+    "cssVariables": true
+  },
+  "aliases": {
+    "utils": "~/lib/utils",
+    "components": "~/components"
+  },
+  "style": "default",
+  "rsc": false,
+  "tsx": true
+}
+```
+
+Change the Tailwind CSS file path and aliases according to your project structure.
+
+Check out [shadcn/ui docs](https://ui.shadcn.com/docs/components-json) for more information about the `components.json` file.

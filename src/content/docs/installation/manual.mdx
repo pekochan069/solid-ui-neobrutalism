@@ -49,7 +49,7 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
 :root {
   --background: oklch(0.93 0.03 256);
   --foreground: oklch(0.28 0.09 268);
-  --primary: oklch(0.62 0.19 260);
+  --primary: oklch(0.72 0.19 260);
   --primary-foreground: oklch(0.28 0.09 268);
   --secondary-background: oklch(100% 0 0);
   --border: oklch(0.28 0.09 268);
@@ -75,8 +75,6 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
 
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);
-
-  --header-height: calc(var(--spacing) * 14);
 }
 
 .dark {
@@ -85,7 +83,7 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
   --primary: oklch(0.62 0.19 260);
   --primary-foreground: oklch(0.28 0.09 268);
   --secondary-background: oklch(0.28 0.09 268);
-  --border: oklch(0.38 0.14 266);
+  --border: oklch(0.97 0.01 255);
   --ring: oklch(0.97 0.01 255);
   --overlay: oklch(0.28 0.09 268 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
@@ -143,8 +141,6 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
   --radius-base: 5px;
   --shadow-shadow: var(--shadow);
   --shadow-destructive: var(--shadow-destructive);
-  --font-weight-base: 500;
-  --font-weight-heading: 700;
 
   --animate-caret-blink: caret-blink 1s infinite;
 
@@ -164,7 +160,7 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
 
 @layer base {
   body {
-    @apply bg-background font-base text-foreground;
+    @apply bg-background text-foreground;
   }
 }
 ```
@@ -182,6 +178,30 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 ```
+
+### Create A `components.json` File
+
+```json
+// components.json
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "tailwind": {
+    "css": "src/styles/global.css",
+    "config": "",
+    "baseColor": "slate",
+    "cssVariables": true
+  },
+  "aliases": {
+    "utils": "~/lib/utils",
+    "components": "~/components"
+  },
+  "style": "default",
+  "rsc": false,
+  "tsx": true
+}
+```
+
+Change the Tailwind CSS file path and aliases according to your project structure.
 
 ### That's it!
 
