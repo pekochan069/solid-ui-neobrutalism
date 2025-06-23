@@ -38,7 +38,7 @@ export default function MobileNav(props: MobileNavProps) {
   return (
     <Popover gutter={10}>
       <PopoverTrigger as={Button}>Menu</PopoverTrigger>
-      <PopoverContent class="h-[calc(100svh-var(--header-height)-2px)] w-svw -translate-x-2 overflow-y-scroll rounded-none">
+      <PopoverContent class="h-[calc(100svh-var(--header-height)-2px)] w-svw -translate-x-2 overflow-y-scroll rounded-none pb-12">
         <div>
           <ul class="grid gap-10">
             <For each={props.navGroups}>

@@ -35,10 +35,6 @@ const nav: NavGroup[] = [
         href: "/docs/installation",
       },
       {
-        label: "components.json",
-        href: "/docs/components-json",
-      },
-      {
         label: "Theming",
         href: "/docs/theming",
       },
@@ -259,6 +255,31 @@ const nav: NavGroup[] = [
       {
         label: "Manual",
         href: "/docs/installation/manual",
+      },
+    ],
+  },
+  {
+    label: "Dark Mode",
+    items: [
+      {
+        label: "Vite",
+        href: "/docs/dark-mode/vite",
+      },
+      {
+        label: "Solid Start",
+        href: "/docs/dark-mode/solid-start",
+      },
+      {
+        label: "Astro",
+        href: "/docs/dark-mode/astro",
+      },
+      {
+        label: "Tanstack Router",
+        href: "/docs/dark-mode/tanstack-router",
+      },
+      {
+        label: "Tanstack Start",
+        href: "/docs/dark-mode/tanstack-start",
       },
     ],
   },

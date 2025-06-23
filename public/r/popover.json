@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "popover",
+  "type": "registry:ui",
+  "dependencies": ["@kobalte/core"],
+  "files": [
+    {
+      "path": "src/registry/items/ui/popover.tsx",
+      "content": "import type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\r\nimport type { Component, ValidComponent } from \"solid-js\";\r\n\r\nimport { splitProps } from \"solid-js\";\r\nimport * as PopoverPrimitive from \"@kobalte/core/popover\";\r\n\r\nimport { cn } from \"~/lib/utils\";\r\n\r\nconst PopoverTrigger = <T extends ValidComponent = \"button\">(\r\n  props: PolymorphicProps<T, PopoverPrimitive.PopoverTriggerProps<T>>,\r\n) => {\r\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...props} />;\r\n};\r\n\r\ntype PopoverProps = PopoverPrimitive.PopoverRootProps;\r\n\r\nconst Popover: Component<PopoverPrimitive.PopoverRootProps> = (props) => {\r\n  return <PopoverPrimitive.Root data-slot=\"popover\" gutter={4} {...props} />;\r\n};\r\n\r\ntype PopoverContentProps<T extends ValidComponent = \"div\"> =\r\n  PopoverPrimitive.PopoverContentProps<T> & { class?: string | undefined };\r\n\r\nconst PopoverContent = <T extends ValidComponent = \"div\">(\r\n  props: PolymorphicProps<T, PopoverContentProps<T>>,\r\n) => {\r\n  const [local, others] = splitProps(props as PopoverContentProps, [\"class\"]);\r\n  return (\r\n    <PopoverPrimitive.Portal>\r\n      <PopoverPrimitive.Content\r\n        data-slot=\"popover-content\"\r\n        class={cn(\r\n          \"z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border bg-primary p-4 text-primary-foreground outline-none ui-expanded:animate-in ui-expanded:fade-in-0 ui-expanded:zoom-in-95 ui-closed:animate-out ui-closed:fade-out-0 ui-closed:zoom-out-95\",\r\n          local.class,\r\n        )}\r\n        {...others}\r\n      />\r\n    </PopoverPrimitive.Portal>\r\n  );\r\n};\r\n\r\nexport { Popover, PopoverTrigger, PopoverContent, type PopoverProps };\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "~/layout/base-layout.astro";
+import UiTest from "~/components/ui-test";
 import { Button } from "~/components/ui/button";
 ---
 
@@ -7,4 +8,5 @@ import { Button } from "~/components/ui/button";
   <div class="mt-32 grid place-content-center">
     <Button as="a" href="/docs" class="text-3xl">Docs</Button>
   </div>
+  <UiTest client:only="solid-js" />
 </BaseLayout>

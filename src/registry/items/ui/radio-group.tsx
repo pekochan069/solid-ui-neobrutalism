@@ -3,6 +3,7 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as RadioGroupPrimitive from "@kobalte/core/radio-group";
+import { CircleIcon } from "lucide-solid";
 
 import { cn } from "~/lib/utils";
 
@@ -47,18 +48,7 @@ const RadioGroupItem = <T extends ValidComponent = "div">(
         class="aspect-square size-4 rounded-full border ring-offset-background focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ui-checked:text-primary"
       >
         <RadioGroupPrimitive.ItemIndicator class="flex h-full items-center justify-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="size-2.5 fill-current text-current"
-          >
-            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-          </svg>
+          <CircleIcon class="size-2.5 fill-current text-current" />
         </RadioGroupPrimitive.ItemIndicator>
       </RadioGroupPrimitive.ItemControl>
       {local.children}

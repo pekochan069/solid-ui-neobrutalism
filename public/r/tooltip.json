@@ -1,0 +1,13 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "tooltip",
+  "type": "registry:ui",
+  "dependencies": ["@kobalte/core"],
+  "files": [
+    {
+      "path": "src/registry/items/ui/tooltip.tsx",
+      "content": "import type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\r\nimport type { Component, ValidComponent } from \"solid-js\";\r\n\r\nimport { splitProps } from \"solid-js\";\r\nimport * as TooltipPrimitive from \"@kobalte/core/tooltip\";\r\n\r\nimport { cn } from \"~/lib/utils\";\r\n\r\nconst TooltipTrigger = TooltipPrimitive.Trigger;\r\n\r\nconst Tooltip: Component<TooltipPrimitive.TooltipRootProps> = (props) => {\r\n  return <TooltipPrimitive.Root gutter={4} {...props} />;\r\n};\r\n\r\ntype TooltipContentProps<T extends ValidComponent = \"div\"> =\r\n  TooltipPrimitive.TooltipContentProps<T> & {\r\n    class?: string | undefined;\r\n  };\r\n\r\nconst TooltipContent = <T extends ValidComponent = \"div\">(\r\n  props: PolymorphicProps<T, TooltipContentProps<T>>,\r\n) => {\r\n  const [local, others] = splitProps(props as TooltipContentProps, [\"class\"]);\r\n\r\n  return (\r\n    <TooltipPrimitive.Portal>\r\n      <TooltipPrimitive.Content\r\n        data-slot=\"tooltip-content\"\r\n        class={cn(\r\n          \"z-50 origin-[var(--kb-popover-content-transform-origin)] overflow-hidden rounded-base border-2 border-border bg-primary px-3 py-1.5 text-sm text-foreground ui-expanded:animate-in ui-expanded:fade-in-0 ui-expanded:zoom-in-95 ui-closed:animate-out ui-closed:fade-out-0 ui-closed:zoom-out-95\",\r\n          local.class,\r\n        )}\r\n        {...others}\r\n      />\r\n    </TooltipPrimitive.Portal>\r\n  );\r\n};\r\n\r\nexport { Tooltip, TooltipTrigger, TooltipContent };\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

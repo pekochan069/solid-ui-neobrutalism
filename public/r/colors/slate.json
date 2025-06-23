@@ -3,7 +3,7 @@
     "light": {
       "background": "slate-100",
       "foreground": "slate-950",
-      "primary": "slate-500",
+      "primary": "slate-400",
       "primary-foreground": "slate-950",
       "secondary-background": "white",
       "border": "slate-950",
@@ -16,7 +16,15 @@
       "chart-3": "cyan-900",
       "chart-4": "amber-400",
       "chart-5": "amber-500",
-      "chart-active-dot": "slate-950"
+      "chart-active-dot": "slate-950",
+      "info": "oklch(0.95 0.024 236.81)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.95 0.0506 162.83)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.96 0.0569 95.61)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.93 0.0314 17.73)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     },
     "dark": {
       "background": "slate-950",
@@ -24,7 +32,7 @@
       "primary": "slate-500",
       "primary-foreground": "slate-950",
       "secondary-background": "slate-950",
-      "border": "slate-900",
+      "border": "slate-50",
       "ring": "slate-50",
       "overlay": "slate-950/80",
       "shadow": "4px 4px 0px 0px var(--border)",
@@ -34,7 +42,15 @@
       "chart-3": "amber-500",
       "chart-4": "purple-500",
       "chart-5": "rose-500",
-      "chart-active-dot": "white"
+      "chart-active-dot": "white",
+      "info": "oklch(0.28 0.0875 267.91)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.26 0.0487 172.54)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.29 0.0638 53.82)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.26 0.0886 26.05)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     }
   },
   "cssVars": {
@@ -42,8 +58,8 @@
       "background": "oklch(96.8% 0.007 247.896)",
       "secondary-background": "oklch(100% 0 0)",
       "foreground": "oklch(12.9% 0.042 264.695)",
-      "main-foreground": "oklch(12.9% 0.042 264.695)",
-      "main": "oklch(55.4% 0.046 257.417)",
+      "primary-foreground": "oklch(12.9% 0.042 264.695)",
+      "primary": "oklch(65.4% 0.046 257.417)",
       "border": "oklch(12.9% 0.042 264.695)",
       "ring": "oklch(12.9% 0.042 264.695)",
       "overlay": "oklch(12.9% 0.042 264.695 / 0.8)",
@@ -54,14 +70,24 @@
       "chart-3": "oklch(0.398 0.07 227.392)",
       "chart-4": "oklch(0.828 0.189 84.429)",
       "chart-5": "oklch(0.769 0.188 70.08)",
-      "chart-active-dot": "oklch(12.9% 0.042 264.695)"
+      "chart-active-dot": "oklch(12.9% 0.042 264.695)",
+      "info": "oklch(0.95 0.024 236.81)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.95 0.0506 162.83)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.96 0.0569 95.61)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.93 0.0314 17.73)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)",
+      "muted": "oklch(0.97 0.01 248)",
+      "muted-foreground": "oklch(0.55 0.04 257)"
     },
     "dark": {
       "background": "oklch(12.9% 0.042 264.695)",
       "secondary-background": "oklch(0.13 0.04 265)",
       "foreground": "oklch(98.4% 0.003 247.858)",
-      "main": "oklch(55.4% 0.046 257.417)",
-      "border": "oklch(0.21 0.04 266)",
+      "primary": "oklch(55.4% 0.046 257.417)",
+      "border": "oklch(98.4% 0.003 247.858)",
       "ring": "oklch(98.4% 0.003 247.858)",
       "overlay": "oklch(12.9% 0.042 264.695 / 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
@@ -72,7 +98,17 @@
       "chart-4": "oklch(0.627 0.265 303.9)",
       "chart-5": "oklch(0.645 0.246 16.439)",
       "sidebar": "oklch(0.216 0.006 56.043)",
-      "chart-active-dot": "oklch(100% 0 0)"
+      "chart-active-dot": "oklch(100% 0 0)",
+      "info": "oklch(0.28 0.0875 267.91)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.26 0.0487 172.54)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.29 0.0638 53.82)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.26 0.0886 26.05)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)",
+      "muted": "oklch(0.21 0.04 266)",
+      "muted-foreground": "oklch(0.71 0.04 257)"
     }
   },
   "cssVarsV4": {
@@ -80,8 +116,8 @@
       "background": "oklch(96.8% 0.007 247.896)",
       "secondary-background": "oklch(100% 0 0)",
       "foreground": "oklch(12.9% 0.042 264.695)",
-      "main-foreground": "oklch(12.9% 0.042 264.695)",
-      "main": "oklch(55.4% 0.046 257.417)",
+      "primary-foreground": "oklch(12.9% 0.042 264.695)",
+      "primary": "oklch(65.4% 0.046 257.417)",
       "border": "oklch(12.9% 0.042 264.695)",
       "ring": "oklch(12.9% 0.042 264.695)",
       "overlay": "oklch(12.9% 0.042 264.695 / 0.8)",
@@ -92,14 +128,24 @@
       "chart-3": "oklch(0.398 0.07 227.392)",
       "chart-4": "oklch(0.828 0.189 84.429)",
       "chart-5": "oklch(0.769 0.188 70.08)",
-      "chart-active-dot": "oklch(12.9% 0.042 264.695)"
+      "chart-active-dot": "oklch(12.9% 0.042 264.695)",
+      "info": "oklch(0.95 0.024 236.81)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.95 0.0506 162.83)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.96 0.0569 95.61)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.93 0.0314 17.73)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)",
+      "muted": "oklch(0.97 0.01 248)",
+      "muted-foreground": "oklch(0.55 0.04 257)"
     },
     "dark": {
       "background": "oklch(12.9% 0.042 264.695)",
       "secondary-background": "oklch(0.13 0.04 265)",
       "foreground": "oklch(98.4% 0.003 247.858)",
-      "main": "oklch(55.4% 0.046 257.417)",
-      "border": "oklch(0.21 0.04 266)",
+      "primary": "oklch(55.4% 0.046 257.417)",
+      "border": "oklch(98.4% 0.003 247.858)",
       "ring": "oklch(98.4% 0.003 247.858)",
       "overlay": "oklch(12.9% 0.042 264.695 / 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
@@ -110,7 +156,17 @@
       "chart-4": "oklch(0.627 0.265 303.9)",
       "chart-5": "oklch(0.645 0.246 16.439)",
       "sidebar": "oklch(0.216 0.006 56.043)",
-      "chart-active-dot": "oklch(100% 0 0)"
+      "chart-active-dot": "oklch(100% 0 0)",
+      "info": "oklch(0.28 0.0875 267.91)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.26 0.0487 172.54)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.29 0.0638 53.82)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.26 0.0886 26.05)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)",
+      "muted": "oklch(0.21 0.04 266)",
+      "muted-foreground": "oklch(0.71 0.04 257)"
     }
   }
 }

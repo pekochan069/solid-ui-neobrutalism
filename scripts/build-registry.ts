@@ -88,23 +88,24 @@ import { lazy } from "solid-js";
 
 export const Index: Record<string, any> = {`;
   for (const item of registry.items) {
+    const registryDependencies = item.registryDependencies ?? [];
+
     index += `
   "${item.name}": {
     name: "${item.name}",
     description: "${item.description ?? ""}",
-    type: "${item.type}",
-    registryDependencies: ${JSON.stringify(item.registryDependencies)},${
+    type: "${item.type}",${item.registryDependencies !== undefined ? `\n    registryDependencies: ${JSON.stringify(item.registryDependencies)},` : ""}${
       item.files?.[0]?.path
         ? `\n    component: lazy(() => import("src/registry/items/${item.type.substring(9)}/${item.name}")),`
         : ""
     } 
-    files: [${item.files?.map(
-      (file) => `{
-      path: "${file.path}",
-      type: "${file.type}",
-      target: "${file.target ?? ""}"
-    }`,
-    )}]
+    files: [\n${item.files?.map(
+      (file) => `      {
+        path: "${file.path}",
+        type: "${file.type}",
+        target: "${file.target ?? ""}"
+      }`,
+    )}\n    ]
   },`;
   }
 

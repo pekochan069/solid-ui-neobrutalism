@@ -15,12 +15,592 @@ export const Index: Record<string, any> = {
     name: "utils",
     description: "",
     type: "registry:lib",
-    registryDependencies: undefined,
     component: lazy(() => import("src/registry/items/lib/utils")),
     files: [
       {
-        path: "src/lib/utils.ts",
+        path: "src/registry/items/lib/utils.ts",
         type: "registry:lib",
+        target: "",
+      },
+    ],
+  },
+  accordion: {
+    name: "accordion",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/accordion")),
+    files: [
+      {
+        path: "src/registry/items/ui/accordion.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "alert-dialog": {
+    name: "alert-dialog",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    component: lazy(() => import("src/registry/items/ui/alert-dialog")),
+    files: [
+      {
+        path: "src/registry/items/ui/alert-dialog.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  alert: {
+    name: "alert",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/alert")),
+    files: [
+      {
+        path: "src/registry/items/ui/alert.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  avatar: {
+    name: "avatar",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/avatar")),
+    files: [
+      {
+        path: "src/registry/items/ui/avatar.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  badge: {
+    name: "badge",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/badge")),
+    files: [
+      {
+        path: "src/registry/items/ui/badge.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "badge-delta": {
+    name: "badge-delta",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["badge"],
+    component: lazy(() => import("src/registry/items/ui/badge-delta")),
+    files: [
+      {
+        path: "src/registry/items/ui/badge-delta.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  breadcrumb: {
+    name: "breadcrumb",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/breadcrumb")),
+    files: [
+      {
+        path: "src/registry/items/ui/breadcrumb.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  button: {
+    name: "button",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/button")),
+    files: [
+      {
+        path: "src/registry/items/ui/button.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  calendar: {
+    name: "calendar",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    component: lazy(() => import("src/registry/items/ui/calendar")),
+    files: [
+      {
+        path: "src/registry/items/ui/calendar.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  callout: {
+    name: "callout",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/callout")),
+    files: [
+      {
+        path: "src/registry/items/ui/callout.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  card: {
+    name: "card",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/card")),
+    files: [
+      {
+        path: "src/registry/items/ui/card.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  carousel: {
+    name: "carousel",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    component: lazy(() => import("src/registry/items/ui/carousel")),
+    files: [
+      {
+        path: "src/registry/items/ui/carousel.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  checkbox: {
+    name: "checkbox",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/checkbox")),
+    files: [
+      {
+        path: "src/registry/items/ui/checkbox.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  collapsible: {
+    name: "collapsible",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/collapsible")),
+    files: [
+      {
+        path: "src/registry/items/ui/collapsible.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  combobox: {
+    name: "combobox",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/combobox")),
+    files: [
+      {
+        path: "src/registry/items/ui/combobox.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  command: {
+    name: "command",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["dialog"],
+    component: lazy(() => import("src/registry/items/ui/command")),
+    files: [
+      {
+        path: "src/registry/items/ui/command.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "context-menu": {
+    name: "context-menu",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/context-menu")),
+    files: [
+      {
+        path: "src/registry/items/ui/context-menu.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  dialog: {
+    name: "dialog",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    component: lazy(() => import("src/registry/items/ui/dialog")),
+    files: [
+      {
+        path: "src/registry/items/ui/dialog.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  drawer: {
+    name: "drawer",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/drawer")),
+    files: [
+      {
+        path: "src/registry/items/ui/drawer.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "dropdown-menu": {
+    name: "dropdown-menu",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/dropdown-menu")),
+    files: [
+      {
+        path: "src/registry/items/ui/dropdown-menu.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "hover-card": {
+    name: "hover-card",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/hover-card")),
+    files: [
+      {
+        path: "src/registry/items/ui/hover-card.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  label: {
+    name: "label",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/label")),
+    files: [
+      {
+        path: "src/registry/items/ui/label.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  menubar: {
+    name: "menubar",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/menubar")),
+    files: [
+      {
+        path: "src/registry/items/ui/menubar.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "number-field": {
+    name: "number-field",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/number-field")),
+    files: [
+      {
+        path: "src/registry/items/ui/number-field.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "otp-field": {
+    name: "otp-field",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/otp-field")),
+    files: [
+      {
+        path: "src/registry/items/ui/otp-field.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  pagination: {
+    name: "pagination",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button"],
+    component: lazy(() => import("src/registry/items/ui/pagination")),
+    files: [
+      {
+        path: "src/registry/items/ui/pagination.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  popover: {
+    name: "popover",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/popover")),
+    files: [
+      {
+        path: "src/registry/items/ui/popover.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "radio-group": {
+    name: "radio-group",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/radio-group")),
+    files: [
+      {
+        path: "src/registry/items/ui/radio-group.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  resizable: {
+    name: "resizable",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/resizable")),
+    files: [
+      {
+        path: "src/registry/items/ui/resizable.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  select: {
+    name: "select",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/select")),
+    files: [
+      {
+        path: "src/registry/items/ui/select.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  separator: {
+    name: "separator",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/separator")),
+    files: [
+      {
+        path: "src/registry/items/ui/separator.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  sheet: {
+    name: "sheet",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/sheet")),
+    files: [
+      {
+        path: "src/registry/items/ui/sheet.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  skeleton: {
+    name: "skeleton",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/skeleton")),
+    files: [
+      {
+        path: "src/registry/items/ui/skeleton.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  slider: {
+    name: "slider",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["label"],
+    component: lazy(() => import("src/registry/items/ui/slider")),
+    files: [
+      {
+        path: "src/registry/items/ui/slider.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  sonner: {
+    name: "sonner",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/sonner")),
+    files: [
+      {
+        path: "src/registry/items/ui/sonner.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  switch: {
+    name: "switch",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/switch")),
+    files: [
+      {
+        path: "src/registry/items/ui/switch.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  table: {
+    name: "table",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/table")),
+    files: [
+      {
+        path: "src/registry/items/ui/table.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  tabs: {
+    name: "tabs",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/tabs")),
+    files: [
+      {
+        path: "src/registry/items/ui/tabs.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "text-field": {
+    name: "text-field",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/text-field")),
+    files: [
+      {
+        path: "src/registry/items/ui/text-field.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  timeline: {
+    name: "timeline",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/timeline")),
+    files: [
+      {
+        path: "src/registry/items/ui/timeline.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  toast: {
+    name: "toast",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/toast")),
+    files: [
+      {
+        path: "src/registry/items/ui/toast.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  toggle: {
+    name: "toggle",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/toggle")),
+    files: [
+      {
+        path: "src/registry/items/ui/toggle.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  "toggle-group": {
+    name: "toggle-group",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["toggle"],
+    component: lazy(() => import("src/registry/items/ui/toggle-group")),
+    files: [
+      {
+        path: "src/registry/items/ui/toggle-group.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
+  tooltip: {
+    name: "tooltip",
+    description: "",
+    type: "registry:ui",
+    component: lazy(() => import("src/registry/items/ui/tooltip")),
+    files: [
+      {
+        path: "src/registry/items/ui/tooltip.tsx",
+        type: "registry:ui",
         target: "",
       },
     ],

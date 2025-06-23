@@ -3,9 +3,10 @@
   "name": "index",
   "type": "registry:style",
   "dependencies": [
-    "class-variance-authority",
     "lucide-solid",
-    "tw-animate-css"
+    "tw-animate-css",
+    "@kobalte/tailwind",
+    "class-variance-authority"
   ],
   "registryDependencies": ["utils"],
   "files": [],

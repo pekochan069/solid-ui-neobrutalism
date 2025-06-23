@@ -3,7 +3,7 @@
     "light": {
       "background": "green-100",
       "foreground": "green-950",
-      "primary": "green-500",
+      "primary": "green-400",
       "primary-foreground": "green-950",
       "secondary-background": "white",
       "border": "green-950",
@@ -16,7 +16,15 @@
       "chart-3": "cyan-900",
       "chart-4": "amber-400",
       "chart-5": "amber-500",
-      "chart-active-dot": "green-950"
+      "chart-active-dot": "green-950",
+      "info": "oklch(0.95 0.024 236.81)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.95 0.0506 162.83)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.96 0.0569 95.61)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.93 0.0314 17.73)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     },
     "dark": {
       "background": "green-950",
@@ -24,7 +32,7 @@
       "primary": "green-500",
       "primary-foreground": "green-950",
       "secondary-background": "green-950",
-      "border": "green-900",
+      "border": "green-50",
       "ring": "green-50",
       "overlay": "green-950/80",
       "shadow": "4px 4px 0px 0px var(--border)",
@@ -34,14 +42,22 @@
       "chart-3": "amber-500",
       "chart-4": "purple-500",
       "chart-5": "rose-500",
-      "chart-active-dot": "white"
+      "chart-active-dot": "white",
+      "info": "oklch(0.28 0.0875 267.91)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.26 0.0487 172.54)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.29 0.0638 53.82)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.26 0.0886 26.05)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     }
   },
   "cssVars": {
     "light": {
       "background": "oklch(0.96 0.04 157)",
       "foreground": "oklch(0.27 0.06 153)",
-      "primary": "oklch(0.72 0.19 150)",
+      "primary": "oklch(0.82 0.19 150)",
       "primary-foreground": "oklch(0.27 0.06 153)",
       "secondary-background": "oklch(100% 0 0)",
       "border": "oklch(0.27 0.06 153)",
@@ -54,7 +70,15 @@
       "chart-3": "oklch(0.398 0.07 227.392)",
       "chart-4": "oklch(0.828 0.189 84.429)",
       "chart-5": "oklch(0.769 0.188 70.08)",
-      "chart-active-dot": "oklch(0.27 0.06 153)"
+      "chart-active-dot": "oklch(0.27 0.06 153)",
+      "info": "oklch(0.95 0.024 236.81)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.95 0.0506 162.83)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.96 0.0569 95.61)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.93 0.0314 17.73)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     },
     "dark": {
       "background": "oklch(0.27 0.06 153)",
@@ -62,7 +86,7 @@
       "primary": "oklch(0.72 0.19 150)",
       "primary-foreground": "oklch(0.27 0.06 153)",
       "secondary-background": "oklch(0.27 0.06 153)",
-      "border": "oklch(0.39 0.09 153)",
+      "border": "oklch(0.98 0.02 156)",
       "ring": "oklch(0.98 0.02 156)",
       "overlay": "oklch(0.27 0.06 153 / 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
@@ -72,14 +96,22 @@
       "chart-3": "oklch(0.769 0.188 70.08)",
       "chart-4": "oklch(0.627 0.265 303.9)",
       "chart-5": "oklch(0.645 0.246 16.439)",
-      "chart-active-dot": "oklch(100% 0 0)"
+      "chart-active-dot": "oklch(100% 0 0)",
+      "info": "oklch(0.28 0.0875 267.91)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.26 0.0487 172.54)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.29 0.0638 53.82)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.26 0.0886 26.05)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     }
   },
   "cssVarsV4": {
     "light": {
       "background": "oklch(0.96 0.04 157)",
       "foreground": "oklch(0.27 0.06 153)",
-      "primary": "oklch(0.72 0.19 150)",
+      "primary": "oklch(0.82 0.19 150)",
       "primary-foreground": "oklch(0.27 0.06 153)",
       "secondary-background": "oklch(100% 0 0)",
       "border": "oklch(0.27 0.06 153)",
@@ -92,7 +124,15 @@
       "chart-3": "oklch(0.398 0.07 227.392)",
       "chart-4": "oklch(0.828 0.189 84.429)",
       "chart-5": "oklch(0.769 0.188 70.08)",
-      "chart-active-dot": "oklch(0.27 0.06 153)"
+      "chart-active-dot": "oklch(0.27 0.06 153)",
+      "info": "oklch(0.95 0.024 236.81)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.95 0.0506 162.83)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.96 0.0569 95.61)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.93 0.0314 17.73)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     },
     "dark": {
       "background": "oklch(0.27 0.06 153)",
@@ -100,7 +140,7 @@
       "primary": "oklch(0.72 0.19 150)",
       "primary-foreground": "oklch(0.27 0.06 153)",
       "secondary-background": "oklch(0.27 0.06 153)",
-      "border": "oklch(0.39 0.09 153)",
+      "border": "oklch(0.98 0.02 156)",
       "ring": "oklch(0.98 0.02 156)",
       "overlay": "oklch(0.27 0.06 153 / 0.8)",
       "shadow": "4px 4px 0px 0px var(--border)",
@@ -110,7 +150,15 @@
       "chart-3": "oklch(0.769 0.188 70.08)",
       "chart-4": "oklch(0.627 0.265 303.9)",
       "chart-5": "oklch(0.645 0.246 16.439)",
-      "chart-active-dot": "oklch(100% 0 0)"
+      "chart-active-dot": "oklch(100% 0 0)",
+      "info": "oklch(0.28 0.0875 267.91)",
+      "info-foreground": "oklch(0.68 0.148143 238.1044)",
+      "success": "oklch(0.26 0.0487 172.54)",
+      "success-foreground": "oklch(0.69 0.1481 162.37)",
+      "warning": "oklch(0.29 0.0638 53.82)",
+      "warning-foreground": "oklch(0.71 0.186 48.13)",
+      "error": "oklch(0.26 0.0886 26.05)",
+      "error-foreground": "oklch(0.64 0.2082 25.38)"
     }
   }
 }

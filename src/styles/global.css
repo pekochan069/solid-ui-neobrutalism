@@ -9,14 +9,14 @@
 }
 
 :root {
-  --background: oklch(0.93 0.03 256);
-  --foreground: oklch(0.28 0.09 268);
-  --primary: oklch(0.62 0.19 260);
-  --primary-foreground: oklch(0.28 0.09 268);
+  --background: oklch(0.95 0.03 307);
+  --foreground: oklch(0.29 0.14 303);
+  --primary: oklch(0.73 0.23 304);
+  --primary-foreground: oklch(0.29 0.14 303);
   --secondary-background: oklch(100% 0 0);
-  --border: oklch(0.28 0.09 268);
-  --ring: oklch(0.28 0.09 268);
-  --overlay: oklch(0.28 0.09 268 / 0.8);
+  --border: oklch(0.29 0.14 303);
+  --ring: oklch(0.29 0.14 303);
+  --overlay: oklch(0.29 0.14 303 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
   --shadow-destructive: 4px 4px 0px 0px oklch(0 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -24,9 +24,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --chart-active-dot: oklch(0.28 0.09 268);
-
-  --header-height: calc(var(--spacing) * 14);
+  --chart-active-dot: oklch(0.29 0.14 303);
 
   --info: oklch(0.95 0.024 236.81);
   --info-foreground: oklch(0.68 0.148143 238.1044);
@@ -42,17 +40,19 @@
 
   --code-background: #eff1f5;
   --code-frame: #dce0e8;
+
+  --header-height: calc(var(--spacing) * 14);
 }
 
 .dark {
-  --background: oklch(0.28 0.09 268);
-  --foreground: oklch(0.97 0.01 255);
-  --primary: oklch(0.62 0.19 260);
-  --primary-foreground: oklch(0.28 0.09 268);
-  --secondary-background: oklch(0.28 0.09 268);
-  --border: oklch(0.38 0.14 266);
-  --ring: oklch(0.97 0.01 255);
-  --overlay: oklch(0.28 0.09 268 / 0.8);
+  --background: oklch(0.29 0.14 303);
+  --foreground: oklch(0.98 0.01 308);
+  --primary: oklch(0.63 0.23 304);
+  --primary-foreground: oklch(0.29 0.14 303);
+  --secondary-background: oklch(0.29 0.14 303);
+  --border: oklch(0.98 0.01 308);
+  --ring: oklch(0.98 0.01 308);
+  --overlay: oklch(0.29 0.14 303 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
   --shadow-destructive: 4px 4px 0px 0px oklch(0 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
