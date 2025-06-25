@@ -11,6 +11,8 @@ const docs = defineCollection({
     prevLabel: z.string().optional(),
     next: z.string().optional(),
     nextLabel: z.string().optional(),
+    docs: z.string().url().optional(),
+    apiReference: z.string().url().optional(),
   }),
 });
 
