@@ -7,7 +7,11 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["src/**/*.{ts,tsx,astro}", "!src/registry/__index__.tsx"]
+    "includes": [
+      "src/**/*.{ts,tsx,astro}",
+      "!src/registry/__index__.tsx",
+      "!src/registry/items/**/*.{rs,tsx}"
+    ]
   },
   "formatter": {
     "enabled": false
