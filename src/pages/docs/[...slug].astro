@@ -4,10 +4,9 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-solid";
 
 import BaseLayout from "~/layout/base-layout.astro";
 import { mdxComponents } from "~/components/mdx-components";
+import { BadgeDelta } from "~/components/ui/badge-delta";
 import { Button } from "~/components/ui/button";
 import { docs } from "~/lib/contents";
-
-const slug = Astro.params.slug;
 
 export function getStaticPaths() {
   const paths = docs.map((doc) => ({
@@ -35,42 +34,76 @@ const RenderedDoc = await render(doc);
 <BaseLayout>
   <div class="container mx-auto px-4 py-8">
     <div class="mb-8">
-      <div class="flex items-center justify-between">
-        <h1 class="text-4xl font-heading">{doc.data.title}</h1>
-        <div>
+      <div>
+        <div class="flex items-center justify-between">
+          <h1 class="text-4xl font-heading">{doc.data.title}</h1>
+          <div>
+            {
+              doc.data.prev && (
+                <Button
+                  as="a"
+                  href={`/docs/${doc.data.prev}`}
+                  size="icon"
+                  variant="neutral-no-shadow"
+                  class="size-8"
+                >
+                  <ArrowLeftIcon />
+                </Button>
+              )
+            }
+            {
+              doc.data.next && (
+                <Button
+                  as="a"
+                  href={`/docs/${doc.data.next}`}
+                  size="icon"
+                  variant="neutral-no-shadow"
+                  class="size-8"
+                >
+                  <ArrowRightIcon />
+                </Button>
+              )
+            }
+          </div>
+        </div>
+        <p
+          class="mt-2 text-[1.05rem] text-balance text-muted-foreground sm:text-base"
+        >
+          {doc.data.description}
+        </p>
+        <div class="mt-2 flex flex-wrap items-center gap-2">
           {
-            doc.data.prev && (
-              <Button
-                as="a"
-                href={`/docs/${doc.data.prev}`}
-                size="icon"
-                variant="neutral-no-shadow"
-                class="size-8"
-              >
-                <ArrowLeftIcon />
-              </Button>
+            doc.data.docs !== undefined && (
+              <a href={doc.data.docs} target="_blank" rel="noopener noreferrer">
+                <BadgeDelta
+                  deltaType="moderateIncrease"
+                  iconLocation="right"
+                  class="bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  Docs
+                </BadgeDelta>
+              </a>
             )
           }
           {
-            doc.data.next && (
-              <Button
-                as="a"
-                href={`/docs/${doc.data.next}`}
-                size="icon"
-                variant="neutral-no-shadow"
-                class="size-8"
+            doc.data.apiReference !== undefined && (
+              <a
+                href={doc.data.apiReference}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <ArrowRightIcon />
-              </Button>
+                <BadgeDelta
+                  deltaType="moderateIncrease"
+                  iconLocation="right"
+                  class="bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  API Reference
+                </BadgeDelta>
+              </a>
             )
           }
         </div>
       </div>
-      <p
-        class="mt-2 text-[1.05rem] text-balance text-muted-foreground sm:text-base"
-      >
-        {doc.data.description}
-      </p>
     </div>
     <div class="prose @container">
       <RenderedDoc.Content components={{ ...mdxComponents }} />
