@@ -6,10 +6,37 @@ prev: components/dropdown-menu
 prevLabel: Dropdown Menu
 next: components/label
 nextLabel: Label
+docs: https://kobalte.dev/docs/core/components/hover-card
+apiReference: https://kobalte.dev/docs/core/components/hover-card#api-reference
 ---
 
 import HoverCardCode from "/src/registry/items/ui/hover-card.tsx?raw"
+import HoverCardDemoCode from "/src/registry/items/examples/hover-card-demo.tsx?raw"
+import HoverCardDemo from "/src/registry/items/examples/hover-card-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={HoverCardCode} lang="tsx" title="~/components/ui/hover-card.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={HoverCardDemoCode}>
+    <HoverCardDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="hover-card" code={HoverCardCode} />
+
+## Usage
+
+```tsx
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "~/components/ui/hover-card";
+```
+
+```tsx
+<HoverCard>
+  <HoverCardTrigger>Hover over me</HoverCardTrigger>
+  <HoverCardContent>
+    This is the content of the hover card.
+  </HoverCardContent>
+</HoverCard>
+```

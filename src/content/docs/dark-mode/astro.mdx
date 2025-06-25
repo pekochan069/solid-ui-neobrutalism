@@ -8,7 +8,7 @@ next: dark-mode/tanstack-router
 nextLabel: TanStack Router
 ---
 
-### Create An Inline Theme Script
+## Create An Inline Theme Script
 
 ```astro ins={11-28}
 // src/pages/index.astro
@@ -41,21 +41,48 @@ import '../styles/globals.css'
 </script>
 ```
 
-### Add A Mode Toggler
+## Add A Mode Toggler
 
-#### Toggle
+### Toggle
 
 ```tsx
 // src/components/mode-toggle.tsx
+import { createEffect, createSignal, onMount } from "solid-js";
 import Moon from "lucide-solid/icons/moon";
 import Sun from "lucide-solid/icons/sun";
-import { toggleMode } from "solid-mode-watcher";
 
 import { Toggle } from "~/components/ui/toggle";
 
 export default function ModeToggle() {
+  const [theme, setTheme] = createSignal<"light" | "dark" | "system">("light");
+
+  onMount(() => {
+    const isDarkMode = document.documentElement.classList.contains("dark");
+    setTheme(isDarkMode ? "dark" : "light");
+  });
+
+  createEffect(() => {
+    const isDark =
+      theme() === "dark" ||
+      (theme() === "system" &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches);
+    document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    document.documentElement.dataset.theme = isDark
+      ? "catppuccin-macchiato"
+      : "catppuccin-latte";
+    ``;
+  });
+
+  const toggleMode = () => {
+    if (theme() === "light") {
+      setTheme("dark");
+    } else if (theme() === "dark") {
+      setTheme("light");
+    }
+  };
+
   return (
-    <Toggle onClick={toggleMode} class="absolute">
+    <Toggle onClick={toggleMode} variant="transparent">
       <Moon class="size-5 scale-0 -rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
       <Sun class="absolute size-5 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
     </Toggle>
@@ -63,7 +90,7 @@ export default function ModeToggle() {
 }
 ```
 
-#### Dropdown Menu
+### Dropdown Menu
 
 ```tsx
 // src/components/mode-toggle.tsx
@@ -90,4 +117,22 @@ export default function ModeToggle() {
     </DropdownMenu>
   );
 }
+```
+
+## Display The Mode Toggler
+
+```astro ins={3,11}
+// src/layouts/layout.astro
+---
+import { ModeToggle } from "~/components/mode-toggle";
+
+import "~/styles/global.css";
+---
+
+<html lang="en">
+	<body>
+    <slot />
+    <ModeToggle client:load />
+	</body>
+</html>
 ```

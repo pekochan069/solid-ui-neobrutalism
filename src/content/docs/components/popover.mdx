@@ -6,10 +6,37 @@ prev: components/pagination
 prevLabel: Pagination
 next: components/radio-group
 nextLabel: Radio Group
+docs: https://kobalte.dev/docs/core/components/popover
+apiReference: https://kobalte.dev/docs/core/components/popover#api-reference
 ---
 
 import PopoverCode from "/src/registry/items/ui/popover.tsx?raw"
+import PopoverDemoCode from "/src/registry/items/examples/popover-demo.tsx?raw"
+import PopoverDemo from "/src/registry/items/examples/popover-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={PopoverCode} lang="tsx" title="~/components/ui/popover.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={PopoverDemoCode}>
+    <PopoverDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="popover" code={PopoverCode} />
+
+## Usage
+
+```tsx
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "~/components/ui/popover";
+```
+
+```tsx
+<Popover>
+  <PopoverTrigger>Open Popover</PopoverTrigger>
+  <PopoverContent>
+    <p>This is the content of the popover.</p>
+  </PopoverContent>
+</Popover>
+```

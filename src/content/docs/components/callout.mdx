@@ -9,7 +9,37 @@ nextLabel: Card
 ---
 
 import CalloutCode from "/src/registry/items/ui/callout.tsx?raw"
+import CalloutDemo from "/src/registry/items/examples/callout-demo.tsx"
+import CalloutDemoCode from "/src/registry/items/examples/callout-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={CalloutCode} lang="tsx" title="~/components/ui/callout.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={CalloutDemoCode}>
+    <CalloutDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="callout" code={CalloutCode} />
+
+## Usage
+
+```tsx
+import { Callout, CalloutTitle, CalloutContent } from "~/components/ui/callout";
+```
+
+```tsx
+<Accordion collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Item 1</AccordionTrigger>
+    <AccordionContent>
+      Content for item 1.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Item 2</AccordionTrigger>
+    <AccordionContent>
+      Content for item 2.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```
+

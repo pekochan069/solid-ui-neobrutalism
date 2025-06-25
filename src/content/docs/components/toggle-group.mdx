@@ -6,10 +6,42 @@ prev: components/toggle
 prevLabel: Toggle
 next: components/tooltip
 nextLabel: Tooltip
+docs: https://kobalte.dev/docs/core/components/toggle-group
+apiReference: https://kobalte.dev/docs/core/components/toggle-group#api-reference
 ---
 
 import ToggleGroupCode from "/src/registry/items/ui/toggle-group.tsx?raw"
+import ToggleGroupDemoCode from "/src/registry/items/examples/toggle-group-demo.tsx?raw"
+import ToggleGroupDemo from "/src/registry/items/examples/toggle-group-demo.tsx"
+import ToggleGroupMultiple from "/src/registry/items/examples/toggle-group-multiple.tsx"
+import ToggleGroupMultipleCode from "/src/registry/items/examples/toggle-group-multiple.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={ToggleGroupCode} lang="tsx" title="~/components/ui/toggle-group.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={ToggleGroupDemoCode}>
+    <ToggleGroupDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="toggle-group" code={ToggleGroupCode} />
+
+## Usage
+
+```tsx
+import { ToggleGroup, ToggleGroupItem } from "~/components/ui/toggle-group";
+```
+
+```tsx
+<ToggleGroup>
+  <ToggleGroupItem value="option1">Option 1</ToggleGroupItem>
+  <ToggleGroupItem value="option2">Option 2</ToggleGroupItem>
+  <ToggleGroupItem value="option3">Option 3</ToggleGroupItem>
+</ToggleGroup>
+```
+
+## Examples
+
+### Multiple Selection
+
+<PreviewTabs demoCode={ToggleGroupMultipleCode} class="mt-4">
+    <ToggleGroupMultiple client:only="solid-js" />
+</PreviewTabs>

@@ -6,10 +6,61 @@ prev: components/badge-delta
 prevLabel: Badge Delta
 next: components/button
 nextLabel: Button
+docs: https://kobalte.dev/docs/core/components/breadcrumb
+apiReference: https://kobalte.dev/docs/core/components/breadcrumb#api-reference
 ---
 
 import BreadcrumbCode from "/src/registry/items/ui/breadcrumb.tsx?raw"
+import BreadcrumbDemoCode from "/src/registry/items/examples/breadcrumb-demo.tsx?raw"
+import BreadcrumbDemo from "/src/registry/items/examples/breadcrumb-demo.tsx"
+import BreadcrumbCustomSeparatorCode from "/src/registry/items/examples/breadcrumb-custom-separator.tsx?raw"
+import BreadcrumbCustomSeparatorDemo from "/src/registry/items/examples/breadcrumb-custom-separator.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={BreadcrumbCode} lang="tsx" title="~/components/ui/breadcrumb.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={BreadcrumbDemoCode}>
+    <BreadcrumbDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="breadcrumb" code={BreadcrumbCode} />
+
+## Usage
+
+```tsx
+import {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbSeparator,
+} from "~/components/ui/breadcrumb";
+```
+
+```tsx
+<Breadcrumb>
+  <BreadcrumbList>
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/">Home</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbLink href="/components">Components</BreadcrumbLink>
+    </BreadcrumbItem>
+    <BreadcrumbSeparator />
+    <BreadcrumbItem>
+      <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
+    </BreadcrumbItem>
+  </BreadcrumbList>
+</Breadcrumb>
+```
+
+## Examples
+
+### Custom Separator
+
+To use a custom separator, pass a custom separator component to the `separator` props of the `Breadcrumb` component.
+
+<PreviewTabs demoCode={BreadcrumbCustomSeparatorCode} class="mt-4">
+    <BreadcrumbCustomSeparatorDemo client:only="solid-js" /> 
+</PreviewTabs>

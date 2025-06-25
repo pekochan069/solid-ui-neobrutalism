@@ -6,10 +6,49 @@ prev: components/slider
 prevLabel: Slider
 next: components/switch
 nextLabel: Switch
+docs: https://solid-sonner.vercel.app/
+apiReference: https://github.com/wobsoriano/solid-sonner?tab=readme-ov-file#types
 ---
 
 import SonnerCode from "/src/registry/items/ui/sonner.tsx?raw"
+import SonnerDemoCode from "/src/registry/items/examples/sonner-demo.tsx?raw"
+import SonnerDemo from "/src/registry/items/examples/sonner-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={SonnerCode} lang="tsx" title="~/components/ui/sonner.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SonnerDemoCode}>
+    <SonnerDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="sonner" code={SonnerCode}>
+    Add the `Toaster` component to your root component (e.g., `App.tsx` or `index.tsx`)
+
+```tsx ins={4,12}
+// src/layout.tsx
+import type { ParentProps } from "solid-js"
+
+import { Toaster } from "~/components/ui/sonner"
+ 
+export default function RootLayout(props: ParentProps) {
+  return (
+    <html lang="en">
+      <head />
+      <body>
+        <main>{props.children}</main>
+        <Toaster />
+      </body>
+    </html>
+  )
+}
+```
+</InstallationTabs>
+
+## Usage
+
+```tsx
+import { toast } from "solid-sonner";
+```
+
+```tsx
+toast("Event has been created.")
+```

@@ -8,13 +8,13 @@ next: dark-mode/solid-start
 nextLabel: Solid Start
 ---
 
-### Install Solid Mode Watcher
+## Install Solid Mode Watcher
 
 Start by installing `solid-mode-watcher`
 
 <NpmCommand type="install" command="solid-mode-watcher" />
 
-### Add Mode Watcher To Your App
+## Add Mode Watcher To Your App
 
 ```tsx ins={2,8}
 // src/App.tsx
@@ -30,9 +30,9 @@ function App() {
 }
 ```
 
-### Add A Mode Toggler
+## Add A Mode Toggler
 
-#### Toggle
+### Toggle
 
 ```tsx
 // src/components/mode-toggle.tsx
@@ -44,7 +44,7 @@ import { Toggle } from "~/components/ui/toggle";
 
 export default function ModeToggle() {
   return (
-    <Toggle onClick={toggleMode} class="absolute">
+    <Toggle onClick={toggleMode} variant="transparent">
       <Moon class="size-5 scale-0 -rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
       <Sun class="absolute size-5 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
     </Toggle>
@@ -52,7 +52,7 @@ export default function ModeToggle() {
 }
 ```
 
-#### Dropdown Menu
+### Dropdown Menu
 
 ```tsx
 // src/components/mode-toggle.tsx

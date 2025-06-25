@@ -6,10 +6,63 @@ prev: components/dialog
 prevLabel: Dialog
 next: components/dropdown-menu
 nextLabel: Dropdown Menu
+docs: https://corvu.dev/docs/primitives/drawer/
+apiReference: https://corvu.dev/docs/primitives/drawer#api-reference
 ---
 
 import DrawerCode from "/src/registry/items/ui/drawer.tsx?raw"
+import DrawerDemoCode from "/src/registry/items/examples/drawer-demo.tsx?raw"
+import DrawerDemo from "/src/registry/items/examples/drawer-demo.tsx"
+import DrawerResponsiveCode from "/src/registry/items/examples/drawer-responsive.tsx?raw"
+import DrawerResponsiveDemo from "/src/registry/items/examples/drawer-responsive.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={DrawerCode} lang="tsx" title="~/components/ui/drawer.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={DrawerDemoCode}>
+    <DrawerDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="drawer" code={DrawerCode} />
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "~/components/ui/drawer";
+```
+
+```tsx
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+## Examples
+
+### Responsive Dialog
+
+You can combine the `Dialog` and `Drawer` components to create a responsive dialog. This renders a `Dialog` component on desktop and a `Drawer` component on mobile.
+
+<PreviewTabs demoCode={DrawerResponsiveCode}>
+    <DrawerResponsiveDemo client:only="solid-js" />
+</PreviewTabs>

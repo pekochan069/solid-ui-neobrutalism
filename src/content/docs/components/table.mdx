@@ -9,7 +9,50 @@ nextLabel: Tabs
 ---
 
 import TableCode from "/src/registry/items/ui/table.tsx?raw"
+import TableDemoCode from "/src/registry/items/examples/table-demo.tsx?raw"
+import TableDemo from "/src/registry/items/examples/table-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={TableCode} lang="tsx" title="~/components/ui/table.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={TableDemoCode}>
+    <TableDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="table" code={TableCode} />
+
+## Usage
+
+```tsx
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "~/components/ui/table";
+```
+
+```tsx
+<Table>
+  <TableCaption>A list of your recent invoices.</TableCaption>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Invoice</TableHead>
+      <TableHead>Payment Status</TableHead>
+      <TableHead>Payment Method</TableHead>
+      <TableHead class="text-right">Total Amount</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell class="font-medium">INV-001</TableCell>
+      <TableCell>Paid</TableCell>
+      <TableCell>Credit Card</TableCell>
+      <TableCell class="text-right">$1,000.00</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```

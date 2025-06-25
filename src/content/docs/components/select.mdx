@@ -6,10 +6,49 @@ prev: components/resizable
 prevLabel: Resizable
 next: components/separator
 nextLabel: Separator
+docs: https://kobalte.dev/docs/core/components/select
+apiReference: https://kobalte.dev/docs/core/components/select#api-reference
 ---
 
 import SelectCode from "/src/registry/items/ui/select.tsx?raw"
+import SelectDemoCode from "/src/registry/items/examples/select-demo.tsx?raw"
+import SelectDemo from "/src/registry/items/examples/select-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={SelectCode} lang="tsx" title="~/components/ui/select.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SelectDemoCode}>
+    <SelectDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="select" code={SelectCode} />
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectDescription,
+  SelectErrorMessage,
+  SelectHiddenSelect,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
+```
+
+```tsx
+<Select
+  value={value()}
+  onChange={setValue}
+  options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
+  placeholder="Select a fruit…"
+  itemComponent={(props) => <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>}
+>
+  <SelectTrigger aria-label="Fruit" class="w-[180px]">
+    <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+  </SelectTrigger>
+  <SelectContent />
+</Select>
+```

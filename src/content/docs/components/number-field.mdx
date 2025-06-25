@@ -6,10 +6,44 @@ prev: components/menubar
 prevLabel: Menubar
 next: components/otp-field
 nextLabel: OTP Field
+docs: https://kobalte.dev/docs/core/components/number-field
+apiReference: https://kobalte.dev/docs/core/components/number-field#api-reference
 ---
 
 import NumberFieldCode from "/src/registry/items/ui/number-field.tsx?raw"
+import NumberFieldDemoCode from "/src/registry/items/examples/number-field-demo.tsx?raw"
+import NumberFieldDemo from "/src/registry/items/examples/number-field-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={NumberFieldCode} lang="tsx" title="~/components/ui/number-field.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={NumberFieldDemoCode}>
+    <NumberFieldDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="number-field" code={NumberFieldCode} />
+
+## Usage
+
+```tsx
+import {
+  NumberField,
+  NumberFieldDecrementTrigger,
+  NumberFieldDescription,
+  NumberFieldErrorMessage,
+  NumberFieldGroup,
+  NumberFieldIncrementTrigger,
+  NumberFieldInput,
+  NumberFieldLabel,
+} from "~/components/ui/number-field";
+```
+
+```tsx
+<NumberField>
+  <NumberFieldLabel>Number Field</NumberFieldLabel>
+  <NumberFieldGroup>
+    <NumberFieldInput />
+    <NumberFieldIncrementTrigger>+</NumberFieldIncrementTrigger>
+    <NumberFieldDecrementTrigger>-</NumberFieldDecrementTrigger>
+  </NumberFieldGroup>
+</NumberFieldGroup>
+```

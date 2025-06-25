@@ -6,10 +6,55 @@ prev: components/command
 prevLabel: Command
 next: components/dialog
 nextLabel: Dialog
+docs: https://kobalte.dev/docs/core/components/context-menu
+apiReference: https://kobalte.dev/docs/core/components/context-menu#api-reference
 ---
 
 import ContextMenuCode from "/src/registry/items/ui/context-menu.tsx?raw"
+import ContextMenuDemoCode from "/src/registry/items/examples/context-menu-demo.tsx?raw"
+import ContextMenuDemo from "/src/registry/items/examples/context-menu-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={ContextMenuCode} lang="tsx" title="~/components/ui/context-menu.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={ContextMenuDemoCode}>
+    <ContextMenuDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="context-menu" code={ContextMenuCode} />
+
+## Usage
+
+```tsx
+import {
+  ContextMenu,
+  ContextMenuTrigger,
+  ContextMenuPortal,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuShortcut,
+  ContextMenuSeparator,
+  ContextMenuSub,
+  ContextMenuSubTrigger,
+  ContextMenuSubContent,
+  ContextMenuCheckboxItem,
+  ContextMenuGroup,
+  ContextMenuGroupLabel,
+  ContextMenuRadioGroup,
+  ContextMenuRadioItem,
+} from "~/components/ui/context-menu";
+```
+
+```tsx
+<ContextMenu>
+  <ContextMenuTrigger>Open</ContextMenuTrigger>
+  <ContextMenuContent>
+    <ContextMenuLabel>My Account</ContextMenuLabel>
+    <ContextMenuSeparator />
+    <ContextMenuItem>Profile</ContextMenuItem>
+    <ContextMenuItem>Billing</ContextMenuItem>
+    <ContextMenuItem>Team</ContextMenuItem>
+    <ContextMenuItem>Subscription</ContextMenuItem>
+  </ContextMenuContent>
+</ContextMenu>
+```
+

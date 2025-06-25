@@ -6,10 +6,54 @@ prev: components/radio-group
 prevLabel: Radio Group
 next: components/select
 nextLabel: Select
+docs: https://corvu.dev/docs/primitives/resizable/
+apiReference: https://corvu.dev/docs/primitives/resizable#api-reference
 ---
 
 import ResizableCode from "/src/registry/items/ui/resizable.tsx?raw"
+import ResizableDemoCode from "/src/registry/items/examples/resizable-demo.tsx?raw"
+import ResizableDemo from "/src/registry/items/examples/resizable-demo.tsx"
+import ResizableVerticalCode from "/src/registry/items/examples/resizable-vertical.tsx?raw"
+import ResizableVerticalDemo from "/src/registry/items/examples/resizable-vertical.tsx"
+import ResizableHorizontalCode from "/src/registry/items/examples/resizable-horizontal.tsx?raw"
+import ResizableHorizontalDemo from "/src/registry/items/examples/resizable-horizontal.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={ResizableCode} lang="tsx" title="~/components/ui/resizable.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={ResizableDemoCode}>
+    <ResizableDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="resizable" code={ResizableCode} />
+
+## Usage
+
+```tsx
+import {
+  Resizable,
+  ResizableHandle,
+  ResizablePanel,
+} from "~/components/ui/resizable";
+```
+
+```tsx
+<Resizable orientation="horizontal">
+  <ResizablePanel>One</ResizablePanel>
+  <ResizableHandle />
+  <ResizablePanel>Two</ResizablePanel>
+</Resizable>
+```
+
+## Examples
+
+### Vertical
+
+<PreviewTabs demoCode={ResizableVerticalCode} class="mt-4">
+    <ResizableVerticalDemo client:only="solid-js" />
+</PreviewTabs>
+
+### Horizontal
+
+<PreviewTabs demoCode={ResizableHorizontalCode} class="mt-4">
+    <ResizableHorizontalDemo client:only="solid-js" />
+</PreviewTabs>

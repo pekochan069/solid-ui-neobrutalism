@@ -4,12 +4,44 @@ slug: components/timeline
 description: A component that displays a timeline.
 prev: components/text-field
 prevLabel: Text Field
-next: components/toast
-nextLabel: Toast
+next: components/toggle
+nextLabel: Toggle
 ---
 
 import TimelineCode from "/src/registry/items/ui/timeline.tsx?raw"
+import TimelineDemoCode from "/src/registry/items/examples/timeline-demo.tsx?raw"
+import TimelineDemo from "/src/registry/items/examples/timeline-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={TimelineCode} lang="tsx" title="~/components/ui/timeline.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={TimelineDemoCode}>
+    <TimelineDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="timeline" code={TimelineCode} />
+
+## Usage
+
+```tsx
+import { Timeline } from "~/components/ui/timeline";
+```
+
+```tsx
+<Timeline
+  items={[
+    {
+      title: "Event #1",
+      description: "This is the first event of the timeline.",
+    },
+    {
+      title: "Event #2",
+      description: "This is the second event of the timeline.",
+    },
+    {
+      title: "Event #3",
+      description: "This is the third event of the timeline.",
+    },
+  ]}
+  activeItem={1}
+/>
+```

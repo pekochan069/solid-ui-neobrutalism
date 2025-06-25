@@ -6,10 +6,50 @@ prev: components/skeleton
 prevLabel: Skeleton
 next: components/sonner
 nextLabel: Sonner
+docs: https://kobalte.dev/docs/core/components/slider
+apiReference: https://kobalte.dev/docs/core/components/slider#api-reference
 ---
 
 import SliderCode from "/src/registry/items/ui/slider.tsx?raw"
+import SliderDemoCode from "/src/registry/items/examples/slider-demo.tsx?raw"
+import SliderDemo from "/src/registry/items/examples/slider-demo.tsx"
+import SliderSingle from "/src/registry/items/examples/slider-single.tsx"
+import SliderSingleCode from "/src/registry/items/examples/slider-single.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={SliderCode} lang="tsx" title="~/components/ui/slider.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SliderDemoCode}>
+    <SliderDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="slider" code={SliderCode} />
+
+## Usage
+
+```tsx
+import {
+  Slider,
+  SliderFill,
+  SliderLabel,
+  SliderThumb,
+  SliderTrack,
+  SliderValueLabel,
+} from "~/components/ui/slider";
+```
+
+```tsx
+<Slider>
+  <SliderTrack>
+    <SliderFill />
+    <SliderThumb />
+  </SliderTrack>
+</Slider>
+```
+
+## Examples
+
+### Single Value
+
+<PreviewTabs demoCode={SliderSingleCode} class="mt-4">
+    <SliderSingle client:only="solid-js" />
+</PreviewTabs>

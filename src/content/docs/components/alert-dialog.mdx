@@ -6,10 +6,44 @@ prev: components/alert
 prevLabel: Alert
 next: components/avatar
 nextLabel: Avatar
+docs: https://kobalte.dev/docs/core/components/alert-dialog
+apiReference: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
 ---
 
 import AlertDialogCode from "/src/registry/items/ui/alert-dialog.tsx?raw"
+import AlertDialogDemoCode from "/src/registry/items/examples/alert-dialog-demo.tsx?raw"
+import AlertDialogDemo from "/src/registry/items/examples/alert-dialog-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={AlertDialogCode} lang="tsx" title="~/components/ui/alert-dialog.tsx" />
-</CollapsibleCode>
+
+<PreviewTabs demoCode={AlertDialogDemoCode}>
+    <AlertDialogDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="alert-dialog" code={AlertDialogCode} />
+
+## Usage
+
+```tsx
+import {
+  AlertDialog,
+  AlertDialogTrigger,
+  AlertDialogContent,
+  AlertDialogTitle,
+  AlertDialogDescription,
+} from "~/components/ui/alert-dialog";
+```
+
+```tsx
+<AlertDialog>
+  <AlertDialogTrigger>Open</AlertDialogTrigger>
+  <AlertDialogContent>
+    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+    <AlertDialogDescription>
+    This action cannot be undone. This will permanently delete your account
+    and remove your data from our servers.
+    </AlertDialogDescription>
+  </AlertDialogContent>
+</AlertDialog>
+```

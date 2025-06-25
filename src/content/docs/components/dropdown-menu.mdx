@@ -6,10 +6,56 @@ prev: components/drawer
 prevLabel: Drawer
 next: components/hover-card
 nextLabel: Hover Card
+docs: https://kobalte.dev/docs/core/components/dropdown-menu
+apiReference: https://kobalte.dev/docs/core/components/dropdown-menu#api-reference
 ---
 
 import DropdownMenuCode from "/src/registry/items/ui/dropdown-menu.tsx?raw"
+import DropdownMenuDemoCode from "/src/registry/items/examples/dropdown-menu-demo.tsx?raw"
+import DropdownMenuDemo from "/src/registry/items/examples/dropdown-menu-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={DropdownMenuCode} lang="tsx" title="~/components/ui/dropdown-menu.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={DropdownMenuDemoCode}>
+    <DropdownMenuDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="dropdown-menu" code={DropdownMenuCode} />
+
+## Usage
+
+```tsx
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuGroupLabel,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+} from "~/components/ui/dropdown-menu";
+```
+
+```tsx
+<DropdownMenu>
+  <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Billing</DropdownMenuItem>
+    <DropdownMenuItem>Team</DropdownMenuItem>
+    <DropdownMenuItem>Subscription</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>
+```
+

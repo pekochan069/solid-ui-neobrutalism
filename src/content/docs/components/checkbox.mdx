@@ -1,15 +1,36 @@
 ---
 title: Checkbox
 slug: components/checkbox
-description: A component that displays a checkbox.
+description: A control that allows the user to toggle between checked and not checked.
 prev: components/carousel
 prevLabel: Carousel
 next: components/collapsible
 nextLabel: Collapsible
+docs: https://kobalte.dev/docs/core/components/checkbox
+apiReference: https://kobalte.dev/docs/core/components/checkbox#api-reference
 ---
 
 import CheckboxCode from "/src/registry/items/ui/checkbox.tsx?raw"
+import CheckboxDemo from "/src/registry/items/examples/checkbox-demo.tsx"
+import CheckboxDemoCode from "/src/registry/items/examples/checkbox-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={CheckboxCode} lang="tsx" title="~/components/ui/checkbox.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={CheckboxDemoCode}>
+    <CheckboxDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="checkbox" dependencies={['@kobalte/core']} code={CheckboxCode} />
+
+## Usage
+
+```tsx
+import { Checkbox } from "~/components/ui/checkbox";
+```
+
+```tsx
+<div class="flex items-center space-x-2">
+  <Checkbox id="terms" />
+  <label for="terms">Accept terms and conditions</label>
+</div>
+```

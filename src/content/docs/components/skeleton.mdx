@@ -1,15 +1,53 @@
 ---
 title: Skeleton
 slug: components/skeleton
-description: A component that displays a skeleton placeholder.
+description: Use to show a placeholder while content is loading.
 prev: components/sheet
 prevLabel: Sheet
 next: components/slider
 nextLabel: Slider
+docs: https://kobalte.dev/docs/core/components/skeleton
+apiReference: https://kobalte.dev/docs/core/components/skeleton#api-reference
 ---
 
 import SkeletonCode from "/src/registry/items/ui/skeleton.tsx?raw"
+import SkeletonDemo from "/src/registry/items/examples/skeleton-demo.tsx"
+import SkeletonDemoCode from "/src/registry/items/examples/skeleton-demo.tsx?raw"
+import SkeletonCircle from "/src/registry/items/examples/skeleton-circle.tsx"
+import SkeletonCircleCode from "/src/registry/items/examples/skeleton-circle.tsx?raw"
+import SkeletonNoAnimation from "/src/registry/items/examples/skeleton-no-animation.tsx"
+import SkeletonNoAnimationCode from "/src/registry/items/examples/skeleton-no-animation.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={SkeletonCode} lang="tsx" title="~/components/ui/skeleton.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SkeletonDemoCode}>
+    <SkeletonDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="skeleton" dependencies={['@kobalte/core']} code={SkeletonCode} />
+
+## Usage
+
+```tsx
+import { Skeleton } from "~/components/ui/skeleton";
+```
+
+```tsx
+<Skeleton width={48} height={16} />
+```
+
+## Examples
+
+### Circle
+
+<PreviewTabs demoCode={SkeletonCircleCode} class="mt-4">
+    <SkeletonCircle client:only="solid-js" />
+</PreviewTabs>
+
+### Disable animation
+
+You can disable animation by setting the `animate` prop to `false`.
+
+<PreviewTabs demoCode={SkeletonNoAnimationCode} class="mt-4">
+    <SkeletonNoAnimation client:only="solid-js" />
+</PreviewTabs>

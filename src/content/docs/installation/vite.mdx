@@ -8,7 +8,7 @@ next: installation/solid-start
 nextLabel: Solid Start
 ---
 
-### Create New Vite App
+## Create New Vite App
 
 Start by creating a new Vite Solid.js app using `create-vite`. Select **Solid.js** template when prompted:
 
@@ -40,13 +40,13 @@ cd {project-name}
 
 <NpmCommand type="install" command="" />
 
-### Add Tailwind CSS and Dependencies
+## Add Tailwind CSS and Dependencies
 
 <NpmCommand type="install" command="tailwindcss @tailwindcss/vite class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
 
 <NpmCommand type="install" command="-D @types/node" />
 
-### Edit `tsconfig.json` File
+## Edit `tsconfig.json` File
 
 The current version of vite splits TypeScript configuration into three files, two of which need to be edited. Add the `baseUrl` and `paths` properties to the `compilerOptions` section of the `tsconfig.json` and `tsconfig.app.json` files:
 
@@ -87,7 +87,7 @@ Then edit `tsconfig.app.json` file to extend the base configuration:
 }
 ```
 
-### Edit `vite.config.ts` File
+## Edit `vite.config.ts` File
 
 Add the following code to the vite.config.ts so your app can resolve paths without error:
 
@@ -108,7 +108,7 @@ export default defineConfig({
 });
 ```
 
-### Configure Styles
+## Configure Styles
 
 <CollapsibleCode>
 
@@ -241,7 +241,7 @@ export default defineConfig({
 
 </CollapsibleCode>
 
-### Add `cn` Helper Function
+## Add `cn` Helper Function
 
 ```ts
 // src/lib/utils.ts
@@ -253,7 +253,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-### Create A `components.json` File
+## Create A `components.json` File
 
 ```json
 // components.json
@@ -277,6 +277,6 @@ export function cn(...inputs: ClassValue[]) {
 
 Change the Tailwind CSS file path and aliases according to your project structure.
 
-### That's it!
+## That's it!
 
 Now you can start adding components to your app.

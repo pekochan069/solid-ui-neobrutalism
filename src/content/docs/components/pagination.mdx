@@ -6,10 +6,44 @@ prev: components/otp-field
 prevLabel: OTP Field
 next: components/popover
 nextLabel: Popover
+docs: https://kobalte.dev/docs/core/components/pagination
+apiReference: https://kobalte.dev/docs/core/components/pagination#api-reference
 ---
 
 import PaginationCode from "/src/registry/items/ui/pagination.tsx?raw"
+import PaginationDemoCode from "/src/registry/items/examples/pagination-demo.tsx?raw"
+import PaginationDemo from "/src/registry/items/examples/pagination-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={PaginationCode} lang="tsx" title="~/components/ui/pagination.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={PaginationDemoCode}>
+    <PaginationDemo client:only="solid-js" />
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="pagination" code={PaginationCode} />
+
+## Usage
+
+```tsx
+import {
+  Pagination,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationItems,
+  PaginationNext,
+  PaginationPrevious,
+} from "~/components/ui/pagination";
+```
+
+```tsx
+<Pagination
+  itemComponent={(props) => (
+    <PaginationItem page={props.page}>{props.page}</PaginationItem>
+  )}
+  ellipsisComponent={() => <PaginationEllipsis />}
+>
+  <PaginationPrevious />
+  <PaginationItems />
+  <PaginationNext />
+</Pagination>
+```

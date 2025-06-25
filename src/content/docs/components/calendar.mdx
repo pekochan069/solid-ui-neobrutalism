@@ -6,10 +6,56 @@ prev: components/button
 prevLabel: Button
 next: components/callout
 nextLabel: Callout
+docs: https://corvu.dev/docs/primitives/calendar/
+apiReference: https://corvu.dev/docs/primitives/calendar#api-reference
 ---
 
 import CalendarCode from "/src/registry/items/ui/calendar.tsx?raw"
+import CalendarDemo from "/src/registry/items/examples/calendar-demo.tsx"
+import CalendarDemoCode from "/src/registry/items/examples/calendar-demo.tsx?raw"
+import CalendarLocalesCode from "/src/registry/items/examples/calendar-locales.tsx?raw"
+import CalendarLocales from "/src/registry/items/examples/calendar-locales.tsx"
+import CalendarMultipleCode from "/src/registry/items/examples/calendar-multiple.tsx?raw"
+import CalendarMultiple from "/src/registry/items/examples/calendar-multiple.tsx"
+import CalendarRangeCode from "/src/registry/items/examples/calendar-range.tsx?raw"
+import CalendarRange from "/src/registry/items/examples/calendar-range.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={CalendarCode} lang="tsx" title="~/components/ui/calendar.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={CalendarDemoCode}>
+    <CalendarDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="calendar" code={CalendarCode} />
+
+## Usage
+
+```tsx
+import { Calendar } from "~/components/ui/calendar";
+```
+
+```tsx
+const [date, setDate] = createSignal<Date | null>(null);
+
+return <Calendar mode="single" value={date()} onValueChange={setDate} />;
+```
+
+## Examples
+
+### Locales
+
+<PreviewTabs demoCode={CalendarLocalesCode} class="mt-4">
+    <CalendarLocales client:only="solid-js" /> 
+</PreviewTabs>
+
+### Multiple Dates
+
+<PreviewTabs demoCode={CalendarMultipleCode} class="mt-4">
+    <CalendarMultiple client:only="solid-js" />
+</PreviewTabs>
+
+### Range Selection
+
+<PreviewTabs demoCode={CalendarRangeCode} class="mt-4">
+    <CalendarRange client:only="solid-js" />
+</PreviewTabs>

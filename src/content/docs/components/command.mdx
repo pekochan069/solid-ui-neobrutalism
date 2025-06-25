@@ -6,10 +6,64 @@ prev: components/combobox
 prevLabel: Combobox
 next: components/context-menu
 nextLabel: Context Menu
+docs: https://cmdk-solid.vercel.app/
+apiReference: https://github.com/create-signal/cmdk-solid?tab=readme-ov-file#use
 ---
 
 import CommandCode from "/src/registry/items/ui/command.tsx?raw"
+import CommandDemoCode from "/src/registry/items/examples/command-demo.tsx?raw"
+import CommandDemo from "/src/registry/items/examples/command-demo.tsx"
+import CommandDialogCode from "/src/registry/items/examples/command-dialog.tsx?raw"
+import CommandDialogDemo from "/src/registry/items/examples/command-dialog.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={CommandCode} lang="tsx" title="~/components/ui/command.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={CommandDemoCode}>
+    <CommandDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="command" code={CommandCode} />
+
+## Usage
+
+```tsx
+import {
+  Command,
+  CommandDialog,
+  CommandInput,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandItem,
+  CommandShortcut,
+  CommandSeparator,
+} from "~/components/ui/command";
+```
+
+```tsx
+<Command>
+  <CommandInput placeholder="Type a command or search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search Emoji</CommandItem>
+      <CommandItem>Calculator</CommandItem>
+    </CommandGroup>
+    <CommandSeparator />
+    <CommandGroup heading="Settings">
+      <CommandItem>Profile</CommandItem>
+      <CommandItem>Billing</CommandItem>
+      <CommandItem>Settings</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>
+```
+
+## Examples
+
+### Dialog
+
+<PreviewTabs demoCode={CommandDialogCode} class="mt-4">
+    <CommandDialogDemo client:only="solid-js" />
+</PreviewTabs>

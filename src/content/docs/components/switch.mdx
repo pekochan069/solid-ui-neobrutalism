@@ -1,15 +1,38 @@
 ---
 title: Switch
 slug: components/switch
-description: A component that displays a toggle switch.
+description: A control that allows the user to toggle between checked and not checked.
 prev: components/sonner
 prevLabel: Sonner
 next: components/table
 nextLabel: Table
+docs: https://kobalte.dev/docs/core/components/switch
+apiReference: https://kobalte.dev/docs/core/components/switch#api-reference
 ---
 
 import SwitchCode from "/src/registry/items/ui/switch.tsx?raw"
+import SwitchDemo from "/src/registry/items/examples/switch-demo.tsx"
+import SwitchDemoCode from "/src/registry/items/examples/switch-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={SwitchCode} lang="tsx" title="~/components/ui/switch.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SwitchDemoCode}>
+    <SwitchDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="switch" dependencies={['@kobalte/core']} code={SwitchCode} />
+
+## Usage
+
+```tsx
+import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "~/components/ui/switch";
+```
+
+```tsx
+<Switch class="flex items-center space-x-2">
+  <SwitchControl>
+    <SwitchThumb />
+  </SwitchControl>
+  <SwitchLabel>Airplane Mode</SwitchLabel>
+</Switch>
+```

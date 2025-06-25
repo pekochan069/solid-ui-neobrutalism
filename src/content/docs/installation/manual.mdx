@@ -8,15 +8,15 @@ next: components
 nextLabel: Components
 ---
 
-### Add Tailwind CSS To Your Solid.js Project.
+## Add Tailwind CSS To Your Solid.js Project.
 
 [Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation/using-vite)
 
-### Add Dependencies
+## Add Dependencies
 
 <NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
 
-### Configure Path Aliases
+## Configure Path Aliases
 
 ```json ins={6-9}
 // tsconfig.json
@@ -34,7 +34,7 @@ nextLabel: Components
 
 The `~` alias is a preference. You can use other aliases such as `@` if you want.
 
-### Configure Styles
+## Configure Styles
 
 <CollapsibleCode>
 
@@ -167,7 +167,7 @@ The `~` alias is a preference. You can use other aliases such as `@` if you want
 
 </CollapsibleCode>
 
-### Add `cn` Helper Function
+## Add `cn` Helper Function
 
 ```ts
 // src/lib/utils.ts
@@ -179,7 +179,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 ```
 
-### Create A `components.json` File
+## Create A `components.json` File
 
 ```json
 // components.json
@@ -203,6 +203,6 @@ export function cn(...inputs: ClassValue[]) {
 
 Change the Tailwind CSS file path and aliases according to your project structure.
 
-### That's it!
+## That's it!
 
 Now you can start adding components to your app.

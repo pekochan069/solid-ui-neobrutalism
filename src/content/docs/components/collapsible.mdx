@@ -6,10 +6,38 @@ prev: components/checkbox
 prevLabel: Checkbox
 next: components/combobox
 nextLabel: Combobox
+docs: https://kobalte.dev/docs/core/components/collapsible
+apiReference: https://kobalte.dev/docs/core/components/collapsible#api-reference
 ---
 
 import CollapsibleCode from "/src/registry/items/ui/collapsible.tsx?raw"
+import CollapsibleDemoCode from "/src/registry/items/examples/collapsible-demo.tsx?raw"
+import CollapsibleDemo from "/src/registry/items/examples/collapsible-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={CollapsibleCode} lang="tsx" title="~/components/ui/collapsible.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={CollapsibleDemoCode}>
+    <CollapsibleDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="collapsible" code={CollapsibleCode} />
+
+## Usage
+
+```tsx
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "~/components/ui/collapsible";
+```
+
+```tsx
+<Collapsible>
+  <CollapsibleTrigger>Toggle</CollapsibleTrigger>
+  <CollapsibleContent>
+    <p>This is the content of the collapsible section.</p>
+  </CollapsibleContent>
+</Collapsible>
+```
+

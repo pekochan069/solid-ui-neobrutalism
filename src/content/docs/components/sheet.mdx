@@ -6,10 +6,58 @@ prev: components/separator
 prevLabel: Separator
 next: components/skeleton
 nextLabel: Skeleton
+docs: https://kobalte.dev/docs/core/components/dialog
+apiReference: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
 import SheetCode from "/src/registry/items/ui/sheet.tsx?raw"
+import SheetDemoCode from "/src/registry/items/examples/sheet-demo.tsx?raw"
+import SheetDemo from "/src/registry/items/examples/sheet-demo.tsx"
+import SheetSideCode from "/src/registry/items/examples/sheet-side.tsx?raw"
+import SheetSide from "/src/registry/items/examples/sheet-side.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={SheetCode} lang="tsx" title="~/components/ui/sheet.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SheetDemoCode}>
+    <SheetDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="sheet" code={SheetCode} />
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "~/components/ui/sheet";
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+```
+
+## Examples
+
+### Side
+
+<PreviewTabs demoCode={SheetSideCode} class="mt-4">
+    <SheetSide client:only="solid-js" />
+</PreviewTabs>

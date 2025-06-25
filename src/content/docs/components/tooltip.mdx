@@ -1,13 +1,40 @@
 ---
 title: Tooltip
 slug: components/tooltip
-description: A component that displays a tooltip.
+description: A floating popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
 prev: components/toggle-group
 prevLabel: Toggle Group
+docs: https://kobalte.dev/docs/core/components/tooltip
+apiReference: https://kobalte.dev/docs/core/components/tooltip#api-reference
 ---
 
 import TooltipCode from "/src/registry/items/ui/tooltip.tsx?raw"
+import TooltipDemo from "/src/registry/items/examples/tooltip-demo.tsx"
+import TooltipDemoCode from "/src/registry/items/examples/tooltip-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={TooltipCode} lang="tsx" title="~/components/ui/tooltip.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={TooltipDemoCode}>
+    <TooltipDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="tooltip" dependencies={['@kobalte/core']} code={TooltipCode} />
+
+## Usage
+
+```tsx
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "~/components/ui/tooltip";
+```
+
+```tsx
+<Tooltip>
+  <TooltipTrigger>Hover me</TooltipTrigger>
+  <TooltipContent>
+    <p>Add to library</p>
+  </TooltipContent>
+</Tooltip>
+```

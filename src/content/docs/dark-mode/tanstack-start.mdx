@@ -8,13 +8,13 @@ next: components
 nextLabel: Components
 ---
 
-### Install Solid Mode Watcher
+## Install Solid Mode Watcher
 
 Start by installing `solid-mode-watcher`
 
 <NpmCommand type="install" command="solid-mode-watcher" />
 
-### Add Mode Watcher To The Root Component
+## Add Mode Watcher To The Root Component
 
 ```tsx ins={4,21}
 // src/routes/__root.tsx
@@ -43,9 +43,9 @@ function RootComponent() {
 }
 ```
 
-### Add A Mode Toggler
+## Add A Mode Toggler
 
-#### Toggle
+### Toggle
 
 ```tsx
 // src/components/mode-toggle.tsx
@@ -57,7 +57,7 @@ import { Toggle } from "~/components/ui/toggle";
 
 export default function ModeToggle() {
   return (
-    <Toggle onClick={toggleMode} class="absolute">
+    <Toggle onClick={toggleMode} variant="transparent">
       <Moon class="size-5 scale-0 -rotate-90 transition-transform dark:scale-100 dark:rotate-0" />
       <Sun class="absolute size-5 scale-100 rotate-0 transition-transform dark:scale-0 dark:-rotate-90" />
     </Toggle>
@@ -65,7 +65,7 @@ export default function ModeToggle() {
 }
 ```
 
-#### Dropdown Menu
+### Dropdown Menu
 
 ```tsx
 // src/components/mode-toggle.tsx

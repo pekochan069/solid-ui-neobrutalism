@@ -9,7 +9,23 @@ nextLabel: Badge Delta
 ---
 
 import BadgeCode from "/src/registry/items/ui/badge.tsx?raw"
+import BadgeDemoCode from "/src/registry/items/examples/badge-demo.tsx?raw"
+import BadgeDemo from "/src/registry/items/examples/badge-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={BadgeCode} lang="tsx" title="~/components/ui/badge.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={BadgeDemoCode}>
+    <BadgeDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="badge" code={BadgeCode} />
+
+## Usage
+
+```tsx
+import { Badge } from "~/components/ui/badge";
+```
+
+```tsx
+<Badge>Badge</Badge>
+```

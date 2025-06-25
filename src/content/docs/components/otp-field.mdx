@@ -6,10 +6,47 @@ prev: components/number-field
 prevLabel: Number Field
 next: components/pagination
 nextLabel: Pagination
+docs: https://corvu.dev/docs/primitives/otp-field/
+apiReference: https://corvu.dev/docs/primitives/otp-field#api-reference
 ---
 
-import OtpFieldCode from "/src/registry/items/ui/otp-field.tsx?raw"
+import OTPFieldCode from "/src/registry/items/ui/otp-field.tsx?raw"
+import OTPFieldDemoCode from "/src/registry/items/examples/otp-field-demo.tsx?raw"
+import OTPFieldDemo from "/src/registry/items/examples/otp-field-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={OtpFieldCode} lang="tsx" title="~/components/ui/otp-field.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={OTPFieldDemoCode}>
+    <OTPFieldDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="otp-field" code={OTPFieldCode} />
+
+## Usage
+
+```tsx
+import {
+  OTPField,
+  OTPFieldGroup,
+  OTPFieldInput,
+  OTPFieldSeparator,
+  OTPFieldSlot,
+} from "~/components/ui/otp-field";
+```
+
+```tsx
+<OTPField maxLength={6}>
+  <OTPFieldInput />
+  <OTPFieldGroup>
+    <OTPFieldSlot index={0} />
+    <OTPFieldSlot index={1} />
+    <OTPFieldSlot index={2} />
+  </OTPFieldGroup>
+  <OTPFieldSeparator />
+  <OTPFieldGroup>
+    <OTPFieldSlot index={3} />
+    <OTPFieldSlot index={4} />
+    <OTPFieldSlot index={5} />
+  </OTPFieldGroup>
+</OTPField>
+```

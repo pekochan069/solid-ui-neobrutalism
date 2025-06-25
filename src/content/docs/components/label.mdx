@@ -1,7 +1,7 @@
 ---
 title: Label
 slug: components/label
-description: A component that displays a label.
+description: Renders an accessible label associated with controls.
 prev: components/hover-card
 prevLabel: Hover Card
 next: components/menubar
@@ -9,7 +9,24 @@ nextLabel: Menubar
 ---
 
 import LabelCode from "/src/registry/items/ui/label.tsx?raw"
+import LabelDemo from "/src/registry/items/examples/label-demo.tsx"
+import LabelDemoCode from "/src/registry/items/examples/label-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={LabelCode} lang="tsx" title="~/components/ui/label.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={LabelDemoCode}>
+    <LabelDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="label" code={LabelCode} />
+
+## Usage
+
+```tsx
+import { Label } from "~/components/ui/label";
+```
+
+```tsx
+<Label for="email">Your email address</Label>
+<input type="email" id="email" />
+```

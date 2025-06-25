@@ -6,10 +6,59 @@ prev: components/label
 prevLabel: Label
 next: components/number-field
 nextLabel: Number Field
+docs: https://kobalte.dev/docs/core/components/menubar
+apiReference: https://kobalte.dev/docs/core/components/menubar#api-reference
 ---
 
 import MenubarCode from "/src/registry/items/ui/menubar.tsx?raw"
+import MenubarDemoCode from "/src/registry/items/examples/menubar-demo.tsx?raw"
+import MenubarDemo from "/src/registry/items/examples/menubar-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={MenubarCode} lang="tsx" title="~/components/ui/menubar.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={MenubarDemoCode}>
+    <MenubarDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="menubar" code={MenubarCode} />
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarGroup,
+  MenubarGroupLabel,
+  MenubarItem,
+  MenubarItemLabel,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from "~/components/ui/menubar";
+```
+
+```tsx
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Share</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```

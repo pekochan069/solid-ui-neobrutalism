@@ -1,15 +1,55 @@
 ---
 title: Button
 slug: components/button
-description: A component that displays a button.
+description: Displays a button or a component that looks like a button with neobrutalism design.
 prev: components/breadcrumb
 prevLabel: Breadcrumb
 next: components/calendar
 nextLabel: Calendar
+docs: https://kobalte.dev/docs/core/components/button
+apiReference: https://kobalte.dev/docs/core/components/button#api-reference
 ---
 
 import ButtonCode from "/src/registry/items/ui/button.tsx?raw"
+import ButtonDemo from "/src/registry/items/examples/button-demo.tsx"
+import ButtonDemoCode from "/src/registry/items/examples/button-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={ButtonCode} lang="tsx" title="~/components/ui/button.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={ButtonDemoCode}>
+    <ButtonDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="button" code={ButtonCode} />
+
+## Usage
+
+```tsx
+import { Button } from "~/components/ui/button";
+```
+
+```tsx
+<Button>Button</Button>
+```
+
+## Link
+
+You can use the `as` prop to make another component look like a button. Here's an example of a link that looks like a button:
+
+```tsx
+import { Button } from "~/components/ui/button";
+import { CustomLink } from "~/components/custom-link";
+
+export function LinkAsButton() {
+  return (
+    <div>
+      <Button as="a" href="https://github.com/pekochan069/solid-ui-neobrutalism">
+        Go to GitHub
+      </Button>
+      <Button as={CustomLink} href="https://github.com/pekochan069/solid-ui-neobrutalism" customProp="customValue">
+        Custom Link Button
+      </Button>
+    </div>
+  )
+}
+```

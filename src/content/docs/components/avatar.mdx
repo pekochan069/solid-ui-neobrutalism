@@ -6,10 +6,32 @@ prev: components/alert-dialog
 prevLabel: Alert Dialog
 next: components/badge
 nextLabel: Badge
+docs: https://kobalte.dev/docs/core/components/image
+apiReference: https://kobalte.dev/docs/core/components/image#api-reference
 ---
 
 import AvatarCode from "/src/registry/items/ui/avatar.tsx?raw"
+import AvatarDemoCode from "/src/registry/items/examples/avatar-demo.tsx?raw"
+import AvatarDemo from "/src/registry/items/examples/avatar-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={AvatarCode} lang="tsx" title="~/components/ui/avatar.tsx" />
-</CollapsibleCode>
+
+<PreviewTabs demoCode={AvatarDemoCode}>
+    <AvatarDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="avatar" code={AvatarCode} />
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+```
+
+```tsx
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```

@@ -1,7 +1,7 @@
 ---
 title: Card
 slug: components/card
-description: A component that displays a card.
+description: Displays a card with header, content, and footer with neobrutalism design.
 prev: components/callout
 prevLabel: Callout
 next: components/carousel
@@ -9,7 +9,41 @@ nextLabel: Carousel
 ---
 
 import CardCode from "/src/registry/items/ui/card.tsx?raw"
+import CardDemo from "/src/registry/items/examples/card-demo.tsx"
+import CardDemoCode from "/src/registry/items/examples/card-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={CardCode} lang="tsx" title="~/components/ui/card.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={CardDemoCode}>
+    <CardDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="card" code={CardCode} />
+
+## Usage
+
+```tsx
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "~/components/ui/card";
+```
+
+```tsx
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card Description</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Card Content</p>
+  </CardContent>
+  <CardFooter>
+    <p>Card Footer</p>
+  </CardFooter>
+</Card>
+```

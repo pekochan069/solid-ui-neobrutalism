@@ -6,10 +6,45 @@ prev: components/context-menu
 prevLabel: Context Menu
 next: components/drawer
 nextLabel: Drawer
+docs: https://kobalte.dev/docs/core/components/dialog
+apiReference: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
 import DialogCode from "/src/registry/items/ui/dialog.tsx?raw"
+import DialogDemoCode from "/src/registry/items/examples/dialog-demo.tsx?raw"
+import DialogDemo from "/src/registry/items/examples/dialog-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={DialogCode} lang="tsx" title="~/components/ui/dialog.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={DialogDemoCode}>
+    <DialogDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="dialog" code={DialogCode} />
+
+## Usage
+
+```tsx
+import { 
+ Dialog,
+ DialogTrigger,
+ DialogContent,
+ DialogHeader,
+ DialogFooter,
+ DialogTitle,
+ DialogDescription,
+} from "~/components/ui/dialog";
+```
+
+```tsx
+<Dialog>
+  <DialogTrigger>Open</DialogTrigger>
+  <DialogContent>
+  <DialogHeader>
+    <DialogTitle>Dialog Title</DialogTitle>
+    <DialogDescription>This is a description of the dialog.</DialogDescription>
+  </DialogHeader>
+    <p>This is the content of the dialog.</p>
+  </DialogContent>
+</DialogContent>
+```

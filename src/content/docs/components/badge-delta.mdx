@@ -9,7 +9,27 @@ nextLabel: Breadcrumb
 ---
 
 import BadgeDeltaCode from "/src/registry/items/ui/badge-delta.tsx?raw"
+import BadgeDeltaDemoCode from "/src/registry/items/examples/badge-delta-demo.tsx?raw"
+import BadgeDeltaDemo from "/src/registry/items/examples/badge-delta-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={BadgeDeltaCode} lang="tsx" title="~/components/ui/badge-delta.tsx" />
-</CollapsibleCode>
+
+<PreviewTabs demoCode={BadgeDeltaDemoCode}>
+    <BadgeDeltaDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="badge-delta" code={BadgeDeltaCode} />
+
+## Usage
+
+```tsx
+import { BadgeDelta } from "~/components/ui/badge-delta";
+```
+
+```tsx
+<BadgeDelta deltaType="increase">
+  <span>+10</span>
+  <span>New followers</span>
+</BadgeDelta>
+```

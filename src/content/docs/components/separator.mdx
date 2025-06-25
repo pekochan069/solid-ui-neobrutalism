@@ -1,15 +1,33 @@
 ---
 title: Separator
 slug: components/separator
-description: A component that displays a visual separator.
+description: Visually or semantically separates content.
 prev: components/select
 prevLabel: Select
 next: components/sheet
 nextLabel: Sheet
+docs: https://kobalte.dev/docs/core/components/separator
+apiReference: https://kobalte.dev/docs/core/components/separator#api-reference
 ---
 
 import SeparatorCode from "/src/registry/items/ui/separator.tsx?raw"
+import SeparatorDemo from "/src/registry/items/examples/separator-demo.tsx"
+import SeparatorDemoCode from "/src/registry/items/examples/separator-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={SeparatorCode} lang="tsx" title="~/components/ui/separator.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={SeparatorDemoCode}>
+    <SeparatorDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="separator" dependencies={['@kobalte/core']} code={SeparatorCode} />
+
+## Usage
+
+```tsx
+import { Separator } from "~/components/ui/separator";
+```
+
+```tsx
+<Separator />
+```

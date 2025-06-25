@@ -6,10 +6,62 @@ prev: components/collapsible
 prevLabel: Collapsible
 next: components/command
 nextLabel: Command
+docs: https://kobalte.dev/docs/core/components/combobox
+apiReference: https://kobalte.dev/docs/core/components/combobox#api-reference
 ---
 
 import ComboboxCode from "/src/registry/items/ui/combobox.tsx?raw"
+import ComboboxDemoCode from "/src/registry/items/examples/combobox-demo.tsx?raw"
+import ComboboxDemo from "/src/registry/items/examples/combobox-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={ComboboxCode} lang="tsx" title="~/components/ui/combobox.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={ComboboxDemoCode}>
+    <ComboboxDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="combobox" code={ComboboxCode} />
+
+## Usage
+
+```tsx
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxControl,
+  ComboboxHiddenSelect,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxItemIndicator,
+  ComboboxItemLabel,
+  ComboboxSection,
+  ComboboxTrigger,
+} from "~/components/ui/combobox";
+```
+
+```tsx
+<Combobox<Food, Category>
+  options={ALL_OPTIONS}
+  optionValue="value"
+  optionTextValue="label"
+  optionLabel="label"
+  optionDisabled="disabled"
+  optionGroupChildren="options"
+  placeholder="Search a food…"
+  itemComponent={(props) => (
+    <ComboboxItem item={props.item}>
+      <ComboboxItemLabel>{props.item.rawValue.label}</ComboboxItemLabel>
+      <ComboboxItemIndicator />
+    </ComboboxItem>
+  )}
+  sectionComponent={(props) => (
+    <ComboboxSection>{props.section.rawValue.label}</ComboboxSection>
+  )}
+>
+  <ComboboxControl aria-label="Food" class="bg-background">
+    <ComboboxInput />
+    <ComboboxTrigger />
+  </ComboboxControl>
+  <ComboboxContent />
+</Combobox>
+```

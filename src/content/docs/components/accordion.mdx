@@ -6,10 +6,46 @@ prev: components
 prevLabel: Components
 next: components/alert
 nextLabel: Alert
+docs: https://kobalte.dev/docs/core/components/accordion
+apiReference: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
 import AccordionCode from "/src/registry/items/ui/accordion.tsx?raw"
+import AccordionDemo from "/src/registry/items/examples/accordion-demo.tsx"
+import AccordionDemoCode from "/src/registry/items/examples/accordion-demo.tsx?raw"
 
-<CollapsibleCode>
-    <CodeComponent code={AccordionCode} lang="tsx" title="~/components/ui/accordion.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={AccordionDemoCode}>
+    <AccordionDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="accordion" code={AccordionCode} />
+
+## Usage
+
+```tsx
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "~/components/ui/accordion";
+```
+
+```tsx
+<Accordion collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Item 1</AccordionTrigger>
+    <AccordionContent>
+      Content for item 1.
+    </AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="item-2">
+    <AccordionTrigger>Item 2</AccordionTrigger>
+    <AccordionContent>
+      Content for item 2.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>
+```

@@ -6,10 +6,49 @@ prev: components/table
 prevLabel: Table
 next: components/text-field
 nextLabel: Text Field
+docs: https://kobalte.dev/docs/core/components/tabs
+apiReference: https://kobalte.dev/docs/core/components/tabs#api-reference
 ---
 
 import TabsCode from "/src/registry/items/ui/tabs.tsx?raw"
+import TabsDemoCode from "/src/registry/items/examples/tabs-demo.tsx?raw"
+import TabsDemo from "/src/registry/items/examples/tabs-demo.tsx"
 
-<CollapsibleCode>
-    <CodeComponent code={TabsCode} lang="tsx" title="~/components/ui/tabs.tsx" />
-</CollapsibleCode>
+<PreviewTabs demoCode={TabsDemoCode}>
+    <TabsDemo client:only="solid-js" /> 
+</PreviewTabs>
+
+## Installation
+
+<InstallationTabs name="tabs" code={TabsCode} />
+
+## Usage
+
+```tsx
+import {
+  Tabs,
+  TabsContent,
+  TabsIndicator,
+  TabsList,
+  TabsTrigger,
+} from "~/components/ui/tabs";
+```
+
+```tsx
+<Tabs defaultValue="tab1">
+  <TabList>
+    <Tab value="tab1">Tab 1</Tab>
+    <Tab value="tab2">Tab 2</Tab>
+    <Tab value="tab3">Tab 3</Tab>
+  </TabList>
+  <TabsContent value="tab1">
+    Content for Tab 1
+  </TabsContent>
+  <TabsContent value="tab2">
+    Content for Tab 2
+  </TabsContent>
+  <TabsContent value="tab3">
+    Content for Tab 3
+  </TabsContent>
+</Tabs>
+```
