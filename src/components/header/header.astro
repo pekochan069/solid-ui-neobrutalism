@@ -1,15 +1,19 @@
 ---
 import { nav } from "~/lib/nav";
-import DesktopNav from "./desktop-nav";
 import MobileNav from "./mobile-nav";
-import ThemeToggle from "./theme-toggle";
+import ThemeToggle from "./mode-toggle";
 ---
 
 <header class="sticky top-0 z-50 w-full border-b-4 bg-background">
   <div class="flex h-(--header-height) items-center justify-between px-4">
     <div>
       <div class="invisible hidden lg:visible lg:block">
-        <DesktopNav client:load navGroups={nav} />
+        <nav>
+          <a href="/">Home</a>
+          <a href="/docs">Docs</a>
+          <a href="/docs/components">Components</a>
+          <a href="/docs/themes">Themes</a>
+        </nav>
       </div>
       <div class="lg:invisible lg:hidden">
         <MobileNav client:load navGroups={nav} />

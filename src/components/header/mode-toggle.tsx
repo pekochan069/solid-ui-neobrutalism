@@ -4,7 +4,7 @@ import SunIcon from "lucide-solid/icons/sun";
 
 import { Button } from "~/components/ui/button";
 
-export default function ThemeToggle() {
+export default function ModeToggle() {
   const [theme, setTheme] = createSignal<"light" | "dark" | "system">("light");
 
   onMount(() => {
