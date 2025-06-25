@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/solid";
-import { Terminal } from "lucide-solid";
+import TerminalIcon from "lucide-solid/icons/terminal";
 
 import { packageManagerAtom } from "~/atoms/global-atoms";
 import { Tabs, TabsList, TabsTrigger } from "../ui/tabs";
@@ -16,7 +16,7 @@ export default function NpmCommandTabs() {
     >
       <TabsList class="translate-y-2 border-b-0 bg-code-frame pr-2 shadow-shadow [&>*]:-translate-y-1">
         <div class="mr-3 ml-2">
-          <Terminal class="size-4 text-muted-foreground" />
+          <TerminalIcon class="size-4 text-muted-foreground" />
         </div>
         <TabsTrigger value="npm" class="py-0.5">
           <span>npm</span>

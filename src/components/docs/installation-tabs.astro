@@ -1,0 +1,108 @@
+---
+import { Code } from "astro-expressive-code/components";
+
+import CollapsibleCode from "./collapsible-code.astro";
+import NpmCommand from "./npm-command.astro";
+import { BadgeDelta } from "~/components/ui/badge-delta";
+import { Index } from "~/registry/__index__";
+
+type Props = {
+  name: string;
+  dependencies?: string[];
+  registryDependencies?: string[];
+  code: string;
+};
+
+const { name, code } = Astro.props;
+
+const dependencies = Index[name].dependencies;
+const registryDependencies = Index[name].registryDependencies;
+---
+
+<div class="mt-6">
+  <div class="ml-2 flex gap-4">
+    <button
+      class="cli-button text-xl text-muted-foreground ui-selected:text-foreground"
+      data-selected>cli</button
+    >
+    <button
+      class="manual-button text-xl text-muted-foreground ui-selected:text-foreground"
+      >manual</button
+    >
+  </div>
+  <div class="cli-content">
+    <NpmCommand
+      type="exec"
+      command={`shadcn@latest add https://solid-ui-neobrutalism.vercel.app/r/${name}.json`}
+      class="mt-2"
+    />
+  </div>
+  <div class="manual-content invisible hidden [&_.expressive-code]:mt-0">
+    {
+      dependencies !== undefined && (
+        <>
+          <p class="mt-2">Install the following dependencies</p>
+          <NpmCommand
+            type="install"
+            command={dependencies.join(" ")}
+            class="mt-2"
+          />
+        </>
+      )
+    }
+    {
+      registryDependencies !== undefined && (
+        <>
+          <p class="mt-2">Install the following component dependencies</p>
+          <div class="mt-2 flex flex-wrap gap-2">
+            {registryDependencies.map((dependency: string) => (
+              <>
+                <a
+                  href={`/docs/components/${dependency}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BadgeDelta
+                    deltaType="moderateIncrease"
+                    iconLocation="right"
+                    class="bg-primary text-primary-foreground hover:bg-primary"
+                  >
+                    {dependency}
+                  </BadgeDelta>
+                </a>
+              </>
+            ))}
+          </div>
+        </>
+      )
+    }
+    <p class="mt-6">Copy and paste the following code into your project</p>
+    <CollapsibleCode class="mt-2">
+      <Code code={code} lang="tsx" title={`~/components/ui/${name}.tsx`} />
+    </CollapsibleCode>
+    <p class="mt-6">Update the import paths to match your project setup.</p>
+    <slot />
+  </div>
+</div>
+<script>
+  const cliButton = document.querySelector<HTMLButtonElement>(".cli-button")!;
+  const manualButton =
+    document.querySelector<HTMLButtonElement>(".manual-button")!;
+  const cliContent = document.querySelector<HTMLDivElement>(".cli-content")!;
+  const manualContent =
+    document.querySelector<HTMLDivElement>(".manual-content")!;
+
+  cliButton.addEventListener("click", () => {
+    manualButton.removeAttribute("data-selected");
+    cliButton.setAttribute("data-selected", "true");
+    cliContent.classList.remove("invisible", "hidden");
+    manualContent.classList.add("invisible", "hidden");
+  });
+
+  manualButton.addEventListener("click", () => {
+    cliButton.removeAttribute("data-selected");
+    manualButton.setAttribute("data-selected", "true");
+    manualContent.classList.remove("invisible", "hidden");
+    cliContent.classList.add("invisible", "hidden");
+  });
+</script>

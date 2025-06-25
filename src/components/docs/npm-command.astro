@@ -3,14 +3,16 @@ import type { PackageManager } from "~/types/store";
 
 import { Code } from "astro-expressive-code/components";
 
+import { cn } from "~/lib/utils";
 import NpmCommandTabs from "./npm-command-tabs";
 
 type Props = {
   type: "install" | "uninstall" | "create" | "run" | "exec";
   command: string;
+  class?: string;
 };
 
-const { type, command } = Astro.props;
+const { type, command, class: className } = Astro.props;
 
 const prefix = (packageManager: PackageManager) => {
   switch (type) {
@@ -93,7 +95,7 @@ const contents = [
 ];
 ---
 
-<div class="npm-command mt-6">
+<div class={cn("npm-command mt-6", className)}>
   <div>
     <NpmCommandTabs client:only />
   </div>

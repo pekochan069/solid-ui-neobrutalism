@@ -1,0 +1,93 @@
+---
+import { Code } from "astro-expressive-code/components";
+
+import { cn } from "~/lib/utils";
+
+type Props = {
+  demoCode: string;
+  class?: string;
+};
+
+const { demoCode, class: className } = Astro.props;
+---
+
+<preview-tabs>
+  <div class={className}>
+    <div class="ml-2 flex gap-4">
+      <button
+        class="preview-button text-xl text-muted-foreground ui-selected:text-foreground"
+        data-selected>Preview</button
+      >
+      <button
+        class="code-button text-xl text-muted-foreground ui-selected:text-foreground"
+        >Code</button
+      >
+    </div>
+    <div
+      class="-z-50 mt-2! h-[450px] rounded-base border-2 border-border bg-code-background shadow-shadow"
+    >
+      <div
+        class="preview-content invisible mx-auto hidden h-full p-8 ui-selected:visible ui-selected:block"
+        data-selected
+      >
+        <div class="flex h-full items-center justify-center">
+          <slot />
+        </div>
+      </div>
+      <div
+        class="code-content invisible no-scrollbar hidden justify-center overflow-y-scroll ui-selected:visible ui-selected:block [&_.expressive-code]:mt-0 [&_.expressive-code]:h-[450px] [&_.expressive-code]:border-none [&_.expressive-code]:shadow-none [&_.expressive-code_.frame]:border-none! [&_.expressive-code_.frame]:shadow-none!"
+      >
+        <Code code={demoCode} lang="tsx" />
+      </div>
+    </div>
+  </div>
+</preview-tabs>
+<script>
+  class PreviewTabs extends HTMLElement {
+    connectedCallback() {
+      const previewButton =
+        this.querySelector<HTMLButtonElement>(".preview-button")!;
+      const codeButton = this.querySelector<HTMLButtonElement>(".code-button")!;
+      const previewContent =
+        this.querySelector<HTMLDivElement>(".preview-content")!;
+      const codeContent = this.querySelector<HTMLDivElement>(".code-content")!;
+
+      previewButton.addEventListener("click", () => {
+        codeButton.removeAttribute("data-selected");
+        previewButton.setAttribute("data-selected", "true");
+        codeContent.removeAttribute("data-selected");
+        previewContent.setAttribute("data-selected", "true");
+      });
+
+      codeButton.addEventListener("click", () => {
+        previewButton.removeAttribute("data-selected");
+        codeButton.setAttribute("data-selected", "true");
+        previewContent.removeAttribute("data-selected");
+        codeContent.setAttribute("data-selected", "true");
+      });
+    }
+  }
+
+  customElements.define("preview-tabs", PreviewTabs);
+
+  const previewButton =
+    document.querySelector<HTMLButtonElement>(".preview-button")!;
+  const codeButton = document.querySelector<HTMLButtonElement>(".code-button")!;
+  const previewContent =
+    document.querySelector<HTMLDivElement>(".preview-content")!;
+  const codeContent = document.querySelector<HTMLDivElement>(".code-content")!;
+
+  previewButton.addEventListener("click", () => {
+    codeButton.removeAttribute("data-selected");
+    previewButton.setAttribute("data-selected", "true");
+    codeContent.removeAttribute("data-selected");
+    previewContent.setAttribute("data-selected", "true");
+  });
+
+  codeButton.addEventListener("click", () => {
+    previewButton.removeAttribute("data-selected");
+    codeButton.setAttribute("data-selected", "true");
+    previewContent.removeAttribute("data-selected");
+    codeContent.setAttribute("data-selected", "true");
+  });
+</script>

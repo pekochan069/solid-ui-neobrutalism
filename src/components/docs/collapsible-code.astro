@@ -1,7 +1,13 @@
 ---
 import CollapsibleCodeBlock from "./collapsible-code-content";
+
+type Props = {
+  class?: string;
+};
+
+const { class: className } = Astro.props;
 ---
 
-<CollapsibleCodeBlock client:load>
+<CollapsibleCodeBlock client:load class={className}>
   <slot />
 </CollapsibleCodeBlock>

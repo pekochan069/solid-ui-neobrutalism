@@ -8,9 +8,10 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "~/components/ui/collapsible";
+import { cn } from "~/lib/utils";
 
 export default function CollapsibleCodeContent(
-  props: ParentProps<{ frame?: boolean }>,
+  props: ParentProps<{ frame?: boolean; class?: string }>,
 ) {
   props = mergeProps({ frame: true }, props);
 
@@ -21,7 +22,7 @@ export default function CollapsibleCodeContent(
       open={opened()}
       onOpenChange={setOpened}
       forceMount
-      class="group/collapsible relative mt-8"
+      class={cn("group/collapsible relative mt-8", props.class)}
     >
       <CollapsibleTrigger
         as="div"
@@ -39,7 +40,7 @@ export default function CollapsibleCodeContent(
       <CollapsibleContent class="relative overflow-hidden rounded-base border-2 border-border shadow-shadow ui-closed:max-h-64 [&_.expressive-code]:my-0 [&_.expressive-code]:border-none [&_.expressive-code]:shadow-none [&>figure]:mt-0 [&>figure]:md:!mx-0">
         {props.children}
       </CollapsibleContent>
-      <CollapsibleTrigger class="absolute inset-x-0 -bottom-2.5 mx-1 my-3 flex h-20 items-center justify-center rounded-b-lg bg-gradient-to-b from-code-background/70 to-code-background text-sm text-muted-foreground group-ui-expanded/collapsible:hidden">
+      <CollapsibleTrigger class="absolute inset-x-0 -bottom-2.5 mx-1 my-3 flex h-20 items-center justify-center rounded-b-lg bg-gradient-to-b from-code-background/40 to-code-background text-sm text-muted-foreground group-ui-expanded/collapsible:hidden">
         {opened() ? "Collapse" : "Expand"}
       </CollapsibleTrigger>
     </Collapsible>
