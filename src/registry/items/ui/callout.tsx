@@ -3,12 +3,10 @@ import type { Component, ComponentProps, JSX } from "solid-js";
 
 import { Show, splitProps } from "solid-js";
 import { cva } from "class-variance-authority";
-import {
-  CircleCheckIcon,
-  CircleXIcon,
-  InfoIcon,
-  TriangleAlertIcon,
-} from "lucide-solid";
+import CircleCheckIcon from "lucide-solid/icons/circle-check";
+import CircleXIcon from "lucide-solid/icons/circle-x";
+import InfoIcon from "lucide-solid/icons/info";
+import TriangleAlertIcon from "lucide-solid/icons/triangle-alert";
 
 import { cn } from "~/lib/utils";
 

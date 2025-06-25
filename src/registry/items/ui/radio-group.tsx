@@ -3,7 +3,7 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as RadioGroupPrimitive from "@kobalte/core/radio-group";
-import { CircleIcon } from "lucide-solid";
+import CircleIcon from "lucide-solid/icons/circle";
 
 import { cn } from "~/lib/utils";
 

@@ -10,7 +10,7 @@ const Table: Component<ComponentProps<"table">> = (props) => {
     <div data-slot="table" class="relative w-full overflow-auto">
       <table
         class={cn(
-          "w-full caption-bottom border-2 border-border text-sm",
+          "w-full caption-bottom rounded-base border-2 border-border text-sm",
           local.class,
         )}
         {...others}
@@ -46,7 +46,10 @@ const TableFooter: Component<ComponentProps<"tfoot">> = (props) => {
   return (
     <tfoot
       data-slot="table-footer"
-      class={cn("bg-primary font-medium text-primary-foreground", local.class)}
+      class={cn(
+        "bg-primary/80 font-medium text-primary-foreground",
+        local.class,
+      )}
       {...others}
     />
   );

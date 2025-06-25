@@ -3,7 +3,7 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as AlertDialogPrimitive from "@kobalte/core/alert-dialog";
-import { XIcon } from "lucide-solid";
+import XIcon from "lucide-solid/icons/x";
 
 import { cn } from "~/lib/utils";
 import { buttonVariants } from "./button";

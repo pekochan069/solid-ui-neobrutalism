@@ -3,7 +3,7 @@ import type { ValidComponent } from "solid-js";
 
 import { Show, splitProps } from "solid-js";
 import ResizablePrimitive from "@corvu/resizable";
-import { GripVerticalIcon } from "lucide-solid";
+import GripVerticalIcon from "lucide-solid/icons/grip-vertical";
 
 import { cn } from "~/lib/utils";
 

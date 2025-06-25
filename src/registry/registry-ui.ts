@@ -443,17 +443,6 @@ export const ui: Registry["items"] = [
     ],
   },
   {
-    name: "toast",
-    type: "registry:ui",
-    dependencies: ["@kobalte/core"],
-    files: [
-      {
-        type: "registry:ui",
-        path: "src/registry/items/ui/toast.tsx",
-      },
-    ],
-  },
-  {
     name: "toggle",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],

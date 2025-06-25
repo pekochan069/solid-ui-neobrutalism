@@ -8,6 +8,12 @@ export const Index: Record<string, any> = {
     name: "index",
     description: "",
     type: "registry:style",
+    dependencies: [
+      "lucide-solid",
+      "tw-animate-css",
+      "@kobalte/tailwind",
+      "class-variance-authority",
+    ],
     registryDependencies: ["utils"],
     files: [],
   },
@@ -15,6 +21,7 @@ export const Index: Record<string, any> = {
     name: "utils",
     description: "",
     type: "registry:lib",
+    dependencies: ["clsx", "tailwind-merge"],
     component: lazy(() => import("src/registry/items/lib/utils")),
     files: [
       {
@@ -28,6 +35,7 @@ export const Index: Record<string, any> = {
     name: "accordion",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/accordion")),
     files: [
       {
@@ -41,6 +49,7 @@ export const Index: Record<string, any> = {
     name: "alert-dialog",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["button"],
     component: lazy(() => import("src/registry/items/ui/alert-dialog")),
     files: [
@@ -55,6 +64,7 @@ export const Index: Record<string, any> = {
     name: "alert",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/alert")),
     files: [
       {
@@ -68,6 +78,7 @@ export const Index: Record<string, any> = {
     name: "avatar",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/avatar")),
     files: [
       {
@@ -108,6 +119,7 @@ export const Index: Record<string, any> = {
     name: "breadcrumb",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/breadcrumb")),
     files: [
       {
@@ -121,6 +133,7 @@ export const Index: Record<string, any> = {
     name: "button",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/button")),
     files: [
       {
@@ -134,6 +147,7 @@ export const Index: Record<string, any> = {
     name: "calendar",
     description: "",
     type: "registry:ui",
+    dependencies: ["@corvu/calendar"],
     registryDependencies: ["button"],
     component: lazy(() => import("src/registry/items/ui/calendar")),
     files: [
@@ -174,6 +188,7 @@ export const Index: Record<string, any> = {
     name: "carousel",
     description: "",
     type: "registry:ui",
+    dependencies: ["embla-carousel-solid"],
     registryDependencies: ["button"],
     component: lazy(() => import("src/registry/items/ui/carousel")),
     files: [
@@ -188,6 +203,7 @@ export const Index: Record<string, any> = {
     name: "checkbox",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/checkbox")),
     files: [
       {
@@ -201,6 +217,7 @@ export const Index: Record<string, any> = {
     name: "collapsible",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/collapsible")),
     files: [
       {
@@ -214,6 +231,7 @@ export const Index: Record<string, any> = {
     name: "combobox",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/combobox")),
     files: [
       {
@@ -227,6 +245,7 @@ export const Index: Record<string, any> = {
     name: "command",
     description: "",
     type: "registry:ui",
+    dependencies: ["cmdk-solid"],
     registryDependencies: ["dialog"],
     component: lazy(() => import("src/registry/items/ui/command")),
     files: [
@@ -241,6 +260,7 @@ export const Index: Record<string, any> = {
     name: "context-menu",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/context-menu")),
     files: [
       {
@@ -254,6 +274,7 @@ export const Index: Record<string, any> = {
     name: "dialog",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["button"],
     component: lazy(() => import("src/registry/items/ui/dialog")),
     files: [
@@ -268,6 +289,7 @@ export const Index: Record<string, any> = {
     name: "drawer",
     description: "",
     type: "registry:ui",
+    dependencies: ["@corvu/drawer"],
     component: lazy(() => import("src/registry/items/ui/drawer")),
     files: [
       {
@@ -281,6 +303,7 @@ export const Index: Record<string, any> = {
     name: "dropdown-menu",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/dropdown-menu")),
     files: [
       {
@@ -294,6 +317,7 @@ export const Index: Record<string, any> = {
     name: "hover-card",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/hover-card")),
     files: [
       {
@@ -320,6 +344,7 @@ export const Index: Record<string, any> = {
     name: "menubar",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/menubar")),
     files: [
       {
@@ -333,6 +358,7 @@ export const Index: Record<string, any> = {
     name: "number-field",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/number-field")),
     files: [
       {
@@ -346,6 +372,7 @@ export const Index: Record<string, any> = {
     name: "otp-field",
     description: "",
     type: "registry:ui",
+    dependencies: ["@corvu/otp-field"],
     component: lazy(() => import("src/registry/items/ui/otp-field")),
     files: [
       {
@@ -359,6 +386,7 @@ export const Index: Record<string, any> = {
     name: "pagination",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["button"],
     component: lazy(() => import("src/registry/items/ui/pagination")),
     files: [
@@ -373,6 +401,7 @@ export const Index: Record<string, any> = {
     name: "popover",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/popover")),
     files: [
       {
@@ -386,6 +415,7 @@ export const Index: Record<string, any> = {
     name: "radio-group",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/radio-group")),
     files: [
       {
@@ -399,6 +429,7 @@ export const Index: Record<string, any> = {
     name: "resizable",
     description: "",
     type: "registry:ui",
+    dependencies: ["@corvu/resizable"],
     component: lazy(() => import("src/registry/items/ui/resizable")),
     files: [
       {
@@ -412,6 +443,7 @@ export const Index: Record<string, any> = {
     name: "select",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/select")),
     files: [
       {
@@ -425,6 +457,7 @@ export const Index: Record<string, any> = {
     name: "separator",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/separator")),
     files: [
       {
@@ -438,6 +471,7 @@ export const Index: Record<string, any> = {
     name: "sheet",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/sheet")),
     files: [
       {
@@ -451,6 +485,7 @@ export const Index: Record<string, any> = {
     name: "skeleton",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/skeleton")),
     files: [
       {
@@ -464,6 +499,7 @@ export const Index: Record<string, any> = {
     name: "slider",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["label"],
     component: lazy(() => import("src/registry/items/ui/slider")),
     files: [
@@ -478,6 +514,7 @@ export const Index: Record<string, any> = {
     name: "sonner",
     description: "",
     type: "registry:ui",
+    dependencies: ["solid-sonner"],
     component: lazy(() => import("src/registry/items/ui/sonner")),
     files: [
       {
@@ -491,6 +528,7 @@ export const Index: Record<string, any> = {
     name: "switch",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/switch")),
     files: [
       {
@@ -517,6 +555,7 @@ export const Index: Record<string, any> = {
     name: "tabs",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/tabs")),
     files: [
       {
@@ -530,6 +569,7 @@ export const Index: Record<string, any> = {
     name: "text-field",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/text-field")),
     files: [
       {
@@ -552,23 +592,11 @@ export const Index: Record<string, any> = {
       },
     ],
   },
-  toast: {
-    name: "toast",
-    description: "",
-    type: "registry:ui",
-    component: lazy(() => import("src/registry/items/ui/toast")),
-    files: [
-      {
-        path: "src/registry/items/ui/toast.tsx",
-        type: "registry:ui",
-        target: "",
-      },
-    ],
-  },
   toggle: {
     name: "toggle",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/toggle")),
     files: [
       {
@@ -582,6 +610,7 @@ export const Index: Record<string, any> = {
     name: "toggle-group",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     registryDependencies: ["toggle"],
     component: lazy(() => import("src/registry/items/ui/toggle-group")),
     files: [
@@ -596,6 +625,7 @@ export const Index: Record<string, any> = {
     name: "tooltip",
     description: "",
     type: "registry:ui",
+    dependencies: ["@kobalte/core"],
     component: lazy(() => import("src/registry/items/ui/tooltip")),
     files: [
       {

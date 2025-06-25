@@ -5,7 +5,7 @@ import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
 import * as SheetPrimitive from "@kobalte/core/dialog";
 import { cva } from "class-variance-authority";
-import { XIcon } from "lucide-solid";
+import XIcon from "lucide-solid/icons/x";
 
 import { cn } from "~/lib/utils";
 
@@ -114,7 +114,7 @@ const SheetContent = <T extends ValidComponent = "div">(
         class={cn(
           sheetVariants({ position: local.position }),
           local.class,
-          "max-h-screen overflow-y-auto",
+          "flex max-h-screen flex-col overflow-y-auto",
         )}
         {...others}
       >
@@ -150,10 +150,7 @@ const SheetFooter: Component<ComponentProps<"div">> = (props) => {
   return (
     <div
       data-slot="sheet-footer"
-      class={cn(
-        "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2",
-        local.class,
-      )}
+      class={cn("mt-auto flex flex-col", local.class)}
       {...others}
     />
   );

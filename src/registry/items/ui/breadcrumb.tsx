@@ -3,7 +3,8 @@ import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js";
 
 import { mergeProps, splitProps } from "solid-js";
 import * as BreadcrumbPrimitive from "@kobalte/core/breadcrumbs";
-import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-solid";
+import ChevronRightIcon from "lucide-solid/icons/chevron-right";
+import MoreHorizontalIcon from "lucide-solid/icons/more-horizontal";
 
 import { cn } from "~/lib/utils";
 

@@ -23,7 +23,8 @@ import {
   Switch,
 } from "solid-js";
 import CalendarPrimitive from "@corvu/calendar";
-import { ChevronLeftIcon, ChevronRightIcon } from "lucide-solid";
+import ChevronLeftIcon from "lucide-solid/icons/chevron-left";
+import ChevronRightIcon from "lucide-solid/icons/chevron-right";
 
 import { Button } from "./button";
 

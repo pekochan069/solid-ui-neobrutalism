@@ -33,7 +33,7 @@ const ToggleGroup = <T extends ValidComponent = "div">(
   return (
     <ToggleGroupPrimitive.Root
       data-slot="toggle-group"
-      class={cn("flex items-center justify-center gap-1", local.class)}
+      class={cn("flex items-center justify-center", local.class)}
       {...others}
     >
       <ToggleGroupContext.Provider
@@ -73,7 +73,9 @@ const ToggleGroupItem = <T extends ValidComponent = "button">(
           size: context.size || local.size,
           variant: context.variant || local.variant,
         }),
-        "border-2 border-border hover:bg-primary/20 hover:text-muted-foreground ui-pressed:bg-primary/40 ui-pressed:text-primary-foreground",
+        "min-w-0 flex-1 shrink-0 rounded-none first:rounded-l-base last:rounded-r-base",
+        local.variant !== "transparent" &&
+          "border-y-2 border-r-2 border-l-0! first:border-l-2!",
         local.class,
       )}
       {...others}

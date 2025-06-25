@@ -3,7 +3,9 @@ import type { Component, ComponentProps, JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as MenubarPrimitive from "@kobalte/core/menubar";
-import { CheckIcon, ChevronRightIcon, DotIcon } from "lucide-solid";
+import CheckIcon from "lucide-solid/icons/check";
+import ChevronRightIcon from "lucide-solid/icons/chevron-right";
+import DotIcon from "lucide-solid/icons/dot";
 
 import { cn } from "~/lib/utils";
 
