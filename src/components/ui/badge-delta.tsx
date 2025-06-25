@@ -2,15 +2,13 @@ import type { BadgeProps } from "~/components/ui/badge";
 import type { VariantProps } from "class-variance-authority";
 import type { Component, JSXElement } from "solid-js";
 
-import { createEffect, on, splitProps } from "solid-js";
+import { createEffect, on, Show, splitProps } from "solid-js";
 import { cva } from "class-variance-authority";
-import {
-  ArrowDownIcon,
-  ArrowDownRightIcon,
-  ArrowRightIcon,
-  ArrowUpIcon,
-  ArrowUpRightIcon,
-} from "lucide-solid";
+import ArrowDownIcon from "lucide-solid/icons/arrow-down";
+import ArrowDownRightIcon from "lucide-solid/icons/arrow-down-right";
+import ArrowRightIcon from "lucide-solid/icons/arrow-right";
+import ArrowUpIcon from "lucide-solid/icons/arrow-up";
+import ArrowUpRightIcon from "lucide-solid/icons/arrow-up-right";
 
 import { Badge } from "~/components/ui/badge";
 import { cn } from "~/lib/utils";
@@ -55,10 +53,16 @@ const variantMap: { [key in DeltaType]: DeltaVariant } = {
 
 type BadgeDeltaProps = Omit<BadgeProps, "variant"> & {
   deltaType: DeltaType;
+  iconLocation?: "left" | "right";
 };
 
 const BadgeDelta: Component<BadgeDeltaProps> = (props) => {
-  const [local, others] = splitProps(props, ["class", "children", "deltaType"]);
+  const [local, others] = splitProps(props, [
+    "class",
+    "children",
+    "deltaType",
+    "iconLocation",
+  ]);
 
   // eslint-disable-next-line solid/reactivity
   let Icon = iconMap[local.deltaType];
@@ -80,8 +84,17 @@ const BadgeDelta: Component<BadgeDeltaProps> = (props) => {
       {...others}
     >
       <span class="flex gap-1">
-        <Icon class="size-4" />
+        <Show
+          when={
+            local.iconLocation === undefined || local.iconLocation === "left"
+          }
+        >
+          <Icon class="size-4" />
+        </Show>
         {local.children}
+        <Show when={local.iconLocation === "right"}>
+          <Icon class="size-4" />
+        </Show>
       </span>
     </Badge>
   );

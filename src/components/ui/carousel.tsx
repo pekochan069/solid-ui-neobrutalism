@@ -12,7 +12,8 @@ import {
   useContext,
 } from "solid-js";
 import createEmblaCarousel from "embla-carousel-solid";
-import { ArrowLeftIcon, ArrowRightIcon } from "lucide-solid";
+import ArrowLeftIcon from "lucide-solid/icons/arrow-left";
+import ArrowRightIcon from "lucide-solid/icons/arrow-right";
 
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/utils";

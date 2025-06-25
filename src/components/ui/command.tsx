@@ -8,7 +8,7 @@ import type {
 
 import { splitProps } from "solid-js";
 import * as CommandPrimitive from "cmdk-solid";
-import { SearchIcon } from "lucide-solid";
+import SearchIcon from "lucide-solid/icons/search";
 
 import { Dialog, DialogContent } from "~/components/ui/dialog";
 import { cn } from "~/lib/utils";
@@ -136,7 +136,7 @@ const CommandItem: Component<ParentProps<CommandPrimitive.CommandItemProps>> = (
       data-slot="command-item"
       cmdk-item=""
       class={cn(
-        "relative flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-none select-none aria-selected:bg-primary aria-selected:text-primary-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50",
+        "relative flex cursor-default items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-none select-none aria-selected:bg-primary aria-selected:text-primary-foreground data-[disabled=true]:pointer-events-none data-[disabled=true]:opacity-50 [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
         local.class,
       )}
       {...others}

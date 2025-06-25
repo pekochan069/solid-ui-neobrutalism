@@ -3,7 +3,7 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { splitProps } from "solid-js";
 import * as AccordionPrimitive from "@kobalte/core/accordion";
-import { ChevronDownIcon } from "lucide-solid";
+import ChevronDownIcon from "lucide-solid/icons/chevron-down";
 
 import { cn } from "~/lib/utils";
 

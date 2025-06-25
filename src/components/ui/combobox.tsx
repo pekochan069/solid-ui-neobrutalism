@@ -3,7 +3,8 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { Show, splitProps } from "solid-js";
 import * as ComboboxPrimitive from "@kobalte/core/combobox";
-import { CheckIcon, ChevronsUpDownIcon } from "lucide-solid";
+import CheckIcon from "lucide-solid/icons/check";
+import ChevronsUpDownIcon from "lucide-solid/icons/chevrons-up-down";
 
 import { cn } from "~/lib/utils";
 

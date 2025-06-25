@@ -3,7 +3,7 @@ import type { Component, ComponentProps, ValidComponent } from "solid-js";
 
 import { Show, splitProps } from "solid-js";
 import OtpField from "@corvu/otp-field";
-import { DotIcon } from "lucide-solid";
+import DotIcon from "lucide-solid/icons/dot";
 
 import { cn } from "~/lib/utils";
 

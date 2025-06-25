@@ -3,7 +3,9 @@ import type { JSX, ValidComponent } from "solid-js";
 
 import { Show, splitProps } from "solid-js";
 import * as PaginationPrimitive from "@kobalte/core/pagination";
-import { ChevronLeftIcon, ChevronRightIcon, EllipsisIcon } from "lucide-solid";
+import ChevronLeftIcon from "lucide-solid/icons/chevron-left";
+import ChevronRightIcon from "lucide-solid/icons/chevron-right";
+import EllipsisIcon from "lucide-solid/icons/ellipsis";
 
 import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";

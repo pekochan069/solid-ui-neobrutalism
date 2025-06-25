@@ -3,7 +3,8 @@ import type { ValidComponent } from "solid-js";
 
 import { Match, splitProps, Switch } from "solid-js";
 import * as CheckboxPrimitive from "@kobalte/core/checkbox";
-import { CheckIcon, MinusIcon } from "lucide-solid";
+import CheckIcon from "lucide-solid/icons/check";
+import MinusIcon from "lucide-solid/icons/minus";
 
 import { cn } from "~/lib/utils";
 
