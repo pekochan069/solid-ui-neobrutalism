@@ -16,24 +16,6 @@ async function buildThemes() {
   });
 
   for (const color of baseColorsV4) {
-    // const cssVarsV4 = `:root {
-    // ${Object.entries(color.light).map(([key, value]) => {
-    //   return `--${key}: ${value};`;
-    // })}
-    // }
-
-    // .dark {
-    // ${Object.entries(color.dark).map(([key, value]) => {
-    //   return `--${key}: ${value};`;
-    // })}
-    // }
-
-    // @theme inline {
-    // ${Object.keys(color.light).map((key) => {
-    //   return `--color-${key}: var(--${key});`;
-    // })}
-    // }`;
-
     const inlineColors = `    "light": {\n${Object.entries(colorMapping.light)
       .map(([key, value]) => {
         return `      "${key}": "${value.replace("{{base}}", color.name)}"`;
@@ -88,13 +70,11 @@ import { lazy } from "solid-js";
 
 export const Index: Record<string, any> = {`;
   for (const item of registry.items) {
-    const registryDependencies = item.registryDependencies ?? [];
-
     index += `
   "${item.name}": {
     name: "${item.name}",
     description: "${item.description ?? ""}",
-    type: "${item.type}",${item.registryDependencies !== undefined ? `\n    registryDependencies: ${JSON.stringify(item.registryDependencies)},` : ""}${
+    type: "${item.type}",${item.dependencies !== undefined ? `\n    dependencies: ${JSON.stringify(item.dependencies)},` : ""}${item.registryDependencies !== undefined ? `\n    registryDependencies: ${JSON.stringify(item.registryDependencies)},` : ""}${
       item.files?.[0]?.path
         ? `\n    component: lazy(() => import("src/registry/items/${item.type.substring(9)}/${item.name}")),`
         : ""
@@ -105,8 +85,7 @@ export const Index: Record<string, any> = {`;
         type: "${file.type}",
         target: "${file.target ?? ""}"
       }`,
-    )}\n    ]
-  },`;
+    )}\n    ]\n  },`;
   }
 
   index += "\n}";
