@@ -1,7 +1,6 @@
 ---
 import Header from "~/components/header";
 import { Toaster as Sonner } from "~/components/ui/sonner";
-import { Toaster } from "~/components/ui/toast";
 
 import "overlayscrollbars/overlayscrollbars.css";
 import "~/styles/global.css";
@@ -19,7 +18,6 @@ import "~/styles/global.css";
     <Header />
     <slot />
     <Sonner client:load />
-    <Toaster client:load />
   </body>
 </html>
 <script>
