@@ -14,12 +14,12 @@ const nav: NavGroup[] = [
         href: "/docs/components",
       },
       {
-        label: "themes",
-        href: "/docs/themes",
+        label: "theming",
+        href: "/docs/theming",
       },
       {
         label: "Colors",
-        href: "/docs/colors",
+        href: "/colors",
       },
     ],
   },
@@ -33,6 +33,10 @@ const nav: NavGroup[] = [
       {
         label: "Installation",
         href: "/docs/installation",
+      },
+      {
+        label: "components.json",
+        href: "/docs/components-json",
       },
       {
         label: "Theming",
