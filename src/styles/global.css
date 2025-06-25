@@ -9,14 +9,14 @@
 }
 
 :root {
-  --background: oklch(0.95 0.03 307);
-  --foreground: oklch(0.29 0.14 303);
-  --primary: oklch(0.73 0.23 304);
-  --primary-foreground: oklch(0.29 0.14 303);
+  --background: oklch(0.93 0.03 256);
+  --foreground: oklch(0.28 0.09 268);
+  --primary: oklch(0.72 0.19 260);
+  --primary-foreground: oklch(0.28 0.09 268);
   --secondary-background: oklch(100% 0 0);
-  --border: oklch(0.29 0.14 303);
-  --ring: oklch(0.29 0.14 303);
-  --overlay: oklch(0.29 0.14 303 / 0.8);
+  --border: oklch(0.28 0.09 268);
+  --ring: oklch(0.28 0.09 268);
+  --overlay: oklch(0.28 0.09 268 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
   --shadow-destructive: 4px 4px 0px 0px oklch(0 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -24,7 +24,7 @@
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --chart-active-dot: oklch(0.29 0.14 303);
+  --chart-active-dot: oklch(0.28 0.09 268);
 
   --info: oklch(0.95 0.024 236.81);
   --info-foreground: oklch(0.68 0.148143 238.1044);
@@ -45,14 +45,14 @@
 }
 
 .dark {
-  --background: oklch(0.29 0.14 303);
-  --foreground: oklch(0.98 0.01 308);
-  --primary: oklch(0.63 0.23 304);
-  --primary-foreground: oklch(0.29 0.14 303);
-  --secondary-background: oklch(0.29 0.14 303);
-  --border: oklch(0.98 0.01 308);
-  --ring: oklch(0.98 0.01 308);
-  --overlay: oklch(0.29 0.14 303 / 0.8);
+  --background: oklch(0.28 0.09 268);
+  --foreground: oklch(0.97 0.01 255);
+  --primary: oklch(0.62 0.19 260);
+  --primary-foreground: oklch(0.28 0.09 268);
+  --secondary-background: oklch(0.28 0.09 268);
+  --border: oklch(0.97 0.01 255);
+  --ring: oklch(0.97 0.01 255);
+  --overlay: oklch(0.28 0.09 268 / 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
   --shadow-destructive: 4px 4px 0px 0px oklch(0 0 0);
   --chart-1: oklch(0.488 0.243 264.376);
@@ -169,125 +169,6 @@
   }
 
   .prose {
-    h1 {
-      @apply mt-2 scroll-m-28 first:mt-0;
-
-      a {
-        @apply scroll-m-28 text-3xl font-heading tracking-tight;
-      }
-
-      & + p {
-        @apply mt-4;
-      }
-    }
-
-    h2 {
-      @apply mt-12 scroll-m-28 first:mt-0 lg:mt-20 [&+p]:!mt-4;
-
-      a {
-        @apply text-2xl font-heading tracking-tight *:[code]:text-2xl;
-      }
-
-      & + p {
-        @apply mt-4;
-      }
-    }
-
-    h3 {
-      @apply mt-8 scroll-m-28 first:mt-0;
-      a {
-        @apply text-xl font-heading tracking-tight *:[code]:text-xl;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    h4 {
-      @apply mt-8 scroll-m-28 first:mt-0;
-
-      a {
-        @apply text-lg font-heading tracking-tight;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    h5 {
-      @apply mt-8 scroll-m-28 first:mt-0;
-
-      a {
-        @apply text-lg font-medium tracking-tight;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    h6 {
-      @apply mt-8 scroll-m-28 first:mt-0;
-
-      a {
-        @apply text-base font-medium tracking-tight;
-      }
-
-      & + p {
-        @apply mt-2;
-      }
-    }
-
-    a {
-      @apply font-medium underline underline-offset-4;
-    }
-
-    p {
-      @apply mt-6 leading-relaxed;
-    }
-
-    strong {
-      @apply font-bold;
-    }
-
-    ul {
-      @apply my-6 ml-6 list-disc;
-    }
-
-    ol {
-      @apply my-6 ml-6 list-decimal;
-    }
-
-    li {
-      @apply mt-1;
-    }
-
-    blockquote {
-      @apply mt-6 border-l-2 pl-6 italic;
-    }
-
-    img {
-      @apply rounded-base;
-    }
-
-    hr {
-      @apply my-4 md:my-8;
-    }
-
-    pre {
-      @apply no-scrollbar min-w-0 overflow-x-auto px-4 py-3.5 outline-none has-[[data-highlighted-line]]:px-0 has-[[data-line-numbers]]:px-0 has-[[data-slot=tabs]]:p-0;
-    }
-
-    figcaption {
-      @apply flex items-center gap-2 [&_svg]:size-4 [&_svg]:opacity-70;
-    }
-
-    code {
-      @apply rounded-base bg-muted px-1 py-0.5 text-muted-foreground;
-    }
-
     .expressive-code {
       @apply mt-8;
     }
