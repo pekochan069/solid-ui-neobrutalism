@@ -96,25 +96,33 @@ const contents = [
 ---
 
 <div class={cn("npm-command mt-6", className)}>
-  <div>
-    <NpmCommandTabs client:only />
+  <div class="translate-y-2">
+    <div
+      class="h-12 rounded-base border-x-2 border-t-2 border-border bg-code-frame shadow-shadow"
+    >
+      <NpmCommandTabs client:only="solid-js" />
+    </div>
   </div>
-  {
-    contents.map(({ packageManager, command }) => (
-      <div
-        data-package-manager={packageManager}
-        class="command invisible hidden"
-      >
-        <Code
-          code={command}
-          lang="bash"
-          frame="none"
-          class="mt-0"
-          showLineNumbers={false}
-        />
-      </div>
-    ))
-  }
+  <div
+    class="relative z-1 min-h-[58.42px] rounded-b-base border-x-2 border-b-2 border-border bg-code-background shadow-shadow"
+  >
+    {
+      contents.map(({ packageManager, command }) => (
+        <div
+          data-package-manager={packageManager}
+          class="command invisible hidden"
+        >
+          <Code
+            code={command}
+            lang="bash"
+            frame="none"
+            class="mt-0 border-0 [&_pre]:rounded-t-none!"
+            showLineNumbers={false}
+          />
+        </div>
+      ))
+    }
+  </div>
 </div>
 <script>
   import { packageManagerAtom } from "~/atoms/global-atoms";
