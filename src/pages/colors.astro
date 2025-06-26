@@ -1,0 +1,28 @@
+---
+import BaseLayout from "~/layout/base-layout.astro";
+import ColorPalette from "~/components/color-palette";
+import { getColors } from "~/lib/colors";
+
+const colors = getColors();
+---
+
+<BaseLayout>
+  <div>
+    <div
+      class="container mx-auto flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-20 xl:gap-4"
+    >
+      <h1
+        class="leading-tighter max-w-2xl text-4xl font-semibold tracking-tight text-balance text-foreground lg:leading-[1.1] lg:font-semibold xl:text-5xl xl:tracking-tighter"
+      >
+        Tailwind Colors in Every Format
+      </h1>
+      <p class="max-w-3xl text-base text-balance text-foreground sm:text-lg">
+        The complete Tailwind color palette in HEX, RGB, HSL, CSS variables, and
+        classes. Ready to copy and paste into your project.
+      </p>
+    </div>
+    <div class="px-4">
+      <ColorPalette colorPalette={colors[0]} client:load />
+    </div>
+  </div>
+</BaseLayout>
