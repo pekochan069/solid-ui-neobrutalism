@@ -481,6 +481,27 @@ export const Index: Record<string, any> = {
       },
     ],
   },
+  sidebar: {
+    name: "sidebar",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: [
+      "button",
+      "separator",
+      "sheet",
+      "skeleton",
+      "text-field",
+      "tooltip",
+    ],
+    component: lazy(() => import("src/registry/items/ui/sidebar")),
+    files: [
+      {
+        path: "src/registry/items/ui/sidebar.tsx",
+        type: "registry:ui",
+        target: "",
+      },
+    ],
+  },
   skeleton: {
     name: "skeleton",
     description: "",

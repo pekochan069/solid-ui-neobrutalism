@@ -356,6 +356,24 @@ export const ui: Registry["items"] = [
     ],
   },
   {
+    name: "sidebar",
+    type: "registry:ui",
+    registryDependencies: [
+      "button",
+      "separator",
+      "sheet",
+      "skeleton",
+      "text-field",
+      "tooltip",
+    ],
+    files: [
+      {
+        type: "registry:ui",
+        path: "src/registry/items/ui/sidebar.tsx",
+      },
+    ],
+  },
+  {
     name: "skeleton",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
