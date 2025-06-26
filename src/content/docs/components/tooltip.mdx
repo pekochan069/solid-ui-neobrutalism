@@ -8,17 +8,21 @@ docs: https://kobalte.dev/docs/core/components/tooltip
 apiReference: https://kobalte.dev/docs/core/components/tooltip#api-reference
 ---
 
-import TooltipCode from "/src/registry/items/ui/tooltip.tsx?raw"
-import TooltipDemo from "/src/registry/items/examples/tooltip-demo.tsx"
-import TooltipDemoCode from "/src/registry/items/examples/tooltip-demo.tsx?raw"
+import TooltipDemo from "/src/registry/items/examples/tooltip-demo.tsx";
+import TooltipDemoCode from "/src/registry/items/examples/tooltip-demo.tsx?raw";
+import TooltipCode from "/src/registry/items/ui/tooltip.tsx?raw";
 
 <PreviewTabs demoCode={TooltipDemoCode}>
-    <TooltipDemo client:only="solid-js" /> 
+  <TooltipDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
 
-<InstallationTabs name="tooltip" dependencies={['@kobalte/core']} code={TooltipCode} />
+<InstallationTabs
+  name="tooltip"
+  dependencies={["@kobalte/core"]}
+  code={TooltipCode}
+/>
 
 ## Usage
 

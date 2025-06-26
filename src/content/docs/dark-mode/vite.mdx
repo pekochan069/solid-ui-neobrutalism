@@ -26,7 +26,7 @@ function App() {
       ...
       <ModeWatcher />
     </>
-  )
+  );
 }
 ```
 
@@ -60,8 +60,13 @@ import Moon from "lucide-solid/icons/moon";
 import Sun from "lucide-solid/icons/sun";
 import { setMode } from "solid-mode-watcher";
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 export default function ModeToggle() {
   return (
@@ -72,9 +77,15 @@ export default function ModeToggle() {
         <span class="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem onClick={() => setMode("light")}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setMode("system")}>System</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("system")}>
+          System
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

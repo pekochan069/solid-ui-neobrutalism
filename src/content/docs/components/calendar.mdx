@@ -10,18 +10,18 @@ docs: https://corvu.dev/docs/primitives/calendar/
 apiReference: https://corvu.dev/docs/primitives/calendar#api-reference
 ---
 
-import CalendarCode from "/src/registry/items/ui/calendar.tsx?raw"
-import CalendarDemo from "/src/registry/items/examples/calendar-demo.tsx"
-import CalendarDemoCode from "/src/registry/items/examples/calendar-demo.tsx?raw"
-import CalendarLocalesCode from "/src/registry/items/examples/calendar-locales.tsx?raw"
-import CalendarLocales from "/src/registry/items/examples/calendar-locales.tsx"
-import CalendarMultipleCode from "/src/registry/items/examples/calendar-multiple.tsx?raw"
-import CalendarMultiple from "/src/registry/items/examples/calendar-multiple.tsx"
-import CalendarRangeCode from "/src/registry/items/examples/calendar-range.tsx?raw"
-import CalendarRange from "/src/registry/items/examples/calendar-range.tsx"
+import CalendarDemo from "/src/registry/items/examples/calendar-demo.tsx";
+import CalendarDemoCode from "/src/registry/items/examples/calendar-demo.tsx?raw";
+import CalendarLocales from "/src/registry/items/examples/calendar-locales.tsx";
+import CalendarLocalesCode from "/src/registry/items/examples/calendar-locales.tsx?raw";
+import CalendarMultiple from "/src/registry/items/examples/calendar-multiple.tsx";
+import CalendarMultipleCode from "/src/registry/items/examples/calendar-multiple.tsx?raw";
+import CalendarRange from "/src/registry/items/examples/calendar-range.tsx";
+import CalendarRangeCode from "/src/registry/items/examples/calendar-range.tsx?raw";
+import CalendarCode from "/src/registry/items/ui/calendar.tsx?raw";
 
 <PreviewTabs demoCode={CalendarDemoCode}>
-    <CalendarDemo client:only="solid-js" /> 
+  <CalendarDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -45,17 +45,17 @@ return <Calendar mode="single" value={date()} onValueChange={setDate} />;
 ### Locales
 
 <PreviewTabs demoCode={CalendarLocalesCode} class="mt-4">
-    <CalendarLocales client:only="solid-js" /> 
+  <CalendarLocales client:only="solid-js" />
 </PreviewTabs>
 
 ### Multiple Dates
 
 <PreviewTabs demoCode={CalendarMultipleCode} class="mt-4">
-    <CalendarMultiple client:only="solid-js" />
+  <CalendarMultiple client:only="solid-js" />
 </PreviewTabs>
 
 ### Range Selection
 
 <PreviewTabs demoCode={CalendarRangeCode} class="mt-4">
-    <CalendarRange client:only="solid-js" />
+  <CalendarRange client:only="solid-js" />
 </PreviewTabs>

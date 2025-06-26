@@ -10,12 +10,12 @@ docs: https://kobalte.dev/docs/core/components/accordion
 apiReference: https://kobalte.dev/docs/core/components/accordion#api-reference
 ---
 
-import AccordionCode from "/src/registry/items/ui/accordion.tsx?raw"
-import AccordionDemo from "/src/registry/items/examples/accordion-demo.tsx"
-import AccordionDemoCode from "/src/registry/items/examples/accordion-demo.tsx?raw"
+import AccordionDemo from "/src/registry/items/examples/accordion-demo.tsx";
+import AccordionDemoCode from "/src/registry/items/examples/accordion-demo.tsx?raw";
+import AccordionCode from "/src/registry/items/ui/accordion.tsx?raw";
 
 <PreviewTabs demoCode={AccordionDemoCode}>
-    <AccordionDemo client:only="solid-js" /> 
+  <AccordionDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -26,10 +26,10 @@ import AccordionDemoCode from "/src/registry/items/examples/accordion-demo.tsx?r
 
 ```tsx
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "~/components/ui/accordion";
 ```
 
@@ -37,15 +37,11 @@ import {
 <Accordion collapsible>
   <AccordionItem value="item-1">
     <AccordionTrigger>Item 1</AccordionTrigger>
-    <AccordionContent>
-      Content for item 1.
-    </AccordionContent>
+    <AccordionContent>Content for item 1.</AccordionContent>
   </AccordionItem>
   <AccordionItem value="item-2">
     <AccordionTrigger>Item 2</AccordionTrigger>
-    <AccordionContent>
-      Content for item 2.
-    </AccordionContent>
+    <AccordionContent>Content for item 2.</AccordionContent>
   </AccordionItem>
 </Accordion>
 ```

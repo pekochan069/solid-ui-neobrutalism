@@ -10,22 +10,31 @@ docs: https://kobalte.dev/docs/core/components/switch
 apiReference: https://kobalte.dev/docs/core/components/switch#api-reference
 ---
 
-import SwitchCode from "/src/registry/items/ui/switch.tsx?raw"
-import SwitchDemo from "/src/registry/items/examples/switch-demo.tsx"
-import SwitchDemoCode from "/src/registry/items/examples/switch-demo.tsx?raw"
+import SwitchDemo from "/src/registry/items/examples/switch-demo.tsx";
+import SwitchDemoCode from "/src/registry/items/examples/switch-demo.tsx?raw";
+import SwitchCode from "/src/registry/items/ui/switch.tsx?raw";
 
 <PreviewTabs demoCode={SwitchDemoCode}>
-    <SwitchDemo client:only="solid-js" /> 
+  <SwitchDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
 
-<InstallationTabs name="switch" dependencies={['@kobalte/core']} code={SwitchCode} />
+<InstallationTabs
+  name="switch"
+  dependencies={["@kobalte/core"]}
+  code={SwitchCode}
+/>
 
 ## Usage
 
 ```tsx
-import { Switch, SwitchControl, SwitchLabel, SwitchThumb } from "~/components/ui/switch";
+import {
+  Switch,
+  SwitchControl,
+  SwitchLabel,
+  SwitchThumb,
+} from "~/components/ui/switch";
 ```
 
 ```tsx

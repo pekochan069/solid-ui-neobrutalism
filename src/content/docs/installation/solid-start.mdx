@@ -28,7 +28,7 @@ When creating the new Solid Start app, make sure to choose the **with-tailwindcs
 
 Once you have created the app, navigate into the project and install the dependencies:
 
-```bash  showLineNumbers=false
+```bash showLineNumbers=false
 cd {project-name}
 ```
 
@@ -36,7 +36,10 @@ cd {project-name}
 
 ## Add Dependencies
 
-<NpmCommand type="install" command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss" />
+<NpmCommand
+  type="install"
+  command="class-variance-authority clsx tailwind-merge lucide-solid tw-animate-css @kobalte/tailwindcss"
+/>
 
 ### Configure Styles
 
@@ -174,12 +177,15 @@ cd {project-name}
 ## Add `cn` Helper Function
 
 ```ts
+import type { ClassValue } from "clsx";
+
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
 // src/lib/utils.ts
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
 ```
 

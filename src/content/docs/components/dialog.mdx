@@ -10,12 +10,12 @@ docs: https://kobalte.dev/docs/core/components/dialog
 apiReference: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
-import DialogCode from "/src/registry/items/ui/dialog.tsx?raw"
-import DialogDemoCode from "/src/registry/items/examples/dialog-demo.tsx?raw"
-import DialogDemo from "/src/registry/items/examples/dialog-demo.tsx"
+import DialogDemo from "/src/registry/items/examples/dialog-demo.tsx";
+import DialogDemoCode from "/src/registry/items/examples/dialog-demo.tsx?raw";
+import DialogCode from "/src/registry/items/ui/dialog.tsx?raw";
 
 <PreviewTabs demoCode={DialogDemoCode}>
-    <DialogDemo client:only="solid-js" /> 
+  <DialogDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -25,14 +25,14 @@ import DialogDemo from "/src/registry/items/examples/dialog-demo.tsx"
 ## Usage
 
 ```tsx
-import { 
- Dialog,
- DialogTrigger,
- DialogContent,
- DialogHeader,
- DialogFooter,
- DialogTitle,
- DialogDescription,
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "~/components/ui/dialog";
 ```
 

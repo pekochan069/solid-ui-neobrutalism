@@ -10,16 +10,16 @@ docs: https://www.embla-carousel.com/get-started/solid/
 apiReference: https://www.embla-carousel.com/api/
 ---
 
-import CarouselCode from "/src/registry/items/ui/carousel.tsx?raw"
-import CarouselDemoCode from "/src/registry/items/examples/carousel-demo.tsx?raw"
-import CarouselDemo from "/src/registry/items/examples/carousel-demo.tsx"
-import CarouselSizesCode from "/src/registry/items/examples/carousel-sizes.tsx?raw"
-import CarouselSizesDemo from "/src/registry/items/examples/carousel-sizes.tsx"
-import CarouselOrientationCode from "/src/registry/items/examples/carousel-orientation.tsx?raw"
-import CarouselOrientationDemo from "/src/registry/items/examples/carousel-orientation.tsx"
+import CarouselDemo from "/src/registry/items/examples/carousel-demo.tsx";
+import CarouselDemoCode from "/src/registry/items/examples/carousel-demo.tsx?raw";
+import CarouselOrientationDemo from "/src/registry/items/examples/carousel-orientation.tsx";
+import CarouselOrientationCode from "/src/registry/items/examples/carousel-orientation.tsx?raw";
+import CarouselSizesDemo from "/src/registry/items/examples/carousel-sizes.tsx";
+import CarouselSizesCode from "/src/registry/items/examples/carousel-sizes.tsx?raw";
+import CarouselCode from "/src/registry/items/ui/carousel.tsx?raw";
 
 <PreviewTabs demoCode={CarouselDemoCode}>
-    <CarouselDemo client:only="solid-js" /> 
+  <CarouselDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -57,11 +57,10 @@ import {
 To set the size of the items, you can use the `basis` utility class on the `CarouselItem` component.
 
 <PreviewTabs demoCode={CarouselSizesCode}>
-    <CarouselSizesDemo client:only="solid-js" /> 
+  <CarouselSizesDemo client:only="solid-js" />
 </PreviewTabs>
 
 ```tsx
-
 // 33% of the carousel width.
 <Carousel>
   <CarouselContent class="-ml-4">
@@ -73,7 +72,6 @@ To set the size of the items, you can use the `basis` utility class on the `Caro
 ```
 
 ```tsx
-
 // 50% on small screens and 33% on larger screens.
 <Carousel>
   <CarouselContent>
@@ -89,7 +87,7 @@ To set the size of the items, you can use the `basis` utility class on the `Caro
 To change the orientation of the carousel, you can use the `flex-col` utility class on the `CarouselContent` component.
 
 <PreviewTabs demoCode={CarouselOrientationCode}>
-    <CarouselOrientationDemo client:only="solid-js" />
+  <CarouselOrientationDemo client:only="solid-js" />
 </PreviewTabs>
 
 ```tsx

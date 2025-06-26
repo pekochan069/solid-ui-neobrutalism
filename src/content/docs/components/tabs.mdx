@@ -10,12 +10,12 @@ docs: https://kobalte.dev/docs/core/components/tabs
 apiReference: https://kobalte.dev/docs/core/components/tabs#api-reference
 ---
 
-import TabsCode from "/src/registry/items/ui/tabs.tsx?raw"
-import TabsDemoCode from "/src/registry/items/examples/tabs-demo.tsx?raw"
-import TabsDemo from "/src/registry/items/examples/tabs-demo.tsx"
+import TabsDemo from "/src/registry/items/examples/tabs-demo.tsx";
+import TabsDemoCode from "/src/registry/items/examples/tabs-demo.tsx?raw";
+import TabsCode from "/src/registry/items/ui/tabs.tsx?raw";
 
 <PreviewTabs demoCode={TabsDemoCode}>
-    <TabsDemo client:only="solid-js" /> 
+  <TabsDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -41,14 +41,8 @@ import {
     <Tab value="tab2">Tab 2</Tab>
     <Tab value="tab3">Tab 3</Tab>
   </TabList>
-  <TabsContent value="tab1">
-    Content for Tab 1
-  </TabsContent>
-  <TabsContent value="tab2">
-    Content for Tab 2
-  </TabsContent>
-  <TabsContent value="tab3">
-    Content for Tab 3
-  </TabsContent>
+  <TabsContent value="tab1">Content for Tab 1</TabsContent>
+  <TabsContent value="tab2">Content for Tab 2</TabsContent>
+  <TabsContent value="tab3">Content for Tab 3</TabsContent>
 </Tabs>
 ```

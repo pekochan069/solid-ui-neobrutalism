@@ -10,13 +10,12 @@ docs: https://kobalte.dev/docs/core/components/alert
 apiReference: https://kobalte.dev/docs/core/components/alert#api-reference
 ---
 
-import AlertCode from "/src/registry/items/ui/alert.tsx?raw"
-import AlertDemoCode from "/src/registry/items/examples/alert-demo.tsx?raw"
-import AlertDemo from "/src/registry/items/examples/alert-demo.tsx"
-
+import AlertDemo from "/src/registry/items/examples/alert-demo.tsx";
+import AlertDemoCode from "/src/registry/items/examples/alert-demo.tsx?raw";
+import AlertCode from "/src/registry/items/ui/alert.tsx?raw";
 
 <PreviewTabs demoCode={AlertDemoCode}>
-    <AlertDemo client:only="solid-js" /> 
+  <AlertDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -33,6 +32,8 @@ import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 <Alert variant="default | destructive | neutral">
   <AlertIcon />
   <AlertTitle>Alert Title</AlertTitle>
-  <AlertDescription>This is an important message for the user.</AlertDescription>
+  <AlertDescription>
+    This is an important message for the user.
+  </AlertDescription>
 </Alert>
 ```

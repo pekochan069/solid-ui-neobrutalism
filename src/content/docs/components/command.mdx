@@ -10,14 +10,14 @@ docs: https://cmdk-solid.vercel.app/
 apiReference: https://github.com/create-signal/cmdk-solid?tab=readme-ov-file#use
 ---
 
-import CommandCode from "/src/registry/items/ui/command.tsx?raw"
-import CommandDemoCode from "/src/registry/items/examples/command-demo.tsx?raw"
-import CommandDemo from "/src/registry/items/examples/command-demo.tsx"
-import CommandDialogCode from "/src/registry/items/examples/command-dialog.tsx?raw"
-import CommandDialogDemo from "/src/registry/items/examples/command-dialog.tsx"
+import CommandDemo from "/src/registry/items/examples/command-demo.tsx";
+import CommandDemoCode from "/src/registry/items/examples/command-demo.tsx?raw";
+import CommandDialogDemo from "/src/registry/items/examples/command-dialog.tsx";
+import CommandDialogCode from "/src/registry/items/examples/command-dialog.tsx?raw";
+import CommandCode from "/src/registry/items/ui/command.tsx?raw";
 
 <PreviewTabs demoCode={CommandDemoCode}>
-    <CommandDemo client:only="solid-js" /> 
+  <CommandDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -30,13 +30,13 @@ import CommandDialogDemo from "/src/registry/items/examples/command-dialog.tsx"
 import {
   Command,
   CommandDialog,
-  CommandInput,
-  CommandList,
   CommandEmpty,
   CommandGroup,
+  CommandInput,
   CommandItem,
-  CommandShortcut,
+  CommandList,
   CommandSeparator,
+  CommandShortcut,
 } from "~/components/ui/command";
 ```
 
@@ -65,5 +65,5 @@ import {
 ### Dialog
 
 <PreviewTabs demoCode={CommandDialogCode} class="mt-4">
-    <CommandDialogDemo client:only="solid-js" />
+  <CommandDialogDemo client:only="solid-js" />
 </PreviewTabs>

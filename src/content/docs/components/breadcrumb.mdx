@@ -10,14 +10,14 @@ docs: https://kobalte.dev/docs/core/components/breadcrumb
 apiReference: https://kobalte.dev/docs/core/components/breadcrumb#api-reference
 ---
 
-import BreadcrumbCode from "/src/registry/items/ui/breadcrumb.tsx?raw"
-import BreadcrumbDemoCode from "/src/registry/items/examples/breadcrumb-demo.tsx?raw"
-import BreadcrumbDemo from "/src/registry/items/examples/breadcrumb-demo.tsx"
-import BreadcrumbCustomSeparatorCode from "/src/registry/items/examples/breadcrumb-custom-separator.tsx?raw"
-import BreadcrumbCustomSeparatorDemo from "/src/registry/items/examples/breadcrumb-custom-separator.tsx"
+import BreadcrumbCustomSeparatorDemo from "/src/registry/items/examples/breadcrumb-custom-separator.tsx";
+import BreadcrumbCustomSeparatorCode from "/src/registry/items/examples/breadcrumb-custom-separator.tsx?raw";
+import BreadcrumbDemo from "/src/registry/items/examples/breadcrumb-demo.tsx";
+import BreadcrumbDemoCode from "/src/registry/items/examples/breadcrumb-demo.tsx?raw";
+import BreadcrumbCode from "/src/registry/items/ui/breadcrumb.tsx?raw";
 
 <PreviewTabs demoCode={BreadcrumbDemoCode}>
-    <BreadcrumbDemo client:only="solid-js" /> 
+  <BreadcrumbDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -62,5 +62,5 @@ import {
 To use a custom separator, pass a custom separator component to the `separator` props of the `Breadcrumb` component.
 
 <PreviewTabs demoCode={BreadcrumbCustomSeparatorCode} class="mt-4">
-    <BreadcrumbCustomSeparatorDemo client:only="solid-js" /> 
+  <BreadcrumbCustomSeparatorDemo client:only="solid-js" />
 </PreviewTabs>

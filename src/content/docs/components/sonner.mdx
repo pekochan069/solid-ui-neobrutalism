@@ -10,12 +10,12 @@ docs: https://solid-sonner.vercel.app/
 apiReference: https://github.com/wobsoriano/solid-sonner?tab=readme-ov-file#types
 ---
 
-import SonnerCode from "/src/registry/items/ui/sonner.tsx?raw"
-import SonnerDemoCode from "/src/registry/items/examples/sonner-demo.tsx?raw"
-import SonnerDemo from "/src/registry/items/examples/sonner-demo.tsx"
+import SonnerDemo from "/src/registry/items/examples/sonner-demo.tsx";
+import SonnerDemoCode from "/src/registry/items/examples/sonner-demo.tsx?raw";
+import SonnerCode from "/src/registry/items/ui/sonner.tsx?raw";
 
 <PreviewTabs demoCode={SonnerDemoCode}>
-    <SonnerDemo client:only="solid-js" /> 
+  <SonnerDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -25,10 +25,10 @@ import SonnerDemo from "/src/registry/items/examples/sonner-demo.tsx"
 
 ```tsx ins={4,12}
 // src/layout.tsx
-import type { ParentProps } from "solid-js"
+import type { ParentProps } from "solid-js";
 
-import { Toaster } from "~/components/ui/sonner"
- 
+import { Toaster } from "~/components/ui/sonner";
+
 export default function RootLayout(props: ParentProps) {
   return (
     <html lang="en">
@@ -38,9 +38,10 @@ export default function RootLayout(props: ParentProps) {
         <Toaster />
       </body>
     </html>
-  )
+  );
 }
 ```
+
 </InstallationTabs>
 
 ## Usage
@@ -50,5 +51,5 @@ import { toast } from "solid-sonner";
 ```
 
 ```tsx
-toast("Event has been created.")
+toast("Event has been created.");
 ```

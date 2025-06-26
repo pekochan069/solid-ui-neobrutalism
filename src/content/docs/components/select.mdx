@@ -10,12 +10,12 @@ docs: https://kobalte.dev/docs/core/components/select
 apiReference: https://kobalte.dev/docs/core/components/select#api-reference
 ---
 
-import SelectCode from "/src/registry/items/ui/select.tsx?raw"
-import SelectDemoCode from "/src/registry/items/examples/select-demo.tsx?raw"
-import SelectDemo from "/src/registry/items/examples/select-demo.tsx"
+import SelectDemo from "/src/registry/items/examples/select-demo.tsx";
+import SelectDemoCode from "/src/registry/items/examples/select-demo.tsx?raw";
+import SelectCode from "/src/registry/items/ui/select.tsx?raw";
 
 <PreviewTabs demoCode={SelectDemoCode}>
-    <SelectDemo client:only="solid-js" /> 
+  <SelectDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -44,7 +44,9 @@ import {
   onChange={setValue}
   options={["Apple", "Banana", "Blueberry", "Grapes", "Pineapple"]}
   placeholder="Select a fruit…"
-  itemComponent={(props) => <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>}
+  itemComponent={(props) => (
+    <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+  )}
 >
   <SelectTrigger aria-label="Fruit" class="w-[180px]">
     <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>

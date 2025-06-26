@@ -10,12 +10,12 @@ docs: https://kobalte.dev/docs/core/components/hover-card
 apiReference: https://kobalte.dev/docs/core/components/hover-card#api-reference
 ---
 
-import HoverCardCode from "/src/registry/items/ui/hover-card.tsx?raw"
-import HoverCardDemoCode from "/src/registry/items/examples/hover-card-demo.tsx?raw"
-import HoverCardDemo from "/src/registry/items/examples/hover-card-demo.tsx"
+import HoverCardDemo from "/src/registry/items/examples/hover-card-demo.tsx";
+import HoverCardDemoCode from "/src/registry/items/examples/hover-card-demo.tsx?raw";
+import HoverCardCode from "/src/registry/items/ui/hover-card.tsx?raw";
 
 <PreviewTabs demoCode={HoverCardDemoCode}>
-    <HoverCardDemo client:only="solid-js" /> 
+  <HoverCardDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -35,8 +35,6 @@ import {
 ```tsx
 <HoverCard>
   <HoverCardTrigger>Hover over me</HoverCardTrigger>
-  <HoverCardContent>
-    This is the content of the hover card.
-  </HoverCardContent>
+  <HoverCardContent>This is the content of the hover card.</HoverCardContent>
 </HoverCard>
 ```

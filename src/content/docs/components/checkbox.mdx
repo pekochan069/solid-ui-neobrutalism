@@ -10,17 +10,21 @@ docs: https://kobalte.dev/docs/core/components/checkbox
 apiReference: https://kobalte.dev/docs/core/components/checkbox#api-reference
 ---
 
-import CheckboxCode from "/src/registry/items/ui/checkbox.tsx?raw"
-import CheckboxDemo from "/src/registry/items/examples/checkbox-demo.tsx"
-import CheckboxDemoCode from "/src/registry/items/examples/checkbox-demo.tsx?raw"
+import CheckboxDemo from "/src/registry/items/examples/checkbox-demo.tsx";
+import CheckboxDemoCode from "/src/registry/items/examples/checkbox-demo.tsx?raw";
+import CheckboxCode from "/src/registry/items/ui/checkbox.tsx?raw";
 
 <PreviewTabs demoCode={CheckboxDemoCode}>
-    <CheckboxDemo client:only="solid-js" /> 
+  <CheckboxDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
 
-<InstallationTabs name="checkbox" dependencies={['@kobalte/core']} code={CheckboxCode} />
+<InstallationTabs
+  name="checkbox"
+  dependencies={["@kobalte/core"]}
+  code={CheckboxCode}
+/>
 
 ## Usage
 

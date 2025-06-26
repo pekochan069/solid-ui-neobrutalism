@@ -10,14 +10,14 @@ docs: https://kobalte.dev/docs/core/components/dialog
 apiReference: https://kobalte.dev/docs/core/components/dialog#api-reference
 ---
 
-import SheetCode from "/src/registry/items/ui/sheet.tsx?raw"
-import SheetDemoCode from "/src/registry/items/examples/sheet-demo.tsx?raw"
-import SheetDemo from "/src/registry/items/examples/sheet-demo.tsx"
-import SheetSideCode from "/src/registry/items/examples/sheet-side.tsx?raw"
-import SheetSide from "/src/registry/items/examples/sheet-side.tsx"
+import SheetDemo from "/src/registry/items/examples/sheet-demo.tsx";
+import SheetDemoCode from "/src/registry/items/examples/sheet-demo.tsx?raw";
+import SheetSide from "/src/registry/items/examples/sheet-side.tsx";
+import SheetSideCode from "/src/registry/items/examples/sheet-side.tsx?raw";
+import SheetCode from "/src/registry/items/ui/sheet.tsx?raw";
 
 <PreviewTabs demoCode={SheetDemoCode}>
-    <SheetDemo client:only="solid-js" /> 
+  <SheetDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -59,5 +59,5 @@ import {
 ### Side
 
 <PreviewTabs demoCode={SheetSideCode} class="mt-4">
-    <SheetSide client:only="solid-js" />
+  <SheetSide client:only="solid-js" />
 </PreviewTabs>

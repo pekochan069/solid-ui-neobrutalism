@@ -12,32 +12,36 @@ nextLabel: TanStack Router
 
 ```astro ins={11-28}
 // src/pages/index.astro
----
+
 import '../styles/globals.css'
----
 
 <html lang="en">
-	<body>
-      <h1>Astro</h1>
-	</body>
+  <body>
+    <h1>Astro</h1>
+  </body>
 </html>
 <script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
 
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
 </script>
 ```
 
@@ -98,8 +102,13 @@ import Moon from "lucide-solid/icons/moon";
 import Sun from "lucide-solid/icons/sun";
 import { setMode } from "solid-mode-watcher";
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 export default function ModeToggle() {
   return (
@@ -110,9 +119,15 @@ export default function ModeToggle() {
         <span class="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem onClick={() => setMode("light")}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setMode("system")}>System</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("system")}>
+          System
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );
@@ -123,16 +138,13 @@ export default function ModeToggle() {
 
 ```astro ins={3,11}
 // src/layouts/layout.astro
----
-import { ModeToggle } from "~/components/mode-toggle";
 
-import "~/styles/global.css";
----
+import { ModeToggle } from "~/components/mode-toggle"; import "~/styles/global.css";
 
 <html lang="en">
-	<body>
+  <body>
     <slot />
     <ModeToggle client:load />
-	</body>
+  </body>
 </html>
 ```

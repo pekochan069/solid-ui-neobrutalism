@@ -18,11 +18,13 @@ Start by installing `solid-mode-watcher`
 
 ```tsx ins={5,20}
 // src/app.tsx
+import { Suspense } from "solid-js";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
-import { Suspense } from "solid-js";
 import { ModeWatcher } from "solid-mode-watcher";
+
 import Nav from "~/components/Nav";
+
 import "./app.css";
 
 export default function App() {
@@ -72,8 +74,13 @@ import Moon from "lucide-solid/icons/moon";
 import Sun from "lucide-solid/icons/sun";
 import { setMode } from "solid-mode-watcher";
 
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 
 export default function ModeToggle() {
   return (
@@ -84,9 +91,15 @@ export default function ModeToggle() {
         <span class="sr-only">Toggle theme</span>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem onClick={() => setMode("light")}>Light</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setMode("dark")}>Dark</DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setMode("system")}>System</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("light")}>
+          Light
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("dark")}>
+          Dark
+        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setMode("system")}>
+          System
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -10,13 +10,12 @@ docs: https://kobalte.dev/docs/core/components/alert-dialog
 apiReference: https://kobalte.dev/docs/core/components/alert-dialog#api-reference
 ---
 
-import AlertDialogCode from "/src/registry/items/ui/alert-dialog.tsx?raw"
-import AlertDialogDemoCode from "/src/registry/items/examples/alert-dialog-demo.tsx?raw"
-import AlertDialogDemo from "/src/registry/items/examples/alert-dialog-demo.tsx"
-
+import AlertDialogDemo from "/src/registry/items/examples/alert-dialog-demo.tsx";
+import AlertDialogDemoCode from "/src/registry/items/examples/alert-dialog-demo.tsx?raw";
+import AlertDialogCode from "/src/registry/items/ui/alert-dialog.tsx?raw";
 
 <PreviewTabs demoCode={AlertDialogDemoCode}>
-    <AlertDialogDemo client:only="solid-js" /> 
+  <AlertDialogDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -28,10 +27,10 @@ import AlertDialogDemo from "/src/registry/items/examples/alert-dialog-demo.tsx"
 ```tsx
 import {
   AlertDialog,
-  AlertDialogTrigger,
   AlertDialogContent,
-  AlertDialogTitle,
   AlertDialogDescription,
+  AlertDialogTitle,
+  AlertDialogTrigger,
 } from "~/components/ui/alert-dialog";
 ```
 
@@ -41,8 +40,8 @@ import {
   <AlertDialogContent>
     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
     <AlertDialogDescription>
-    This action cannot be undone. This will permanently delete your account
-    and remove your data from our servers.
+      This action cannot be undone. This will permanently delete your account
+      and remove your data from our servers.
     </AlertDialogDescription>
   </AlertDialogContent>
 </AlertDialog>

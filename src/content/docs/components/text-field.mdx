@@ -10,14 +10,14 @@ docs: https://kobalte.dev/docs/core/components/text-field
 apiReference: https://kobalte.dev/docs/core/components/text-field#api-reference
 ---
 
-import TextFieldCode from "/src/registry/items/ui/text-field.tsx?raw"
-import TextFieldDemoCode from "/src/registry/items/examples/text-field-demo.tsx?raw"
-import TextFieldDemo from "/src/registry/items/examples/text-field-demo.tsx"
-import TextFieldTextAreaCode from "/src/registry/items/examples/text-field-textarea.tsx?raw"
-import TextFieldTextArea from "/src/registry/items/examples/text-field-textarea.tsx"
+import TextFieldDemo from "/src/registry/items/examples/text-field-demo.tsx";
+import TextFieldDemoCode from "/src/registry/items/examples/text-field-demo.tsx?raw";
+import TextFieldTextArea from "/src/registry/items/examples/text-field-textarea.tsx";
+import TextFieldTextAreaCode from "/src/registry/items/examples/text-field-textarea.tsx?raw";
+import TextFieldCode from "/src/registry/items/ui/text-field.tsx?raw";
 
 <PreviewTabs demoCode={TextFieldDemoCode}>
-    <TextFieldDemo client:only="solid-js" /> 
+  <TextFieldDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -51,5 +51,5 @@ import {
 Use `TextFieldTextArea` instead of `TextFieldInput` for multiline input fields.
 
 <PreviewTabs demoCode={TextFieldTextAreaCode} class="mt-4">
-    <TextFieldTextArea client:only="solid-js" />    
+  <TextFieldTextArea client:only="solid-js" />
 </PreviewTabs>

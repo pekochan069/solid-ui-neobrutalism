@@ -10,16 +10,16 @@ docs: https://corvu.dev/docs/primitives/resizable/
 apiReference: https://corvu.dev/docs/primitives/resizable#api-reference
 ---
 
-import ResizableCode from "/src/registry/items/ui/resizable.tsx?raw"
-import ResizableDemoCode from "/src/registry/items/examples/resizable-demo.tsx?raw"
-import ResizableDemo from "/src/registry/items/examples/resizable-demo.tsx"
-import ResizableVerticalCode from "/src/registry/items/examples/resizable-vertical.tsx?raw"
-import ResizableVerticalDemo from "/src/registry/items/examples/resizable-vertical.tsx"
-import ResizableHorizontalCode from "/src/registry/items/examples/resizable-horizontal.tsx?raw"
-import ResizableHorizontalDemo from "/src/registry/items/examples/resizable-horizontal.tsx"
+import ResizableDemo from "/src/registry/items/examples/resizable-demo.tsx";
+import ResizableDemoCode from "/src/registry/items/examples/resizable-demo.tsx?raw";
+import ResizableHorizontalDemo from "/src/registry/items/examples/resizable-horizontal.tsx";
+import ResizableHorizontalCode from "/src/registry/items/examples/resizable-horizontal.tsx?raw";
+import ResizableVerticalDemo from "/src/registry/items/examples/resizable-vertical.tsx";
+import ResizableVerticalCode from "/src/registry/items/examples/resizable-vertical.tsx?raw";
+import ResizableCode from "/src/registry/items/ui/resizable.tsx?raw";
 
 <PreviewTabs demoCode={ResizableDemoCode}>
-    <ResizableDemo client:only="solid-js" /> 
+  <ResizableDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -49,11 +49,11 @@ import {
 ### Vertical
 
 <PreviewTabs demoCode={ResizableVerticalCode} class="mt-4">
-    <ResizableVerticalDemo client:only="solid-js" />
+  <ResizableVerticalDemo client:only="solid-js" />
 </PreviewTabs>
 
 ### Horizontal
 
 <PreviewTabs demoCode={ResizableHorizontalCode} class="mt-4">
-    <ResizableHorizontalDemo client:only="solid-js" />
+  <ResizableHorizontalDemo client:only="solid-js" />
 </PreviewTabs>

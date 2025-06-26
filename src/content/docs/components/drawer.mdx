@@ -10,14 +10,14 @@ docs: https://corvu.dev/docs/primitives/drawer/
 apiReference: https://corvu.dev/docs/primitives/drawer#api-reference
 ---
 
-import DrawerCode from "/src/registry/items/ui/drawer.tsx?raw"
-import DrawerDemoCode from "/src/registry/items/examples/drawer-demo.tsx?raw"
-import DrawerDemo from "/src/registry/items/examples/drawer-demo.tsx"
-import DrawerResponsiveCode from "/src/registry/items/examples/drawer-responsive.tsx?raw"
-import DrawerResponsiveDemo from "/src/registry/items/examples/drawer-responsive.tsx"
+import DrawerDemo from "/src/registry/items/examples/drawer-demo.tsx";
+import DrawerDemoCode from "/src/registry/items/examples/drawer-demo.tsx?raw";
+import DrawerResponsiveDemo from "/src/registry/items/examples/drawer-responsive.tsx";
+import DrawerResponsiveCode from "/src/registry/items/examples/drawer-responsive.tsx?raw";
+import DrawerCode from "/src/registry/items/ui/drawer.tsx?raw";
 
 <PreviewTabs demoCode={DrawerDemoCode}>
-    <DrawerDemo client:only="solid-js" /> 
+  <DrawerDemo client:only="solid-js" />
 </PreviewTabs>
 
 ## Installation
@@ -64,5 +64,5 @@ import {
 You can combine the `Dialog` and `Drawer` components to create a responsive dialog. This renders a `Dialog` component on desktop and a `Drawer` component on mobile.
 
 <PreviewTabs demoCode={DrawerResponsiveCode}>
-    <DrawerResponsiveDemo client:only="solid-js" />
+  <DrawerResponsiveDemo client:only="solid-js" />
 </PreviewTabs>

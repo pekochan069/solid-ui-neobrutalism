@@ -12,8 +12,6 @@ const PopoverTrigger = <T extends ValidComponent = "button">(
   return <PopoverPrimitive.Trigger data-slot="popover-trigger" {...props} />;
 };
 
-type PopoverProps = PopoverPrimitive.PopoverRootProps;
-
 const Popover: Component<PopoverPrimitive.PopoverRootProps> = (props) => {
   return <PopoverPrimitive.Root data-slot="popover" gutter={4} {...props} />;
 };
