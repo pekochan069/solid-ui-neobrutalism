@@ -1,4 +1,6 @@
 ---
+import Logo from "~/assets/logo.svg";
+import { Button } from "~/components/ui/button";
 import { nav } from "~/lib/nav";
 import MobileNav from "./mobile-nav";
 import ThemeToggle from "./mode-toggle";
@@ -8,11 +10,25 @@ import ThemeToggle from "./mode-toggle";
   <div class="flex h-(--header-height) items-center justify-between px-4">
     <div>
       <div class="invisible hidden lg:visible lg:block">
-        <nav>
-          <a href="/">Home</a>
-          <a href="/docs">Docs</a>
-          <a href="/docs/components">Components</a>
-          <a href="/docs/themes">Themes</a>
+        <nav class="flex gap-2">
+          <Button as="a" variant="ghost" href="/" size="icon" class="size-8">
+            <Logo class="size-6!" />
+          </Button>
+          <Button as="a" variant="ghost" href="/docs" class="h-8 px-3"
+            >Docs</Button
+          >
+          <Button
+            as="a"
+            variant="ghost"
+            href="/docs/components"
+            class="h-8 px-3">Components</Button
+          >
+          <Button as="a" variant="ghost" href="/docs/theming" class="h-8 px-3"
+            >Theming</Button
+          >
+          <Button as="a" variant="ghost" href="/colors" class="h-8 px-3"
+            >Colors</Button
+          >
         </nav>
       </div>
       <div class="lg:invisible lg:hidden">
