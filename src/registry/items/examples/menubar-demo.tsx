@@ -91,7 +91,7 @@ export default function MenubarDemo() {
       <MenubarMenu>
         <MenubarTrigger>Profiles</MenubarTrigger>
         <MenubarContent>
-          <MenubarRadioGroup value="benoit">
+          <MenubarRadioGroup defaultValue="benoit">
             <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
             <MenubarRadioItem value="benoit">Benoit</MenubarRadioItem>
             <MenubarRadioItem value="Luis">Luis</MenubarRadioItem>

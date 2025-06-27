@@ -17,11 +17,11 @@ import {
 export default function TabsDemo() {
   return (
     <Tabs defaultValue="account">
-      <TabsList class="grid w-full grid-cols-2">
+      <TabsList class="grid w-xs grid-cols-2">
         <TabsTrigger value="account">Account</TabsTrigger>
         <TabsTrigger value="password">Password</TabsTrigger>
       </TabsList>
-      <TabsContent value="account" class="w-sm">
+      <TabsContent value="account" class="w-xs">
         <Card>
           <CardHeader>
             <CardTitle>Account</CardTitle>

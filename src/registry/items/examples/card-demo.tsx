@@ -10,7 +10,7 @@ import {
 
 export default function CardDemo() {
   return (
-    <Card class="w-[350px]">
+    <Card class="w-[340px]">
       <CardHeader>
         <CardTitle>Create project</CardTitle>
         <CardDescription>Deploy your new project in one-click.</CardDescription>

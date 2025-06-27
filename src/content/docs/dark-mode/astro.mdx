@@ -10,7 +10,7 @@ nextLabel: TanStack Router
 
 ## Create An Inline Theme Script
 
-```astro ins={11-28}
+```astro ins={11-31}
 // src/pages/index.astro
 
 import '../styles/globals.css'
@@ -136,11 +136,11 @@ export default function ModeToggle() {
 
 ## Display The Mode Toggler
 
-```astro ins={3,11}
+```astro ins={3,8}
 // src/layouts/layout.astro
-
+---
 import { ModeToggle } from "~/components/mode-toggle"; import "~/styles/global.css";
-
+---
 <html lang="en">
   <body>
     <slot />

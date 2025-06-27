@@ -10,9 +10,7 @@ import { Button } from "~/components/ui/button";
 export default function AlertDialogDemo() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger as={Button} variant="neutral-no-shadow">
-        Show Dialog
-      </AlertDialogTrigger>
+      <AlertDialogTrigger as={Button}>Show Dialog</AlertDialogTrigger>
       <AlertDialogContent>
         <div>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>

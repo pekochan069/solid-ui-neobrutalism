@@ -16,6 +16,7 @@ export default function PaginationDemo() {
         <PaginationItem page={props.page}>{props.page}</PaginationItem>
       )}
       ellipsisComponent={() => <PaginationEllipsis />}
+      wrap={true}
     >
       <PaginationPrevious />
       <PaginationItems />

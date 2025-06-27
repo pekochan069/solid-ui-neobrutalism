@@ -17,7 +17,9 @@ import {
 export default function DropdownMenuDemo() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger as={Button<"button">}>Open</DropdownMenuTrigger>
+      <DropdownMenuTrigger as={Button<"button">} variant="no-shadow">
+        Open
+      </DropdownMenuTrigger>
       <DropdownMenuContent class="w-56">
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuGroup>

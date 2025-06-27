@@ -6,7 +6,7 @@ import {
 
 export default function ResizableDemo() {
   return (
-    <Resizable class="max-w-md rounded-base border-2 border-border">
+    <Resizable class="w-xs rounded-base border-2 border-border">
       <ResizablePanel initialSize={0.25} class="overflow-hidden">
         <div class="flex h-[200px] items-center justify-center p-6">
           <span class="font-semibold">One</span>
