@@ -9,6 +9,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/accordion.tsx",
+        target: "ui/accordion.tsx",
       },
     ],
   },
@@ -21,6 +22,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/alert-dialog.tsx",
+        target: "ui/alert-dialog.tsx",
       },
     ],
   },
@@ -32,6 +34,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/alert.tsx",
+        target: "ui/alert.tsx",
       },
     ],
   },
@@ -43,6 +46,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/avatar.tsx",
+        target: "ui/avatar.tsx",
       },
     ],
   },
@@ -53,6 +57,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/badge.tsx",
+        target: "ui/badge.tsx",
       },
     ],
   },
@@ -64,6 +69,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/badge-delta.tsx",
+        target: "ui/badge-delta.tsx",
       },
     ],
   },
@@ -75,6 +81,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/breadcrumb.tsx",
+        target: "ui/breadcrumb.tsx",
       },
     ],
   },
@@ -86,6 +93,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/button.tsx",
+        target: "ui/button.tsx",
       },
     ],
   },
@@ -98,6 +106,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/calendar.tsx",
+        target: "ui/calendar.tsx",
       },
     ],
   },
@@ -108,6 +117,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/callout.tsx",
+        target: "ui/callout.tsx",
       },
     ],
   },
@@ -118,6 +128,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/card.tsx",
+        target: "ui/card.tsx",
       },
     ],
   },
@@ -130,6 +141,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/carousel.tsx",
+        target: "ui/carousel.tsx",
       },
     ],
   },
@@ -141,6 +153,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/checkbox.tsx",
+        target: "ui/checkbox.tsx",
       },
     ],
   },
@@ -152,6 +165,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/collapsible.tsx",
+        target: "ui/collapsible.tsx",
       },
     ],
   },
@@ -163,6 +177,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/combobox.tsx",
+        target: "ui/combobox.tsx",
       },
     ],
   },
@@ -175,6 +190,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/command.tsx",
+        target: "ui/command.tsx",
       },
     ],
   },
@@ -186,6 +202,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/context-menu.tsx",
+        target: "ui/context-menu.tsx",
       },
     ],
   },
@@ -198,6 +215,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/dialog.tsx",
+        target: "ui/dialog.tsx",
       },
     ],
   },
@@ -209,6 +227,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/drawer.tsx",
+        target: "ui/drawer.tsx",
       },
     ],
   },
@@ -220,6 +239,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/dropdown-menu.tsx",
+        target: "ui/dropdown-menu.tsx",
       },
     ],
   },
@@ -231,6 +251,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/hover-card.tsx",
+        target: "ui/hover-card.tsx",
       },
     ],
   },
@@ -241,6 +262,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/label.tsx",
+        target: "ui/label.tsx",
       },
     ],
   },
@@ -252,6 +274,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/menubar.tsx",
+        target: "ui/menubar.tsx",
       },
     ],
   },
@@ -263,6 +286,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/number-field.tsx",
+        target: "ui/number-field.tsx",
       },
     ],
   },
@@ -274,6 +298,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/otp-field.tsx",
+        target: "ui/otp-field.tsx",
       },
     ],
   },
@@ -286,6 +311,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/pagination.tsx",
+        target: "ui/pagination.tsx",
       },
     ],
   },
@@ -297,6 +323,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/popover.tsx",
+        target: "ui/popover.tsx",
       },
     ],
   },
@@ -308,6 +335,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/radio-group.tsx",
+        target: "ui/radio-group.tsx",
       },
     ],
   },
@@ -319,6 +347,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/resizable.tsx",
+        target: "ui/resizable.tsx",
       },
     ],
   },
@@ -330,6 +359,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/select.tsx",
+        target: "ui/select.tsx",
       },
     ],
   },
@@ -341,6 +371,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/separator.tsx",
+        target: "ui/separator.tsx",
       },
     ],
   },
@@ -352,6 +383,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/sheet.tsx",
+        target: "ui/sheet.tsx",
       },
     ],
   },
@@ -370,6 +402,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/sidebar.tsx",
+        target: "ui/sidebar.tsx",
       },
     ],
   },
@@ -381,6 +414,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/skeleton.tsx",
+        target: "ui/skeleton.tsx",
       },
     ],
   },
@@ -393,6 +427,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/slider.tsx",
+        target: "ui/slider.tsx",
       },
     ],
   },
@@ -404,6 +439,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/sonner.tsx",
+        target: "ui/sonner.tsx",
       },
     ],
   },
@@ -415,6 +451,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/switch.tsx",
+        target: "ui/switch.tsx",
       },
     ],
   },
@@ -425,6 +462,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/table.tsx",
+        target: "ui/table.tsx",
       },
     ],
   },
@@ -436,6 +474,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/tabs.tsx",
+        target: "ui/tabs.tsx",
       },
     ],
   },
@@ -447,6 +486,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/text-field.tsx",
+        target: "ui/text-field.tsx",
       },
     ],
   },
@@ -457,6 +497,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/timeline.tsx",
+        target: "ui/timeline.tsx",
       },
     ],
   },
@@ -468,6 +509,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/toggle.tsx",
+        target: "ui/toggle.tsx",
       },
     ],
   },
@@ -480,6 +522,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/toggle-group.tsx",
+        target: "ui/toggle-group.tsx",
       },
     ],
   },
@@ -491,6 +534,7 @@ export const ui: Registry["items"] = [
       {
         type: "registry:ui",
         path: "src/registry/items/ui/tooltip.tsx",
+        target: "ui/tooltip.tsx",
       },
     ],
   },

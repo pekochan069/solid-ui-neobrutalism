@@ -180,6 +180,10 @@ const nav: NavGroup[] = [
         label: "Sheet",
       },
       {
+        href: "/docs/components/sidebar",
+        label: "Sidebar",
+      },
+      {
         href: "/docs/components/skeleton",
         label: "Skeleton",
       },

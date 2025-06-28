@@ -78,14 +78,17 @@ export const Index: Record<string, any> = {`;
       item.files?.[0]?.path
         ? `\n    component: lazy(() => import("src/registry/items/${item.type.substring(9)}/${item.name}")),`
         : ""
-    } 
-    files: [\n${item.files?.map(
-      (file) => `      {
+    }${
+      item.files !== undefined && item.files.length > 0
+        ? `\n    files: [\n${item.files?.map(
+            (file) => `      {
         path: "${file.path}",
-        type: "${file.type}",
-        target: "${file.target ?? ""}"
-      }`,
-    )}\n    ]\n  },`;
+        type: "${file.type}",${file.target ? `\n        target: "${file.target}",` : ""}
+      },`,
+          )}\n   ],`
+        : ""
+    } 
+  },`;
   }
 
   index += "\n}";

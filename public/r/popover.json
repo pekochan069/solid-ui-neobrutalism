@@ -7,7 +7,8 @@
     {
       "path": "src/registry/items/ui/popover.tsx",
       "content": "import type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { Component, ValidComponent } from \"solid-js\";\n\nimport { splitProps } from \"solid-js\";\nimport * as PopoverPrimitive from \"@kobalte/core/popover\";\n\nimport { cn } from \"~/lib/utils\";\n\nconst PopoverTrigger = <T extends ValidComponent = \"button\">(\n  props: PolymorphicProps<T, PopoverPrimitive.PopoverTriggerProps<T>>,\n) => {\n  return <PopoverPrimitive.Trigger data-slot=\"popover-trigger\" {...props} />;\n};\n\nconst Popover: Component<PopoverPrimitive.PopoverRootProps> = (props) => {\n  return <PopoverPrimitive.Root data-slot=\"popover\" gutter={4} {...props} />;\n};\n\ntype PopoverContentProps<T extends ValidComponent = \"div\"> =\n  PopoverPrimitive.PopoverContentProps<T> & { class?: string | undefined };\n\nconst PopoverContent = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, PopoverContentProps<T>>,\n) => {\n  const [local, others] = splitProps(props as PopoverContentProps, [\"class\"]);\n  return (\n    <PopoverPrimitive.Portal>\n      <PopoverPrimitive.Content\n        data-slot=\"popover-content\"\n        class={cn(\n          \"z-50 w-72 origin-[var(--kb-popover-content-transform-origin)] rounded-md border-2 border-border bg-background p-4 text-primary-foreground outline-none ui-expanded:animate-in ui-expanded:fade-in-0 ui-expanded:zoom-in-95 ui-closed:animate-out ui-closed:fade-out-0 ui-closed:zoom-out-95\",\n          local.class,\n        )}\n        {...others}\n      />\n    </PopoverPrimitive.Portal>\n  );\n};\n\nexport { Popover, PopoverTrigger, PopoverContent };\n",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "target": "ui/popover.tsx"
     }
   ]
 }

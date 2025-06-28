@@ -6,7 +6,8 @@
     {
       "path": "src/registry/items/ui/label.tsx",
       "content": "import type { Component, ComponentProps } from \"solid-js\";\n\nimport { splitProps } from \"solid-js\";\n\nimport { cn } from \"~/lib/utils\";\n\nconst Label: Component<ComponentProps<\"label\">> = (props) => {\n  const [local, others] = splitProps(props, [\"class\"]);\n  return (\n    <label\n      class={cn(\n        \"text-sm leading-none font-heading peer-disabled:cursor-not-allowed peer-disabled:opacity-70\",\n        local.class,\n      )}\n      {...others}\n    />\n  );\n};\n\nexport { Label };\n",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "target": "ui/label.tsx"
     }
   ]
 }

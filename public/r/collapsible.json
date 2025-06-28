@@ -7,7 +7,8 @@
     {
       "path": "src/registry/items/ui/collapsible.tsx",
       "content": "import type { PolymorphicProps } from \"@kobalte/core\";\nimport type { ValidComponent } from \"solid-js\";\n\nimport * as CollapsiblePrimitive from \"@kobalte/core/collapsible\";\n\nconst Collapsible = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, CollapsiblePrimitive.CollapsibleRootProps<T>>,\n) => {\n  return <CollapsiblePrimitive.Root data-slot=\"collapsible\" {...props} />;\n};\n\nconst CollapsibleTrigger = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, CollapsiblePrimitive.CollapsibleTriggerProps<T>>,\n) => {\n  return (\n    <CollapsiblePrimitive.Trigger data-slot=\"collapsible-trigger\" {...props} />\n  );\n};\n\nconst CollapsibleContent = <T extends ValidComponent = \"div\">(\n  props: PolymorphicProps<T, CollapsiblePrimitive.CollapsibleContentProps<T>>,\n) => {\n  return (\n    <CollapsiblePrimitive.Content data-slot=\"collapsible-content\" {...props} />\n  );\n};\n\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\n",
-      "type": "registry:ui"
+      "type": "registry:ui",
+      "target": "ui/collapsible.tsx"
     }
   ]
 }
