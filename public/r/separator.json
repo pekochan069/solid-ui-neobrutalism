@@ -7,8 +7,7 @@
     {
       "path": "src/registry/items/ui/separator.tsx",
       "content": "import type { PolymorphicProps } from \"@kobalte/core/polymorphic\";\nimport type { ValidComponent } from \"solid-js\";\n\nimport { splitProps } from \"solid-js\";\nimport * as SeparatorPrimitive from \"@kobalte/core/separator\";\n\nimport { cn } from \"~/lib/utils\";\n\ntype SeparatorRootProps<T extends ValidComponent = \"hr\"> =\n  SeparatorPrimitive.SeparatorRootProps<T> & { class?: string | undefined };\n\nconst Separator = <T extends ValidComponent = \"hr\">(\n  props: PolymorphicProps<T, SeparatorRootProps<T>>,\n) => {\n  const [local, others] = splitProps(props as SeparatorRootProps, [\n    \"class\",\n    \"orientation\",\n  ]);\n  return (\n    <SeparatorPrimitive.Root\n      data-slot=\"separator\"\n      orientation={local.orientation ?? \"horizontal\"}\n      class={cn(\n        \"shrink-0 bg-muted-foreground\",\n        local.orientation === \"vertical\" ? \"h-full w-0.5\" : \"h-0.5 w-full\",\n        local.class,\n      )}\n      {...others}\n    />\n  );\n};\n\nexport { Separator };\n",
-      "type": "registry:ui",
-      "target": "ui/separator.tsx"
+      "type": "registry:ui"
     }
   ]
 }

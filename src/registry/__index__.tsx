@@ -40,7 +40,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/accordion.tsx",
         type: "registry:ui",
-        target: "ui/accordion.tsx",
       },
     ],
   },
@@ -55,7 +54,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/alert-dialog.tsx",
         type: "registry:ui",
-        target: "ui/alert-dialog.tsx",
       },
     ],
   },
@@ -69,7 +67,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/alert.tsx",
         type: "registry:ui",
-        target: "ui/alert.tsx",
       },
     ],
   },
@@ -83,7 +80,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/avatar.tsx",
         type: "registry:ui",
-        target: "ui/avatar.tsx",
       },
     ],
   },
@@ -96,7 +92,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/badge.tsx",
         type: "registry:ui",
-        target: "ui/badge.tsx",
       },
     ],
   },
@@ -110,7 +105,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/badge-delta.tsx",
         type: "registry:ui",
-        target: "ui/badge-delta.tsx",
       },
     ],
   },
@@ -124,7 +118,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/breadcrumb.tsx",
         type: "registry:ui",
-        target: "ui/breadcrumb.tsx",
       },
     ],
   },
@@ -138,7 +131,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/button.tsx",
         type: "registry:ui",
-        target: "ui/button.tsx",
       },
     ],
   },
@@ -153,7 +145,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/calendar.tsx",
         type: "registry:ui",
-        target: "ui/calendar.tsx",
       },
     ],
   },
@@ -166,7 +157,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/callout.tsx",
         type: "registry:ui",
-        target: "ui/callout.tsx",
       },
     ],
   },
@@ -179,7 +169,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/card.tsx",
         type: "registry:ui",
-        target: "ui/card.tsx",
       },
     ],
   },
@@ -194,7 +183,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/carousel.tsx",
         type: "registry:ui",
-        target: "ui/carousel.tsx",
       },
     ],
   },
@@ -208,7 +196,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/checkbox.tsx",
         type: "registry:ui",
-        target: "ui/checkbox.tsx",
       },
     ],
   },
@@ -222,7 +209,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/collapsible.tsx",
         type: "registry:ui",
-        target: "ui/collapsible.tsx",
       },
     ],
   },
@@ -236,7 +222,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/combobox.tsx",
         type: "registry:ui",
-        target: "ui/combobox.tsx",
       },
     ],
   },
@@ -251,7 +236,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/command.tsx",
         type: "registry:ui",
-        target: "ui/command.tsx",
       },
     ],
   },
@@ -265,7 +249,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/context-menu.tsx",
         type: "registry:ui",
-        target: "ui/context-menu.tsx",
       },
     ],
   },
@@ -280,7 +263,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/dialog.tsx",
         type: "registry:ui",
-        target: "ui/dialog.tsx",
       },
     ],
   },
@@ -294,7 +276,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/drawer.tsx",
         type: "registry:ui",
-        target: "ui/drawer.tsx",
       },
     ],
   },
@@ -308,7 +289,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/dropdown-menu.tsx",
         type: "registry:ui",
-        target: "ui/dropdown-menu.tsx",
       },
     ],
   },
@@ -322,7 +302,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/hover-card.tsx",
         type: "registry:ui",
-        target: "ui/hover-card.tsx",
       },
     ],
   },
@@ -335,7 +314,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/label.tsx",
         type: "registry:ui",
-        target: "ui/label.tsx",
       },
     ],
   },
@@ -349,7 +327,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/menubar.tsx",
         type: "registry:ui",
-        target: "ui/menubar.tsx",
       },
     ],
   },
@@ -363,7 +340,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/number-field.tsx",
         type: "registry:ui",
-        target: "ui/number-field.tsx",
       },
     ],
   },
@@ -377,7 +353,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/otp-field.tsx",
         type: "registry:ui",
-        target: "ui/otp-field.tsx",
       },
     ],
   },
@@ -392,7 +367,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/pagination.tsx",
         type: "registry:ui",
-        target: "ui/pagination.tsx",
       },
     ],
   },
@@ -406,7 +380,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/popover.tsx",
         type: "registry:ui",
-        target: "ui/popover.tsx",
       },
     ],
   },
@@ -420,7 +393,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/radio-group.tsx",
         type: "registry:ui",
-        target: "ui/radio-group.tsx",
       },
     ],
   },
@@ -434,7 +406,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/resizable.tsx",
         type: "registry:ui",
-        target: "ui/resizable.tsx",
       },
     ],
   },
@@ -448,7 +419,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/select.tsx",
         type: "registry:ui",
-        target: "ui/select.tsx",
       },
     ],
   },
@@ -462,7 +432,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/separator.tsx",
         type: "registry:ui",
-        target: "ui/separator.tsx",
       },
     ],
   },
@@ -476,7 +445,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/sheet.tsx",
         type: "registry:ui",
-        target: "ui/sheet.tsx",
       },
     ],
   },
@@ -497,7 +465,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/sidebar.tsx",
         type: "registry:ui",
-        target: "ui/sidebar.tsx",
       },
     ],
   },
@@ -511,7 +478,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/skeleton.tsx",
         type: "registry:ui",
-        target: "ui/skeleton.tsx",
       },
     ],
   },
@@ -526,7 +492,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/slider.tsx",
         type: "registry:ui",
-        target: "ui/slider.tsx",
       },
     ],
   },
@@ -540,7 +505,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/sonner.tsx",
         type: "registry:ui",
-        target: "ui/sonner.tsx",
       },
     ],
   },
@@ -554,7 +518,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/switch.tsx",
         type: "registry:ui",
-        target: "ui/switch.tsx",
       },
     ],
   },
@@ -567,7 +530,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/table.tsx",
         type: "registry:ui",
-        target: "ui/table.tsx",
       },
     ],
   },
@@ -581,7 +543,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/tabs.tsx",
         type: "registry:ui",
-        target: "ui/tabs.tsx",
       },
     ],
   },
@@ -595,7 +556,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/text-field.tsx",
         type: "registry:ui",
-        target: "ui/text-field.tsx",
       },
     ],
   },
@@ -608,7 +568,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/timeline.tsx",
         type: "registry:ui",
-        target: "ui/timeline.tsx",
       },
     ],
   },
@@ -622,7 +581,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/toggle.tsx",
         type: "registry:ui",
-        target: "ui/toggle.tsx",
       },
     ],
   },
@@ -637,7 +595,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/toggle-group.tsx",
         type: "registry:ui",
-        target: "ui/toggle-group.tsx",
       },
     ],
   },
@@ -651,7 +608,6 @@ export const Index: Record<string, any> = {
       {
         path: "src/registry/items/ui/tooltip.tsx",
         type: "registry:ui",
-        target: "ui/tooltip.tsx",
       },
     ],
   },

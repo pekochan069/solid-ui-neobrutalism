@@ -6,8 +6,7 @@
     {
       "path": "src/registry/items/ui/badge.tsx",
       "content": "import type { VariantProps } from \"class-variance-authority\";\nimport type { Component, ComponentProps } from \"solid-js\";\n\nimport { splitProps } from \"solid-js\";\nimport { cva } from \"class-variance-authority\";\n\nimport { cn } from \"~/lib/utils\";\n\nconst badgeVariants = cva(\n  \"inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden rounded-base border-2 border-border px-2.5 py-0.5 text-xs font-base whitespace-nowrap focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [&>svg]:pointer-events-none [&>svg]:size-3\",\n  {\n    variants: {\n      variant: {\n        default: \"bg-primary text-primary-foreground\",\n        neutral: \"bg-secondary-background text-foreground\",\n      },\n    },\n    defaultVariants: {\n      variant: \"default\",\n    },\n  },\n);\n\ntype BadgeProps = ComponentProps<\"div\"> &\n  VariantProps<typeof badgeVariants> & {\n    round?: boolean;\n  };\n\nconst Badge: Component<BadgeProps> = (props) => {\n  const [local, others] = splitProps(props, [\"class\", \"variant\", \"round\"]);\n  return (\n    <div\n      data-slot=\"badge\"\n      class={cn(\n        badgeVariants({ variant: local.variant }),\n        local.round && \"rounded-full\",\n        local.class,\n      )}\n      {...others}\n    />\n  );\n};\n\nexport type { BadgeProps };\nexport { Badge, badgeVariants };\n",
-      "type": "registry:ui",
-      "target": "ui/badge.tsx"
+      "type": "registry:ui"
     }
   ]
 }
