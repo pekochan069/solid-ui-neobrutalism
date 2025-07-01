@@ -10,25 +10,34 @@ import EllipsisIcon from "lucide-solid/icons/ellipsis";
 import { buttonVariants } from "~/components/ui/button";
 import { cn } from "~/lib/utils";
 
-const PaginationItems = PaginationPrimitive.Items;
-
 type PaginationRootProps<T extends ValidComponent = "nav"> =
-  PaginationPrimitive.PaginationRootProps<T> & { class?: string | undefined };
+  PaginationPrimitive.PaginationRootProps<T> & {
+    class?: string | undefined;
+    wrap?: boolean | undefined;
+  };
 
 const Pagination = <T extends ValidComponent = "nav">(
   props: PolymorphicProps<T, PaginationRootProps<T>>,
 ) => {
-  const [local, others] = splitProps(props as PaginationRootProps, ["class"]);
+  const [local, others] = splitProps(props as PaginationRootProps, [
+    "class",
+    "wrap",
+  ]);
   return (
     <PaginationPrimitive.Root
       data-slot="pagination"
       class={cn(
-        "[&>*]:flex [&>*]:flex-row [&>*]:items-center [&>*]:gap-1",
+        "[&>*]:flex [&>*]:flex-row [&>*]:items-center [&>*]:gap-1 data-[wrap=true]:[&>*]:flex-wrap",
         local.class,
       )}
       {...others}
+      data-wrap={local.wrap ? "true" : "false"}
     />
   );
+};
+
+const PaginationItems = (props: PaginationPrimitive.PaginationItemsProps) => {
+  return <PaginationPrimitive.Items {...props} data-slot="pagination-items" />;
 };
 
 type PaginationItemProps<T extends ValidComponent = "button"> =
