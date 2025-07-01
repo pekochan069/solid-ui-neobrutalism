@@ -22,7 +22,7 @@ const colors = getColors();
       </p>
     </div>
     <div class="px-4">
-      <ColorPalette colorPalette={colors[0]} client:load />
+      {colors.map((color) => <ColorPalette colorPalette={color} client:load />)}
     </div>
   </div>
 </BaseLayout>

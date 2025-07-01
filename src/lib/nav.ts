@@ -2,7 +2,7 @@ import type { NavGroup } from "~/types/nav";
 
 const nav: NavGroup[] = [
   {
-    label: "menu",
+    label: "Menu",
     items: [
       { label: "Home", href: "/" },
       {
@@ -234,7 +234,7 @@ const nav: NavGroup[] = [
     ],
   },
   {
-    label: "installation",
+    label: "Installation",
     items: [
       {
         label: "vite",

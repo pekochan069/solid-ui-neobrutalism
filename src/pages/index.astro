@@ -5,6 +5,25 @@ import { Button } from "~/components/ui/button";
 
 <BaseLayout>
   <div class="mt-32 grid place-content-center">
-    <Button as="a" href="/docs" class="text-3xl">Docs</Button>
+    <div>
+      <div
+        class="container flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-20 xl:gap-4"
+      >
+        <h1
+          class="leading-tighter max-w-2xl text-4xl font-semibold tracking-tight text-balance text-primary lg:leading-[1.1] lg:font-semibold xl:text-5xl xl:tracking-tighter"
+        >
+          Build your Component Library
+        </h1>
+        <p class="max-w-3xl text-base text-balance text-foreground sm:text-lg">
+          A set of beautifully-designed, accessible components and a code
+          distribution platform. Works with your favorite frameworks. Open
+          Source. Open Code.
+        </p>
+        <div class="grid grid-cols-2 gap-2">
+          <Button as="a" href="/docs">Get Started</Button>
+          <Button variant="neutral">Browse Blocks</Button>
+        </div>
+      </div>
+    </div>
   </div>
 </BaseLayout>

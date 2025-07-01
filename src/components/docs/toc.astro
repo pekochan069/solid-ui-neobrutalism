@@ -1,0 +1,30 @@
+---
+import type { MarkdownHeading } from "astro";
+
+type Props = {
+  headings: MarkdownHeading[];
+};
+
+const { headings } = Astro.props;
+---
+
+<aside
+  class="invisible sticky top-[calc(var(--header-height)+4px)] z-30 no-scrollbar hidden h-[calc(100svh-var(--header-height)-2reml)] w-80 flex-col overflow-y-scroll bg-transparent px-4 pt-8 xl:visible xl:flex"
+>
+  <p class="text-muted-foreground">On This Page</p>
+  <ul class="mt-4 flex flex-col gap-1">
+    {
+      headings.map((heading) => (
+        <li>
+          <a
+            href={`#${heading.slug}`}
+            style={`margin-left: ${heading.depth - 2}rem`}
+            class="toc-link text-sm hover:underline"
+          >
+            {heading.text.substring(0, heading.text.length - 1)}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</aside>
