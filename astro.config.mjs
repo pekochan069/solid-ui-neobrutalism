@@ -43,9 +43,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss(), lucidePreprocess()],
   },
-  build: {
-    format: "file",
-  },
   experimental: {
     contentIntellisense: true,
   },
