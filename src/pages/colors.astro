@@ -1,12 +1,12 @@
 ---
-import BaseLayout from "~/layout/base-layout.astro";
+import Layout from "~/layout/layout.astro";
 import ColorPalette from "~/components/color-palette";
 import { getColors } from "~/lib/colors";
 
 const colors = getColors();
 ---
 
-<BaseLayout>
+<Layout>
   <div>
     <div
       class="container mx-auto flex flex-col items-center gap-2 py-8 text-center md:py-16 lg:py-20 xl:gap-4"
@@ -25,4 +25,4 @@ const colors = getColors();
       {colors.map((color) => <ColorPalette colorPalette={color} client:load />)}
     </div>
   </div>
-</BaseLayout>
+</Layout>

@@ -66,6 +66,21 @@ const BreadcrumbLink = <T extends ValidComponent = "a">(
   );
 };
 
+const BreadcrumbPage = <T extends ValidComponent = "span">(
+  props: ComponentProps<T> & {
+    class?: string | undefined;
+  },
+) => {
+  const [local, others] = splitProps(props, ["class"]);
+  return (
+    <span
+      data-slot="breadcrumb-page"
+      class={cn("font-bold text-foreground", local.class)}
+      {...others}
+    />
+  );
+};
+
 type BreadcrumbSeparatorProps<T extends ValidComponent = "span"> =
   BreadcrumbPrimitive.BreadcrumbsSeparatorProps<T> & {
     class?: string | undefined;
@@ -107,6 +122,7 @@ export {
   BreadcrumbList,
   BreadcrumbItem,
   BreadcrumbLink,
+  BreadcrumbPage,
   BreadcrumbSeparator,
   BreadcrumbEllipsis,
 };

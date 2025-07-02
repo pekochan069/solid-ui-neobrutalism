@@ -611,4 +611,295 @@ export const Index: Record<string, any> = {
       },
     ],
   },
+  "sidebar-01": {
+    name: "sidebar-01",
+    description: "A simple sidebar with navigation grouped by section.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "label",
+      "dropdown-menu",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-01/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-01/page.tsx",
+        type: "registry:page",
+        target: "src/routes/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-01/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-01/components/search-form.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-01/components/version-switcher.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-02": {
+    name: "sidebar-02",
+    description: "A sidebar with collapsible sections.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "label",
+      "dropdown-menu",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-02/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-02/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-02/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-02/components/search-form.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-02/components/version-switcher.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-03": {
+    name: "sidebar-03",
+    description: "A sidebar with submenus.",
+    type: "registry:block",
+    registryDependencies: ["sidebar", "breadcrumb"],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-03/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-03/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-03/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-04": {
+    name: "sidebar-04",
+    description: "A floating sidebar with submenus.",
+    type: "registry:block",
+    registryDependencies: ["sidebar", "breadcrumb", "separator"],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-04/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-04/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-04/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-05": {
+    name: "sidebar-05",
+    description: "A sidebar with collapsible submenus.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "label",
+      "collapsible",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-05/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-05/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-05/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-05/components/search-form.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-06": {
+    name: "sidebar-06",
+    description: "A sidebar with submenus as dropdowns.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "card",
+      "dropdown-menu",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-06/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-06/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-06/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-06/components/nav-main.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-06/components/sidebar-opt-in-form.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-07": {
+    name: "sidebar-07",
+    description: "A sidebar that collapses to icons.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "collapsible",
+      "dropdown-menu",
+      "avatar",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-07/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-07/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-07/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-07/components/nav-main.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-07/components/nav-projects.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-07/components/nav-user.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-07/components/team-switcher.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-08": {
+    name: "sidebar-08",
+    description: "An inset sidebar with secondary navigation.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "collapsible",
+      "dropdown-menu",
+      "avatar",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-08/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-08/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-08/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-08/components/nav-main.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-08/components/nav-projects.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-08/components/nav-secondary.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-08/components/nav-user.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
+  "sidebar-09": {
+    name: "sidebar-09",
+    description: "Collapsible nested sidebars.",
+    type: "registry:block",
+    registryDependencies: [
+      "sidebar",
+      "breadcrumb",
+      "separator",
+      "collapsible",
+      "dropdown-menu",
+      "avatar",
+      "switch",
+      "label",
+    ],
+    component: lazy(
+      () => import("src/registry/items/block/sidebar-09/page.tsx"),
+    ),
+    files: [
+      {
+        path: "src/registry/items/block/sidebar-09/page.tsx",
+        type: "registry:page",
+        target: "src/dashboard/page.tsx",
+      },
+      {
+        path: "src/registry/items/block/sidebar-09/components/app-sidebar.tsx",
+        type: "registry:component",
+      },
+      {
+        path: "src/registry/items/block/sidebar-09/components/nav-user.tsx",
+        type: "registry:component",
+      },
+    ],
+  },
 };

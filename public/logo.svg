@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32">
+  <rect class="st0" width="32" height="32" fill="none" />
+  <line class="st1" x1="26" y1="16" x2="16" y2="26" fill="oklch(0.72 0.19 260)"
+    stroke="oklch(0.72 0.19 260)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4px" />
+  <line class="st1" x1="24" y1="5" x2="5" y2="24" fill="oklch(0.72 0.19 260)"
+    stroke="oklch(0.72 0.19 260)" stroke-linecap="round" stroke-linejoin="round" stroke-width="4px" />
+</svg>

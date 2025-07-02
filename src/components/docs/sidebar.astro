@@ -6,7 +6,7 @@ const pathname = Astro.url.pathname;
 ---
 
 <aside
-  class="invisible sticky top-[calc(var(--header-height)+4px)] z-30 no-scrollbar hidden h-[calc(100svh-var(--header-height)-2rem)] w-80 overflow-y-scroll bg-transparent px-4 pt-8 lg:visible lg:flex"
+  class="invisible sticky top-[calc(var(--header-height)+4px)] z-30 no-scrollbar hidden h-[calc(100svh-var(--header-height)-2rem)] w-80 overflow-y-scroll border-r-4 border-border bg-transparent px-4 pt-8 lg:visible lg:flex"
 >
   <ul class="flex flex-col gap-6">
     {
@@ -17,7 +17,7 @@ const pathname = Astro.url.pathname;
             {navGroup.items.map((navItem) => (
               <a
                 href={navItem.href}
-                class="h-auto rounded-base bg-transparent px-2 py-0.5 text-sm text-foreground transition-colors duration-75 hover:bg-secondary-background/50 data-[current=true]:bg-secondary-background/50 data-[current=true]:text-foreground"
+                class="h-auto rounded-base bg-transparent px-2 py-1 text-sm text-foreground transition-colors duration-75 hover:bg-secondary-background/50 data-[current=true]:bg-secondary-background/50 data-[current=true]:text-foreground"
                 data-current={pathname === navItem.href}
               >
                 {navItem.label}

@@ -3,6 +3,7 @@ import type { Registry } from "shadcn/registry";
 import { registryItemSchema } from "shadcn/registry";
 import { z } from "zod";
 
+import { blocks } from "./registry-blocks";
 import { lib } from "./registry-lib";
 import { ui } from "./registry-ui";
 
@@ -25,6 +26,7 @@ const registry = {
     },
     ...lib,
     ...ui,
+    ...blocks,
   ]),
 } satisfies Registry;
 

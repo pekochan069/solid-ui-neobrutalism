@@ -6,6 +6,7 @@ import { rimraf } from "rimraf";
 // import { getAllBlocks } from "~/lib/blocks";
 import registry from "~/registry";
 import { baseColorsV4 } from "~/registry/registry-base-colors";
+import { blocks } from "~/registry/registry-blocks";
 import { colorMapping } from "~/registry/registry-colors";
 
 const REGISTRY_DIR = path.join(process.cwd(), "public/r");
@@ -70,22 +71,29 @@ import { lazy } from "solid-js";
 
 export const Index: Record<string, any> = {`;
   for (const item of registry.items) {
+    const component =
+      item.type === "registry:block"
+        ? `src/registry/items/block/${item.name}/page.tsx`
+        : `src/registry/items/${item.type.substring(9)}/${item.name}`;
+
     index += `
   "${item.name}": {
     name: "${item.name}",
     description: "${item.description ?? ""}",
     type: "${item.type}",${item.dependencies !== undefined ? `\n    dependencies: ${JSON.stringify(item.dependencies)},` : ""}${item.registryDependencies !== undefined ? `\n    registryDependencies: ${JSON.stringify(item.registryDependencies)},` : ""}${
       item.files?.[0]?.path
-        ? `\n    component: lazy(() => import("src/registry/items/${item.type.substring(9)}/${item.name}")),`
+        ? `\n    component: lazy(() => import("${component}")),`
         : ""
     }${
       item.files !== undefined && item.files.length > 0
-        ? `\n    files: [\n${item.files?.map(
-            (file) => `      {
+        ? `\n    files: [\n${item.files
+            ?.map(
+              (file) => `      {
         path: "${file.path}",
         type: "${file.type}",${file.target ? `\n        target: "${file.target}",` : ""}
-      },`,
-          )}\n   ],`
+      }`,
+            )
+            .join(",\n")}\n   ],`
         : ""
     } 
   },`;
@@ -127,6 +135,15 @@ async function buildRegistry() {
   });
 }
 
+async function buildBlocksViews() {
+  for (const block of blocks) {
+    let view = `---\nimport BaseLayout from "~/layout/base-layout.astro";\nimport Block from "~/registry/items/block/${block.name}/page";\n---\n\n<BaseLayout>\n  <Block client:only="solid-js" />\n</BaseLayout>`;
+    const file = `src/pages/view/${block.name}.astro`;
+    rimraf.sync(path.join(process.cwd(), file));
+    await fs.writeFile(path.join(process.cwd(), file), view, "utf-8");
+  }
+}
+
 try {
   console.log("🗂️ Building src/registry/__index__.tsx...");
   await buildRegistryIndex();
@@ -139,6 +156,9 @@ try {
 
   console.log("🎨 Building themes...");
   await buildThemes();
+
+  console.log("📦 Building blocks views...");
+  await buildBlocksViews();
 } catch (error) {
   console.error(error);
   process.exit(1);

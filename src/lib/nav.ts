@@ -14,8 +14,12 @@ const nav: NavGroup[] = [
         href: "/docs/components",
       },
       {
-        label: "theming",
+        label: "Theming",
         href: "/docs/theming",
+      },
+      {
+        label: "Blocks",
+        href: "/blocks",
       },
       {
         label: "Colors",
@@ -98,6 +102,10 @@ const nav: NavGroup[] = [
       {
         href: "/docs/components/carousel",
         label: "Carousel",
+      },
+      {
+        href: "/docs/components/charts",
+        label: "Charts",
       },
       {
         href: "/docs/components/checkbox",

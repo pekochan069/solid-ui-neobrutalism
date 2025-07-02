@@ -4,6 +4,7 @@ import { splitProps } from "solid-js";
 import { Code } from "astro-expressive-code/components";
 import { Image } from "astro:assets";
 
+import BlockDisplay from "./docs/block-display.astro";
 import CollapsibleCode from "./docs/collapsible-code.astro";
 import ComponentsList from "./docs/components-list.astro";
 import InstallationTabs from "./docs/installation-tabs.astro";
@@ -174,6 +175,7 @@ export const mdxComponents = {
       />
     );
   },
+  BlockDisplay,
   CodeComponent: Code,
   CollapsibleCode,
   ComponentsList,

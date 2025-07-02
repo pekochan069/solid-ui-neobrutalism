@@ -8,8 +8,258 @@ next: components/skeleton
 nextLabel: Skeleton
 ---
 
+import sidebarStructurePng from "~/assets/sidebar-structure.png";
 import SidebarCode from "/src/registry/items/ui/sidebar.tsx?raw";
+import SidebarDemo from "/src/registry/items/examples/sidebar-demo.tsx";
+import SidebarDemoCode from "/src/registry/items/examples/sidebar-demo.tsx?raw";
+
+<BlockDisplay name="sidebar-07" />
 
 ## Installation
 
 <InstallationTabs name="sidebar" code={SidebarCode} />
+
+### Add The Following Colors To Your CSS File
+
+```css ins={4-11,16-23,28-35}
+/* src/app.css */
+:root {
+  ...
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+ 
+.dark {
+  ...
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
+@theme inline {
+  ...
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+```
+
+## Structure
+
+A `Sidebar` component is composed of the following parts:
+
+- `SidebarProvider` - Handles collapsible state
+- `Sidebar` - The main container for the sidebar
+- `SidebarHeader` and `SidebarFooter` - Sticky at the top and bottom of the sidebar
+- `SidebarContent` - The main scrollable area
+- `SidebarGroup` - Sections within the `SidebarContent`
+- `SidebarTrigger` - Trigger for the `Sidebar`
+
+<div class="border-2 border-border rounded-base">
+    <Image src={sidebarStructurePng} alt="Sidebar Structure" class="rounded-base" />
+</div>
+
+## Usage
+
+```tsx ins={7,8,17,18,21}
+// src/app.tsx
+import { Suspense } from "solid-js";
+import { Router } from "@solidjs/router";
+import { FileRoutes } from "@solidjs/start/router";
+
+import Nav from "~/components/Nav";
+import { AppSidebar } from "~/components/app-sidebar"
+import { SidebarProvider } from "~/components/ui/sidebar";
+
+import "./app.css";
+
+export default function App() {
+  return (
+    <Router
+      root={(props) => (
+        <>
+          <SidebarProvider>
+            <AppSidebar />
+            <Nav />
+            <Suspense>{props.children}</Suspense>
+          </SidebarProvider>
+        </>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  );
+}
+```
+
+```tsx
+// src/components/app-sidebar.tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarHeader,
+} from "~/components/ui/sidebar"
+
+export function AppSidebar() {
+  return (
+    <Sidebar>
+      <SidebarHeader />
+      <SidebarContent>
+        <SidebarGroup />
+        <SidebarGroup />
+      </SidebarContent>
+      <SidebarFooter />
+    </Sidebar>
+  )
+}
+```
+
+## Your First Sidebar
+
+Let's start with the most basic sidebar. A collapsible sidebar with a menu.
+
+Add A `SidebarProvider` and `SidebarTrigger` At The Root Of Your Application.
+
+```tsx ins={7,8,17,18,21}
+// src/app.tsx
+import { Suspense } from "solid-js";
+import { Router } from "@solidjs/router";
+import { FileRoutes } from "@solidjs/start/router";
+
+import Nav from "~/components/Nav";
+import { AppSidebar } from "~/components/app-sidebar"
+import { SidebarProvider } from "~/components/ui/sidebar";
+
+import "./app.css";
+
+export default function App() {
+  return (
+    <Router
+      root={(props) => (
+        <>
+          <SidebarProvider>
+            <AppSidebar />
+            <Nav />
+            <Suspense>{props.children}</Suspense>
+          </SidebarProvider>
+        </>
+      )}
+    >
+      <FileRoutes />
+    </Router>
+  );
+}
+```
+
+Create A New Sidebar Component At `src/components/app-sidebar.tsx`.
+
+```tsx
+// src/components/app-sidebar.tsx
+import { Sidebar, SidebarContent } from "~/components/ui/sidebar"
+ 
+export function AppSidebar() {
+  return (
+    <Sidebar>
+      <SidebarContent />
+    </Sidebar>
+  )
+}
+```
+
+Now Let's Add A `SidebarMenu` To The Sidebar.
+
+We'll use the `SidebarMenu` component in a `SidebarGroup`.
+
+```tsx
+// src/components/app-sidebar.tsx
+import { For } from "solid-js";
+import CalendarIcon from "lucide-solid/icons/calendar";
+import HomeIcon from "lucide-solid/icons/home";
+import InboxIcon from "lucide-solid/icons/inbox";
+import SearchIcon from "lucide-solid/icons/search";
+import SettingsIcon from "lucide-solid/icons/settings";
+
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "~/components/ui/sidebar";
+
+// Menu items.
+const items = [
+  {
+    title: "Home",
+    url: "#",
+    icon: HomeIcon,
+  },
+  {
+    title: "Inbox",
+    url: "#",
+    icon: InboxIcon,
+  },
+  {
+    title: "Calendar",
+    url: "#",
+    icon: CalendarIcon,
+  },
+  {
+    title: "Search",
+    url: "#",
+    icon: SearchIcon,
+  },
+  {
+    title: "Settings",
+    url: "#",
+    icon: SettingsIcon,
+  },
+];
+
+export function AppSidebar() {
+  return (
+    <Sidebar>
+      <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <For each={items}>
+                {(item) => (
+                  <SidebarMenuItem>
+                    <SidebarMenuButton as="a" href={item.url}>
+                      <item.icon />
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                )}
+              </For>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </SidebarContent>
+    </Sidebar>
+  );
+}
+```
