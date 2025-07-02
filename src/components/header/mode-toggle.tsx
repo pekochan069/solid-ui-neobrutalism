@@ -12,7 +12,15 @@ export default function ModeToggle() {
     setTheme(isDarkMode ? "dark" : "light");
   });
 
-  createEffect(() => {
+  createEffect(() => {});
+
+  const onClick = () => {
+    if (theme() === "light") {
+      setTheme("dark");
+    } else if (theme() === "dark") {
+      setTheme("light");
+    }
+
     const isDark =
       theme() === "dark" ||
       (theme() === "system" &&
@@ -22,14 +30,6 @@ export default function ModeToggle() {
       ? "catppuccin-macchiato"
       : "catppuccin-latte";
     ``;
-  });
-
-  const onClick = () => {
-    if (theme() === "light") {
-      setTheme("dark");
-    } else if (theme() === "dark") {
-      setTheme("light");
-    }
   };
 
   return (

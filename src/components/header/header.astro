@@ -4,7 +4,7 @@ import Logo from "~/assets/logo.svg";
 import { Button } from "~/components/ui/button";
 import { nav } from "~/lib/nav";
 import MobileNav from "./mobile-nav";
-import ThemeToggle from "./mode-toggle";
+import ModeToggle from "./mode-toggle";
 ---
 
 <header class="sticky top-0 z-50 w-full border-b-4 bg-background">
@@ -38,7 +38,7 @@ import ThemeToggle from "./mode-toggle";
     </div>
     <div class="flex gap-2">
       <Search />
-      <ThemeToggle client:load />
+      <ModeToggle client:load />
     </div>
   </div>
 </header>

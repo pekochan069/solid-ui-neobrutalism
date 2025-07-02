@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @view-transition {
-  navigation: auto; /* enabled! */
+  navigation: auto;
 }
 
 :root {
