@@ -1,9 +1,25 @@
 ---
+import BlockDisplay from "~/components/docs/block-display.astro";
 import Layout from "~/layout/layout.astro";
 
-const featuredBlocks = ["sidebar-01"];
+const featuredBlocks = [
+  "sidebar-01",
+  "sidebar-03",
+  "sidebar-07",
+  "sidebar-08",
+  "sidebar-09",
+];
 ---
 
 <Layout>
-  <div></div>
+  <div class="grid gap-16 p-4">
+    {
+      featuredBlocks.map((block) => (
+        <div>
+          <p class="mb-1">{block.replaceAll("-", " ")}</p>
+          <BlockDisplay name={block} />
+        </div>
+      ))
+    }
+  </div>
 </Layout>
