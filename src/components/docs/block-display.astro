@@ -9,7 +9,7 @@ const { name }: Props = Astro.props;
 <div
   class="relative aspect-[4/2.5] w-full overflow-hidden rounded-base border-2 border-border shadow-shadow"
 >
-  <div class="absolute inset-0 hidden w-[1600px] bg-background md:block">
-    <iframe src={`/view/${name}`} class="h-full w-full"></iframe>
+  <div class="absolute inset-0 w-[1600px] bg-background">
+    <iframe src={`/view/${name}`} class="size-full"></iframe>
   </div>
 </div>
