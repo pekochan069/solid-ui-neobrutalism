@@ -58,7 +58,7 @@ export function SearchDialog() {
   const [input, setInput] = createSignal("");
 
   return (
-    <CommandDialog open={open()} onOpenChange={setOpen}>
+    <CommandDialog open={open()} onOpenChange={setOpen} modal={false}>
       <CommandInput
         placeholder="Search..."
         value={input()}
