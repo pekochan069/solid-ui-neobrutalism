@@ -46,9 +46,9 @@ export function NavUser(props: {
             size="lg"
             class="ui-expanded:bg-sidebar-accent ui-expanded:text-sidebar-accent-foreground"
           >
-            <Avatar class="h-8 w-8 rounded-lg">
+            <Avatar class="size-8 rounded-base!">
               <AvatarImage src={props.user.avatar} alt={props.user.name} />
-              <AvatarFallback class="rounded-lg">CN</AvatarFallback>
+              <AvatarFallback class="rounded-base">CN</AvatarFallback>
             </Avatar>
             <div class="grid flex-1 text-left text-sm leading-tight">
               <span class="truncate font-medium">{props.user.name}</span>

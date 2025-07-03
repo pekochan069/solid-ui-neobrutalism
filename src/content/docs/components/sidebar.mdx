@@ -25,26 +25,26 @@ import SidebarDemoCode from "/src/registry/items/examples/sidebar-demo.tsx?raw";
 /* src/app.css */
 :root {
   ...
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: oklch(0.88 0.06 254);
+  --sidebar-foreground: oklch(0.28 0.09 268);
+  --sidebar-primary: oklch(0.72 0.19 260);
+  --sidebar-primary-foreground: oklch(0.28 0.09 268);
+  --sidebar-accent: oklch(0.93 0.03 256);
+  --sidebar-accent-foreground: oklch(0.28 0.09 268);
+  --sidebar-border: oklch(0.28 0.09 268);
+  --sidebar-ring: oklch(0.28 0.09 268);
 }
  
 .dark {
   ...
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: oklch(0.38 0.14 266);
+  --sidebar-foreground: oklch(0.97 0.01 255);
+  --sidebar-primary: oklch(0.62 0.19 260);
+  --sidebar-primary-foreground: oklch(0.28 0.09 268);
+  --sidebar-accent: oklch(0.28 0.09 268);
+  --sidebar-accent-foreground: oklch(0.97 0.01 255);
+  --sidebar-border: oklch(0.97 0.01 255);
+  --sidebar-ring: oklch(0.97 0.01 255);
 }
 
 @theme inline {
@@ -59,6 +59,30 @@ import SidebarDemoCode from "/src/registry/items/examples/sidebar-demo.tsx?raw";
   --color-sidebar-ring: var(--sidebar-ring);
 }
 ```
+
+If you are using a different theme, change the color variables to match your theme's design.
+
+Light Theme
+
+- sidebar - `{color}-200`
+- sidebar-foreground - `{color}-950`
+- sidebar-primary - `{color}-400`
+- sidebar-primary-foreground - `{color}-950`
+- sidebar-accent - `{color}-100`
+- sidebar-accent-foreground - `{color}-950`
+- sidebar-border - `{color}-950`
+- sidebar-ring - `{color}-950`
+
+Dark Theme
+
+- sidebar - `{color}-900`
+- sidebar-foreground - `{color}-50`
+- sidebar-primary - `{color}-500`
+- sidebar-primary-foreground - `{color}-950`
+- sidebar-accent - `{color}-950`
+- sidebar-accent-foreground - `{color}-50`
+- sidebar-border - `{color}-50`
+- sidebar-ring - `{color}-50`
 
 ## Structure
 

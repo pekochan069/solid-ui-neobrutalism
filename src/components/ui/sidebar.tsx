@@ -276,14 +276,14 @@ const Sidebar: Component<SidebarProps> = (rawProps) => {
               // Adjust the padding for floating and inset variants.
               local.variant === "floating" || local.variant === "inset"
                 ? "p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
-                : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r group-data-[side=right]:border-l",
+                : "group-data-[collapsible=icon]:w-(--sidebar-width-icon) group-data-[side=left]:border-r-2 group-data-[side=right]:border-l-2",
               local.class,
             )}
             {...others}
           >
             <div
               data-sidebar="sidebar"
-              class="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-sm"
+              class="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border-2 group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow-sm"
             >
               {local.children}
             </div>
@@ -722,7 +722,7 @@ const SidebarMenuSub: Component<ComponentProps<"ul">> = (props) => {
     <ul
       data-sidebar="menu-sub"
       class={cn(
-        "mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l border-sidebar-border px-2.5 py-0.5",
+        "mx-3.5 flex min-w-0 translate-x-px flex-col gap-1 border-l-2 border-sidebar-border px-2.5 py-0.5",
         "group-data-[collapsible=icon]:hidden",
         local.class,
       )}

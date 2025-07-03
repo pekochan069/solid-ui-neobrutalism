@@ -19,7 +19,7 @@ const Avatar = <T extends ValidComponent = "span">(
     <ImagePrimitive.Root
       data-slot="avatar"
       class={cn(
-        "relative flex size-10 shrink-0 overflow-hidden rounded-full outline-2 outline-border",
+        "relative flex size-10 shrink-0 overflow-hidden rounded-full border-2 border-border",
         local.class,
       )}
       {...others}
